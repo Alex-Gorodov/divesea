@@ -19,8 +19,12 @@
     border: none
     background-color: $slider-button
     padding: 29px
+    &:hover:enabled
+      background-color: $accent-dark
+      color: $white
     &:active:enabled
       box-shadow: inset 0px 0px 2px 2px rgba($accent-dark, 50%)
+      background-color: $slider-button
       color: rgba($accent-dark, 50%)
     &--prev
       position: relative
