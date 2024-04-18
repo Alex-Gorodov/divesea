@@ -1,0 +1,170 @@
+// COLORS
+
+$black: #000000
+$accent-dark: #141416
+$dark-transparent: rgba(#1c1d20, 35%)
+$dark-stroke: rgba(#1c1d20, 8%)
+$parallax-gray: #979797
+$dark-gray: #606060
+$gray: #848586
+$title-gray: #c5c5c5
+$light-gray: #cecdcd
+$slider-button-divider: #e6e8ec
+$weekly-section: #f1f1f1
+$slider-button: #fcfcfd
+$lighten-gray: #ededed
+$background-gray: #e5e5e5
+$white: #ffffff
+
+// MIXINS
+
+@mixin list-reset
+  padding: 0
+  margin: 0
+  list-style-type: none
+
+@mixin link-reset
+  text-decoration: none
+  color: $gray
+  transition: 0.3s
+
+// FONTS
+
+$main-fonts: "Arial", sans-serif
+
+// weights
+$regular: 400
+$medium: 500
+$semi-bold: 600
+$bold: 700
+$extra-bold: 800
+
+@mixin poppins-regular
+  font-family: "Poppins", $main-fonts
+  font-weight: $regular
+
+@mixin poppins-medium
+  font-family: "Poppins", $main-fonts
+  font-weight: $medium
+
+@mixin poppins-semi-bold
+  font-family: "Poppins", $main-fonts
+  font-weight: $semi-bold
+
+@mixin poppins-bold
+  font-family: "Poppins", $main-fonts
+  font-weight: $bold
+
+@mixin inter-regular
+  font-family: "Inter", $main-fonts
+  font-weight: $regular
+
+@mixin inter-semi-bold
+  font-family: "Inter", $main-fonts
+  font-weight: $semi-bold
+
+@mixin inter-medium
+  font-family: "Inter", $main-fonts
+  font-weight: $medium
+
+@mixin manrope-semi-bold
+  font-family: "Manrope", $main-fonts
+  font-weight: $semi-bold
+
+@mixin manrope-extra-bold
+  font-family: "Manrope", $main-fonts
+  font-weight: $extra-bold
+
+@mixin dm-sans-bold
+  font-family: "DM Sans", $main-fonts
+  font-weight: $bold
+
+@mixin roboto-regular
+  font-family: "Roboto", $main-fonts
+  font-weight: $regular
+
+@mixin roboto-bold
+  font-family: "Roboto", $main-fonts
+  font-weight: $bold
+
+@mixin public-sans-semi-bold
+  font-family: "Public Sans", $main-fonts
+  font-weight: $semi-bold
+
+@mixin public-sans-bold
+  font-family: "Public Sans", $main-fonts
+  font-weight: $bold
+
+@mixin outfit-regular
+  font-family: "Outfit", $main-fonts
+  font-weight: $regular
+
+@mixin outfit-medium
+  font-family: "Outfit", $main-fonts
+  font-weight: $medium
+
+@mixin outfit-semi-bold
+  font-family: "Outfit", $main-fonts
+  font-weight: $semi-bold
+
+@mixin urbanist-bold
+  font-family: "Urbanist", $main-fonts
+  font-weight: $bold
+
+@mixin plus-jakatra-sans-medium
+  font-family: "Plus Jakarta Sans", $main-fonts
+  font-weight: $medium
+
+*, 
+*::after, 
+*::before
+  box-sizing: border-box
+
+html
+  display: flex
+  margin: 0
+  padding: 0
+  flex-direction: column
+
+body
+  margin: 0
+  padding: 0
+  background-color: $background-gray
+  overflow-x: hidden
+
+.visually-hidden
+  position: absolute
+
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+
+  basic-extra-light-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+.main
+  position: relative
+
+.parallax
+  position: absolute
+  right: -53px
+  top: 100px
+  width: 170px
+  height: 400px
+  background-image: url("img/icons/hero-parallax.svg")
+  background-size: initial
+  background-position: center
+  background-repeat: no-repeat
+  z-index: -1
+
+.swiper-horizontal
+  padding: 0 30px
+
+.swiper-slide.item
+  flex-shrink: 0 !important
+  width: 100% !important
+  max-width: 282px !important

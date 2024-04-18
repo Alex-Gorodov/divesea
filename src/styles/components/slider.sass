@@ -1,0 +1,38 @@
+.slider
+  &-buttons
+    display: flex
+    margin-bottom: 82px
+    gap: 23px
+    max-width: 166px
+    margin: auto
+    margin-top: 70px
+    margin-bottom: -70px
+    background-color: $slider-button
+    gap: 0px
+    box-shadow: 0px 42px 34px 0px rgba(#0f0f0f, 12%)
+    border-radius: 18px
+  &-btn
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50%
+    border: none
+    background-color: $slider-button
+    padding: 29px
+    &:active:enabled
+      box-shadow: inset 0px 0px 2px 2px rgba($accent-dark, 50%)
+      color: rgba($accent-dark, 50%)
+    &--prev
+      position: relative
+      border-radius: 18px 0 0 18px
+      &::after
+        position: absolute
+        left: calc(100% - 1px)
+        top: 50%
+        height: 50%
+        transform: translateY(-50%)
+        width: 2px
+        background-color: $slider-button-divider
+        content: ''
+    &--next
+      border-radius: 0 18px 18px 0

@@ -1,0 +1,21 @@
+.navigation
+  display: flex
+  align-items: center
+  &__logo
+    margin-right: 57px
+  &__list
+    @include list-reset
+    @include inter-medium
+    display: flex
+    gap: 3em
+  &__link
+    @include link-reset
+    font-size: 17.83px
+    line-height: 1
+    text-transform: uppercase
+    &:hover
+      opacity: 0.6
+  &__wrapper
+    display: flex
+    justify-content: center
+    gap: 30px
