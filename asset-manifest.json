@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/divesea/static/css/main.75cecf4f.css",
+    "main.js": "/divesea/static/js/main.39c8c015.js",
+    "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
+    "static/media/logo.svg": "/divesea/static/media/logo.5a2304d48fb670d58af7b8f98d9b099c.svg",
+    "index.html": "/divesea/index.html",
+    "static/media/hero-arrow.svg": "/divesea/static/media/hero-arrow.9a26e1dcc89a60e430b3.svg",
+    "static/media/button-arrow.svg": "/divesea/static/media/button-arrow.838b01acaa4fd3c0b8c2c6e04c67d251.svg",
+    "static/media/search.svg": "/divesea/static/media/search.98e74083d083a7680417.svg",
+    "static/media/etherium.svg": "/divesea/static/media/etherium.b01f5ac86eb4d3d7cbcd.svg",
+    "main.75cecf4f.css.map": "/divesea/static/css/main.75cecf4f.css.map",
+    "main.39c8c015.js.map": "/divesea/static/js/main.39c8c015.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75cecf4f.css",
+    "static/js/main.39c8c015.js"
+  ]
+}
