@@ -1,34 +1,48 @@
 .hero
   display: flex
-  max-width: 1250px
+  max-width: $container-max-width
   padding-top: 100px
   margin-bottom: 180px
   margin-inline: auto
   gap: 114px
+  @media (max-width: $tablet)
+    padding-top: 40px
+    flex-direction: column
+    align-items: center
   &__wrapper
     display: flex
     max-width: 510px
     flex-direction: column
+    @media (max-width: $tablet)
+      text-align: center
   &__text
     display: flex
     margin-bottom: 45px
     flex-direction: column
     gap: 16px
+    @media (max-width: $tablet)
+      align-items: center
   & .title
     position: relative
-    &::before
-      position: absolute
-      top: 0
-      left: 5px
-      display: block
-      height: 1px
-      width: 30%
-      background-color: $light-gray
-      content: ''
+    @media (min-width: $tablet)
+      &::before
+        position: absolute
+        top: 0
+        left: 5px
+        display: block
+        height: 1px
+        width: 30%
+        background-color: $light-gray
+        content: ''
+  &__description
+    @media (max-width: $tablet)
+      max-width: 300px
   &__buttons
     display: flex
     margin-bottom: 82px
     gap: 23px
+    @media (max-width: $tablet)
+      justify-content: center
   &__right
     position: relative
     &::after

@@ -3,10 +3,13 @@
   border-radius: 12.4px
   padding: 1em 1.5em
   font-size: 16px
+  color: $accent-dark
   text-transform: uppercase
   white-space: nowrap
   cursor: pointer
   transition: 0.3s
+  @media (max-width: $tablet)
+    font-size: 12px
   &--dark
     background-color: $black
     color: $white
@@ -22,4 +25,5 @@
       background-color: $black
       color: $white
   &:disabled
+    color: rgba($accent-dark, 50%)
     cursor: auto

@@ -12,9 +12,16 @@ $light-gray: #cecdcd
 $slider-button-divider: #e6e8ec
 $weekly-section: #f1f1f1
 $slider-button: #fcfcfd
+$mobile-background-color: #f9f9f9
 $lighten-gray: #ededed
 $background-gray: #e5e5e5
 $white: #ffffff
+
+// SCREEN WIDTH
+$mobile: 375px
+$tablet: 1024px
+$desktop: 1440px
+$container-max-width: 1250px
 
 // MIXINS
 
@@ -28,11 +35,17 @@ $white: #ffffff
   color: $gray
   transition: 0.3s
 
+@mixin burger-line
+  display: block
+  width: 30px
+  height: 3px
+  background-color: $accent-dark
+  border-radius: 4px
+
 // FONTS
 
 $main-fonts: "Arial", sans-serif
 
-// weights
 $regular: 400
 $medium: 500
 $semi-bold: 600
@@ -129,8 +142,10 @@ html
 body
   margin: 0
   padding: 0
-  background-color: $background-gray
   overflow-x: hidden
+  background-color: $background-gray
+  @media (max-width: $tablet)
+    background-color: $mobile-background-color
 
 .visually-hidden
   position: absolute
@@ -160,10 +175,14 @@ body
   background-position: center
   background-repeat: no-repeat
   z-index: -1
+  @media (max-width: $tablet)
+    top: 300px
 
 .swiper-horizontal
   margin-left: -35px
-
+  @media (max-width: $tablet)
+    margin-left: 0
+    
 .swiper-slide.item
   flex-shrink: 0 !important
   width: 100% !important

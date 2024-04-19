@@ -5,9 +5,27 @@ import { Navigation } from 'swiper/modules';
 import { items } from "../../mocks/items";
 import 'swiper/css/navigation';
 import 'swiper/css';
+import { useEffect, useState } from "react";
+import { ScreenSizes } from "../../const";
 
 export function Weekly(): JSX.Element {
-  const itemWidth = 282;
+  const itemWidth = 281;
+  const slidesCount = Math.round(window.innerWidth / itemWidth)
+  const spaceBetween = Math.round(window.innerWidth - itemWidth) / 2 / slidesCount;
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= ScreenSizes.Tablet);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMobile]);
+
+  console.log(spaceBetween);
+  
+
   return (
     <section className="section weekly">
       <h2 className="title title--2 weekly__title">Weekly - Top NFT</h2>
@@ -19,7 +37,9 @@ export function Weekly(): JSX.Element {
           nextEl: '.weekly__slider-btn--next'
         }}
         modules={[Navigation]}
-        slidesPerView={Math.round(window.innerWidth / itemWidth)}
+        centeredSlides={isMobile}
+        slidesPerView={isMobile ? 1.275 : slidesCount}
+        slidesPerGroup={isMobile ? 1 : undefined}
       >
         {items.map((item) => (
           <SwiperSlide className="item" key={`weekly-${item.id}`}>
