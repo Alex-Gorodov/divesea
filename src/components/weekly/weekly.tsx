@@ -26,7 +26,7 @@ export function Weekly(): JSX.Element {
 
   return (
     <section className="section weekly">
-      <h2 className="title title--2 weekly__title">Weekly - Top NFT</h2>
+      <h2 className="title title--2 title--secondary weekly__title">Weekly - Top NFT</h2>
       <Swiper
         spaceBetween={20}
         loop={true}
