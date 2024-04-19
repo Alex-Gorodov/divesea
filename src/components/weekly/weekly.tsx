@@ -10,8 +10,9 @@ import { ScreenSizes } from "../../const";
 
 export function Weekly(): JSX.Element {
   const itemWidth = 281;
-  const slidesCount = Math.round(window.innerWidth / itemWidth)
-  const spaceBetween = Math.round(window.innerWidth - itemWidth) / 2 / slidesCount;
+  const slidesPerView = Math.round(window.innerWidth / itemWidth)
+  const spaceBetween = Math.round(window.innerWidth - itemWidth) / 2 / slidesPerView;
+  const mobileSlidesPerView = window.innerWidth / (itemWidth + spaceBetween/(items.length - 3));
   const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
   useEffect(() => {
     const handleResize = () => {
@@ -23,7 +24,7 @@ export function Weekly(): JSX.Element {
     };
   }, [isMobile]);
 
-  console.log(spaceBetween);
+  console.log(window.innerWidth / (itemWidth + spaceBetween/(items.length - 3)));
   
 
   return (
@@ -38,7 +39,7 @@ export function Weekly(): JSX.Element {
         }}
         modules={[Navigation]}
         centeredSlides={isMobile}
-        slidesPerView={isMobile ? 1.275 : slidesCount}
+        slidesPerView={isMobile ? mobileSlidesPerView : slidesPerView}
         slidesPerGroup={isMobile ? 1 : undefined}
       >
         {items.map((item) => (
