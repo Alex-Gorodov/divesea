@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { HeroItemSizes, ScreenSizes } from "../../const";
 import React from "react";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
+// import Swiper from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 interface Props {
   end: number;
@@ -96,36 +99,35 @@ export function Hero(): JSX.Element {
         </div>
       </div>
       <div className="hero__right">
-        {
-          items.map((item) => {
-            const itemClassName = cn('hero__item', {
-              'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items.length - 1),
-              'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
+          {
+            items.map((item) => {
+              const itemClassName = cn('hero__item', {
+                'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items.length - 1),
+                'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
+              })
+              return (
+                <div className={itemClassName} key={`hero-${item.name}`}>
+                  <img
+                    src={item.img}
+                    alt={item.name} 
+                    width={
+                      activeItem === item.id
+                      ? isMobile
+                        ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
+                      : isMobile
+                        ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
+                    }
+                    height={
+                      activeItem === item.id
+                      ? isMobile
+                        ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
+                      : isMobile
+                        ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
+                    }/>
+                </div>
+              )
             })
-
-            return (
-              <div className={itemClassName} key={`hero-${item.name}`}>
-                <img
-                  src={item.img}
-                  alt={item.name} 
-                  width={
-                    activeItem === item.id
-                    ? isMobile
-                      ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
-                    : isMobile
-                      ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
-                  }
-                  height={
-                    activeItem === item.id
-                    ? isMobile
-                      ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
-                    : isMobile
-                      ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
-                  }/>
-              </div>
-            )
-          })
-        }
+          }
         <SliderButtons classNames={['hero__slider-buttons', 'hero__slider-btn--prev', 'hero__slider-btn--next']} onClickPrev={() => handleActiveItemPrev()} onClickNext={() => handleActiveItemNext()} isPrevDisabled={activeItem === 0} isNextDisabled={activeItem === items.length - 1}/>
       </div>
     </section>

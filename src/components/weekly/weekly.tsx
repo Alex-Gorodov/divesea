@@ -31,8 +31,8 @@ export function Weekly(): JSX.Element {
         spaceBetween={20}
         loop={true}
         navigation={{
-          prevEl: '.weekly__slider-btn--prev',
-          nextEl: '.weekly__slider-btn--next'
+          prevEl: '.weekly__slider-btn--next',
+          nextEl: '.weekly__slider-btn--prev'
         }}
         modules={[Navigation]}
         centeredSlides={isMobile}

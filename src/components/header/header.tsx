@@ -1,13 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AppRoute, ScreenSizes } from '../../const';
 import { ReactComponent as Logo} from '../../logo.svg';
 import cn from "classnames";
 import { useEffect, useState } from 'react';
 
 export function Header(): JSX.Element {
-  const [isActive, setActive] = useState(false);
+  const location = useLocation();
   const [isMenuOpened, setMenuOpened] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
+  const [currentPage, setCurrentPage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const pathname = location.pathname;
+    if (pathname === AppRoute.Creators ||
+        pathname === AppRoute.Discover ||
+        pathname === AppRoute.Stats ||
+        pathname === AppRoute.Sell) {
+          setCurrentPage(pathname);
+    } else {
+      setCurrentPage(null);
+    }
+  }, [location.pathname]);
   
   useEffect(() => {
     const handleResize = () => {
@@ -17,10 +30,6 @@ export function Header(): JSX.Element {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
-  const navLinkClassName = cn('navigation__link', {
-    'navigation__link--active' : isActive,
-  })
 
   const navWrapperClassName = cn('navigation__wrapper', {
     'navigation__wrapper--opened' : isMenuOpened
@@ -29,6 +38,11 @@ export function Header(): JSX.Element {
   const burgerClassName = cn('navigation__mobile-toggler', {
     'navigation__mobile-toggler--opened' : isMenuOpened
   })
+
+  const navLinkClassName = (page: string) =>
+    cn('navigation__link', {
+      'navigation__link--current': currentPage === page,
+    });
 
   return (
     <header className="header">
@@ -49,16 +63,16 @@ export function Header(): JSX.Element {
         <div className={navWrapperClassName}>
           <ul className="navigation__list">
             <li className="navigation__item">
-              <Link to={AppRoute.Discover} className={navLinkClassName} onClick={() => setActive(true)}>Discover</Link>
+              <Link to={AppRoute.Discover} className={navLinkClassName(AppRoute.Discover)}>Discover</Link>
             </li>
             <li className="navigation__item">
-              <Link to={AppRoute.Creators} className={navLinkClassName} onClick={() => setActive(true)}>Creators</Link>
+              <Link to={AppRoute.Creators} className={navLinkClassName(AppRoute.Creators)}>Creators</Link>
             </li>
             <li className="navigation__item">
-              <Link to={AppRoute.Sell} className={navLinkClassName} onClick={() => setActive(true)}>Sell</Link>
+              <Link to={AppRoute.Sell} className={navLinkClassName(AppRoute.Sell)}>Sell</Link>
             </li>
             <li className="navigation__item">
-              <Link to={AppRoute.Stats} className={navLinkClassName} onClick={() => setActive(true)}>Stats</Link>
+              <Link to={AppRoute.Stats} className={navLinkClassName(AppRoute.Stats)}>Stats</Link>
             </li>
           </ul>
           <div className="navigation__buttons-wrapper">

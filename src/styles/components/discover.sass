@@ -1,0 +1,12 @@
+.discover
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__list
+    @include list-reset
+    display: grid
+    max-width: $container-max-width
+    grid-template-columns: repeat(auto-fit, minmax(200px, 282px))
+    gap: 60px 40px
+    justify-content: center
+    justify-items: center

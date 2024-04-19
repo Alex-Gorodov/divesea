@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Hero } from '../../components/hero/hero';
 import { Layout } from '../../components/layout/layout';
 import { Weekly } from '../../components/weekly/weekly';
+import { Helmet } from 'react-helmet-async';
 
 export function HomePage(): JSX.Element {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -21,6 +22,9 @@ export function HomePage(): JSX.Element {
 
   return (
     <Layout>
+      <Helmet>
+        <title>DiveSea</title>
+      </Helmet>
       <main className="main">
         <Hero />
         <Weekly />

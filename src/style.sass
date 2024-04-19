@@ -4,6 +4,7 @@ $black: #000000
 $accent-dark: #141416
 $dark-transparent: rgba(#1c1d20, 35%)
 $dark-stroke: rgba(#1c1d20, 8%)
+$footer-gray: #999999
 $parallax-gray: #979797
 $dark-gray: #606060
 $gray: #848586
@@ -18,7 +19,7 @@ $background-gray: #e5e5e5
 $white: #ffffff
 
 // SCREEN WIDTH
-$mobile: 375px
+$mobile: 430px
 $tablet: 1024px
 $desktop: 1440px
 $container-max-width: 1250px
@@ -138,14 +139,20 @@ html
   margin: 0
   padding: 0
   flex-direction: column
+  overflow-x: hidden
 
 body
   margin: 0
   padding: 0
-  overflow-x: hidden
   background-color: $background-gray
+  overflow-x: hidden
   @media (max-width: $tablet)
     background-color: $mobile-background-color
+
+.page-container
+  min-height: 100vh
+  display: flex
+  flex-direction: column
 
 .visually-hidden
   position: absolute
@@ -163,6 +170,7 @@ body
 
 .main
   position: relative
+  flex-grow: 1
 
 .parallax
   position: absolute
