@@ -5,14 +5,19 @@
     grid-template-columns: repeat(3, 110px)
     gap: 65px
     @media (max-width: $mobile)
-      grid-template-columns: unset
+      grid-template-columns: repeat(3, auto)
       margin-left: 30px
+      justify-items: center
+      justify-content: center
+      gap: 20px
   &__item
     display: flex
     flex-direction: column
   &__accent
     @include public-sans-semi-bold
     font-size: 36px
+    @media (max-width: $mobile)
+      font-size: 24px
   &__description
     @include inter-medium
     font-size: 12px

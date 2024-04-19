@@ -9,6 +9,7 @@
     padding-top: 40px
     flex-direction: column
     align-items: center
+    gap: 40px
   &__wrapper
     display: flex
     max-width: 510px
@@ -57,14 +58,25 @@
       background-position: center
       background-repeat: no-repeat
       content: ''
+      @media (max-width: $mobile)
+        right: -35%
+        scale: 0.7
   &__item
+    @media (max-width: $mobile)
+      position: relative
+      left: -50px
     &--inactive
       position: absolute
       right: -100%
       bottom: -20%
+      @media (max-width: $mobile)
+        left: unset
+        right: -70%
     &--invisible
       display: none
     & img
       border-radius: 56px
       box-shadow: 32px 32px 80px 0px $gray
-  
+  &__slider-buttons.slider-buttons
+    margin-top: 140px
+    margin-bottom: -140px

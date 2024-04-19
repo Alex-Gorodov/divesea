@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 
 export function Header(): JSX.Element {
   const [isActive, setActive] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
   const [isMenuOpened, setMenuOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
   
   useEffect(() => {
     const handleResize = () => {
@@ -17,12 +17,17 @@ export function Header(): JSX.Element {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  
   const navLinkClassName = cn('navigation__link', {
     'navigation__link--active' : isActive,
   })
 
   const navWrapperClassName = cn('navigation__wrapper', {
     'navigation__wrapper--opened' : isMenuOpened
+  })
+
+  const burgerClassName = cn('navigation__mobile-toggler', {
+    'navigation__mobile-toggler--opened' : isMenuOpened
   })
 
   return (
@@ -35,7 +40,7 @@ export function Header(): JSX.Element {
           {
             isMobile
             ?
-              <button className="navigation__mobile-toggler" onClick={() => setMenuOpened(!isMenuOpened)}>
+              <button className={burgerClassName} onClick={() => setMenuOpened(!isMenuOpened)}>
                 <span></span>
               </button>
             : ''

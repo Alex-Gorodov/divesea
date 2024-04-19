@@ -8,7 +8,9 @@ export enum AppRoute {
 
 export enum HeroItemSizes {
   Active = 392,
-  Inactive = 318
+  ActiveMobile = 210,
+  Inactive = 318,
+  InactiveMobile = 170,
 }
 
 export enum ScreenSizes {

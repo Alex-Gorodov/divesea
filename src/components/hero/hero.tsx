@@ -1,8 +1,8 @@
 import { animated, useSpring } from "react-spring"
 import { items } from "../../mocks/items";
 import cn from "classnames";
-import { useState } from "react";
-import { HeroItemSizes } from "../../const";
+import { useEffect, useState } from "react";
+import { HeroItemSizes, ScreenSizes } from "../../const";
 import React from "react";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
 
@@ -33,6 +33,17 @@ const CountAnimation: React.FC<Props> = ({ end }) => {
 export function Hero(): JSX.Element {
 
   const [activeItem, setActiveItem] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= ScreenSizes.Tablet);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
   
   const handleActiveItemPrev = () => {
     setActiveItem(activeItem - 1)
@@ -94,12 +105,28 @@ export function Hero(): JSX.Element {
 
             return (
               <div className={itemClassName} key={`hero-${item.name}`}>
-                <img src={item.img} alt={item.name} width={activeItem === item.id ? HeroItemSizes.Active : HeroItemSizes.Inactive} height={activeItem === item.id ? HeroItemSizes.Active : HeroItemSizes.Inactive}/>
+                <img
+                  src={item.img}
+                  alt={item.name} 
+                  width={
+                    activeItem === item.id
+                    ? isMobile
+                      ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
+                    : isMobile
+                      ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
+                  }
+                  height={
+                    activeItem === item.id
+                    ? isMobile
+                      ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
+                    : isMobile
+                      ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
+                  }/>
               </div>
             )
           })
         }
-        <SliderButtons classNames={['hero__slider-btn--prev', 'hero__slider-btn--next']} onClickPrev={() => handleActiveItemPrev()} onClickNext={() => handleActiveItemNext()} isPrevDisabled={activeItem === 0} isNextDisabled={activeItem === items.length - 1}/>
+        <SliderButtons classNames={['hero__slider-buttons', 'hero__slider-btn--prev', 'hero__slider-btn--next']} onClickPrev={() => handleActiveItemPrev()} onClickNext={() => handleActiveItemNext()} isPrevDisabled={activeItem === 0} isNextDisabled={activeItem === items.length - 1}/>
       </div>
     </section>
   )
