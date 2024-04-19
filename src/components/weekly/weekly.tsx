@@ -24,9 +24,6 @@ export function Weekly(): JSX.Element {
     };
   }, [isMobile]);
 
-  console.log(window.innerWidth / (itemWidth + spaceBetween/(items.length - 3)));
-  
-
   return (
     <section className="section weekly">
       <h2 className="title title--2 weekly__title">Weekly - Top NFT</h2>
