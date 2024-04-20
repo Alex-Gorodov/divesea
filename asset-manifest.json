@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/divesea/static/css/main.3f0140b9.css",
-    "main.js": "/divesea/static/js/main.10b31c2e.js",
+    "main.css": "/divesea/static/css/main.d99dee7a.css",
+    "main.js": "/divesea/static/js/main.670d1f1f.js",
     "static/media/profile-cover.png": "/divesea/static/media/profile-cover.415e0a91ba363fb3605f.png",
     "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
     "static/media/logo.svg": "/divesea/static/media/logo.5a2304d48fb670d58af7b8f98d9b099c.svg",
@@ -17,12 +17,12 @@
     "static/media/search.svg": "/divesea/static/media/search.98e74083d083a7680417.svg",
     "static/media/facebook.svg": "/divesea/static/media/facebook.45980a6f35d77b6194bdb15f65c92818.svg",
     "static/media/redirect-arrow.svg": "/divesea/static/media/redirect-arrow.c11ebb0599b56ea3e094474f275cb15b.svg",
-    "static/media/etherium.svg": "/divesea/static/media/etherium.b01f5ac86eb4d3d7cbcd.svg",
-    "main.3f0140b9.css.map": "/divesea/static/css/main.3f0140b9.css.map",
-    "main.10b31c2e.js.map": "/divesea/static/js/main.10b31c2e.js.map"
+    "static/media/etherium.svg": "/divesea/static/media/etherium.b01f5ac86eb4d3d7cbcdde66645c3c65.svg",
+    "main.d99dee7a.css.map": "/divesea/static/css/main.d99dee7a.css.map",
+    "main.670d1f1f.js.map": "/divesea/static/js/main.670d1f1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f0140b9.css",
-    "static/js/main.10b31c2e.js"
+    "static/css/main.d99dee7a.css",
+    "static/js/main.670d1f1f.js"
   ]
 }
