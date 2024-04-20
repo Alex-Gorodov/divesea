@@ -1,35 +1,28 @@
 import { Link, useLocation } from 'react-router-dom';
-import { AppRoute, ScreenSizes } from '../../const';
+import { AppRoute } from '../../const';
 import { ReactComponent as Logo} from '../../logo.svg';
 import cn from "classnames";
 import { useEffect, useState } from 'react';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 export function Header(): JSX.Element {
   const location = useLocation();
   const [isMenuOpened, setMenuOpened] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
   const [currentPage, setCurrentPage] = useState<string | null>(null);
-
+  
   useEffect(() => {
     const pathname = location.pathname;
     if (pathname === AppRoute.Creators ||
-        pathname === AppRoute.Discover ||
-        pathname === AppRoute.Stats ||
-        pathname === AppRoute.Sell) {
-          setCurrentPage(pathname);
-    } else {
-      setCurrentPage(null);
-    }
-  }, [location.pathname]);
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= ScreenSizes.Tablet);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      pathname === AppRoute.Discover ||
+      pathname === AppRoute.Stats ||
+      pathname === AppRoute.Sell) {
+        setCurrentPage(pathname);
+      } else {
+        setCurrentPage(null);
+      }
+    }, [location.pathname]);
+    
+  const isMobile = useIsMobile();
 
   const navWrapperClassName = cn('navigation__wrapper', {
     'navigation__wrapper--opened' : isMenuOpened
@@ -54,7 +47,7 @@ export function Header(): JSX.Element {
           {
             isMobile
             ?
-              <button className={burgerClassName} onClick={() => setMenuOpened(!isMenuOpened)}>
+              <button className={burgerClassName} type="button" onClick={() => setMenuOpened(!isMenuOpened)}>
                 <span></span>
               </button>
             : ''
@@ -81,7 +74,7 @@ export function Header(): JSX.Element {
                 <input className="search__input" type="text" name="search" id="search" placeholder="Search Art Work / Creator"/>
               </label>
             </form>
-            <button className="button button--dark">Connect wallet</button>
+            <button className="button button--dark" type="button">Connect wallet</button>
           </div>
         </div>
       </nav>

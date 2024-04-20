@@ -6,11 +6,16 @@ $dark-transparent: rgba(#1c1d20, 35%)
 $dark-stroke: rgba(#1c1d20, 8%)
 $footer-gray: #999999
 $parallax-gray: #979797
+$nickname-gray: #93989a
 $dark-gray: #606060
 $gray: #848586
+$creator-bg: #f2f2f2
+$creator-collection-last: rgba(#101010, 50%)
+$creator-shadow: rgba(#bfbfbf, 60%)
 $redirect-link-gray: #acadb9
 $title-gray: #c5c5c5
 $light-gray: #cecdcd
+$pseudo_element_gray: #d0d0d0
 $slider-button-divider: #e6e8ec
 $weekly-section: #f1f1f1
 $slider-button: #fcfcfd
@@ -154,6 +159,8 @@ body
   min-height: 100vh
   display: flex
   flex-direction: column
+  &:has(.not-found) .navigation
+    margin-bottom: 0
 
 .visually-hidden
   position: absolute

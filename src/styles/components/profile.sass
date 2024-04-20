@@ -1,0 +1,98 @@
+.profile
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 0
+  &__head-bg
+    width: 100%
+    max-width: 1250px
+    height: auto
+    border-radius: 22px
+    background-image: url("../../img/users/profile-cover.png")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    box-shadow: 15px 15px 50px 0 rgba($black, 12%)
+  &__wrapper
+    display: grid
+    padding-top: 128px
+    grid-template-columns: 367px 673px
+    gap: 130px
+    @media (max-width: $tablet)
+      display: block
+      padding-top: 70px
+  &-wrapper__left
+    position: relative
+    grid-column: 1
+    @media (max-width: $tablet)
+      padding: 20px 45px
+  &-wrapper__right
+    grid-column: 2
+  &__avatar
+    position: absolute
+    left: 0
+    top: -128px
+    border: 6px solid $white
+    border-radius: 50%
+    transform: translateY(-50%)
+    @media (max-width: $tablet)
+      left: 40px
+      top: -70px
+  &__name
+    @include poppins-semi-bold
+    margin: 0
+    padding: 0
+    font-size: 35px
+    grid-row: 1 / 2
+    &-wrapper
+      position: relative
+      display: grid
+      margin-bottom: 84px
+      grid-template-columns: max-content auto
+      grid-template-rows: repeat(2, min-content)
+      column-gap: 110px
+      &::after
+        position: absolute
+        bottom: -40px
+        left: 0
+        display: block
+        width: 100%
+        height: 2px
+        background-color: $pseudo_element_gray
+        content: ''
+  &__nickname
+    @include outfit-regular
+    font-size: 18px
+    color: $nickname-gray
+    grid-row: 2/3
+  &__follow-btn
+    max-height: 53px
+    grid-row: 1 / 2
+  &__bio
+    margin-bottom: 80px
+  &__bio-title
+    @include public-sans-bold
+    font-size: 25px
+    color: $title-gray
+  &__bio-description
+    @include poppins-regular
+    font-size: 14px
+    color: $parallax-gray
+  &__social-list
+    @include list-reset
+    position: relative
+    display: flex
+    gap: 66px
+    @media (max-width: $mobile)
+      justify-content: center
+      margin-bottom: 40px
+    &::after
+      position: absolute
+      top: -33px
+      left: 0
+      display: block
+      width: 100%
+      height: 2px
+      background-color: $pseudo_element_gray
+      content: ''
+  

@@ -1,5 +1,5 @@
-import { items } from "../../mocks/items"
-import { ShopItem } from "../shop-item/shop-item"
+import { ShopItem } from "../shop-item/shop-item";
+import { items } from "../../mocks/items";
 
 export function Discover(): JSX.Element {
   return (

@@ -5,24 +5,14 @@ import { Navigation } from 'swiper/modules';
 import { items } from "../../mocks/items";
 import 'swiper/css/navigation';
 import 'swiper/css';
-import { useEffect, useState } from "react";
-import { ScreenSizes } from "../../const";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 export function Weekly(): JSX.Element {
   const itemWidth = 281;
   const slidesPerView = Math.round(window.innerWidth / itemWidth)
   const spaceBetween = Math.round(window.innerWidth - itemWidth) / 2 / slidesPerView;
   const mobileSlidesPerView = window.innerWidth / (itemWidth + spaceBetween/(items.length - 3));
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= ScreenSizes.Tablet);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isMobile]);
+  const isMobile = useIsMobile();
 
   return (
     <section className="section weekly">
@@ -40,7 +30,7 @@ export function Weekly(): JSX.Element {
         slidesPerGroup={isMobile ? 1 : undefined}
       >
         {items.map((item) => (
-          <SwiperSlide className="item" key={`weekly-${item.id}`}>
+          <SwiperSlide key={`weekly-${item.id}`}>
             <ShopItem item={item}/>
           </SwiperSlide>
         ))}

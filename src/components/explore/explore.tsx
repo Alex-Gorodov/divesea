@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
-import { items } from "../../mocks/items";
+import { ReactComponent as Arrow} from "../../img/icons/redirect-arrow.svg";
 import { ShopItem } from "../shop-item/shop-item";
+import { items } from "../../mocks/items";
+import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
-import { ReactComponent as Arrow} from "../../img/icons/redirect-arrow.svg"
 
 export function Explore(): JSX.Element {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
   return (
     <section className="section explore">
       <h2 className="title title--2 title--secondary">Explore Marketplace</h2>
@@ -19,7 +22,7 @@ export function Explore(): JSX.Element {
           })
         }
       </ul>
-      <Link className="explore__redirect-link" to={AppRoute.Discover}>
+      <Link className="explore__redirect-link" to={AppRoute.Discover} onClick={() => scrollToTop()}>
         <span>
           Explore all
         </span>

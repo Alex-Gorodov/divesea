@@ -2,6 +2,7 @@ export enum AppRoute {
   Root = "/divesea",
   Discover = "/divesea/discover",
   Creators = "/divesea/creators",
+  UserPage = "/divesea/creators/:id",
   Sell = "/divesea/sell",
   Stats = "/divesea/stats",
 }

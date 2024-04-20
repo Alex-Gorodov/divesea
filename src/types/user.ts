@@ -5,6 +5,7 @@ export type User = {
   firstname: string;
   surname: string;
   nickname: string;
+  avatar: string;
   totalSales: number | 0;
   followers: number | 0;
   following: number | 0;

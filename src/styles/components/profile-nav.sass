@@ -1,0 +1,39 @@
+.profile-nav
+  // display: grid
+  // grid-template-columns: repeat(2, 1fr)
+  &__buttons-wrapper
+    display: flex
+    width: 100%
+    justify-content: space-around
+    margin-bottom: 85px
+    @media (max-width: $mobile)
+      padding: 0 30px
+  &__btn
+    @include poppins-bold
+    position: relative
+    width: 100%
+    display: flex
+    align-items: center
+    gap: 6px
+    justify-content: center
+    border: none
+    background-color: transparent
+    font-size: 16px
+    color: $light-gray
+    cursor: pointer
+    &--active
+      color: $black
+      &::after
+        position: absolute
+        bottom: -15px
+        left: 0
+        display: block
+        height: 3px
+        width: 100%
+        border-radius: 2px
+        background-color: $accent-dark
+        content: ''
+  &__collection
+    margin: 0
+    @media (max-width: $tablet)
+      max-width: unset

@@ -1,13 +1,12 @@
 import { animated, useSpring } from "react-spring"
 import { items } from "../../mocks/items";
 import cn from "classnames";
-import { useEffect, useState } from "react";
-import { HeroItemSizes, ScreenSizes } from "../../const";
+import { useState } from "react";
+import { AppRoute, HeroItemSizes } from "../../const";
 import React from "react";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
-// import Swiper from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { Link } from "react-router-dom";
 
 interface Props {
   end: number;
@@ -36,17 +35,8 @@ const CountAnimation: React.FC<Props> = ({ end }) => {
 export function Hero(): JSX.Element {
 
   const [activeItem, setActiveItem] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Tablet);
   
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= ScreenSizes.Tablet);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  
+  const isMobile = useIsMobile();
   
   const handleActiveItemPrev = () => {
     setActiveItem(activeItem - 1)
@@ -65,8 +55,8 @@ export function Hero(): JSX.Element {
             <p className="hero__description section__description">Discover, Create and Sell NFTs On Our NFT Marketplace With Over Thousands Of NFTs And Get a <span className="section__description--accent">$20 bonus</span>.</p>
           </div>
           <div className="hero__buttons">
-            <button className="button button--dark">Explore More</button>
-            <button className="button button--light">Create nft</button>
+            <Link className="button button--dark" to={AppRoute.Discover}>Explore More</Link>
+            <Link className="button button--light" to={AppRoute.Sell}>Create nft</Link>
           </div>
         </div>
         <div className="hero__stats hero-stats">

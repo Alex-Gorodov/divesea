@@ -22,7 +22,7 @@ export function ShopItem({item}: ItemProps): JSX.Element {
   const seconds = Math.floor(difference % 60);
 
   return (
-    <div className="weekly__item item">
+    <div className="item">
       <div className="item__image-wrapper">
         <img className="item__image" src={item.img} alt={item.name} width={252} height={252}/>
         <p className="item__time-wrapper" style={{gridTemplateColumns: `${days !== 0 ? 'repeat(4, 36px)' : 'repeat(3, 36px)'}`}}>
