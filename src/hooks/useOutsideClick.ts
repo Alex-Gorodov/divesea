@@ -7,7 +7,7 @@ export const useOutsideClick = (callback: () => void) => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
 
-      const isBurgerButton = target.closest('button')?.classList.contains('navigation__toggler') || target.closest('div')?.classList.contains('navigation__toggler-wrapper');
+      const isBurgerButton = target.closest('button')?.classList.contains('navigation__mobile-toggler') || target.closest('div')?.classList.contains('navigation__mobile-toggler');
 
       if (!isBurgerButton && ref.current && !ref.current.contains(target)) {
         callback();

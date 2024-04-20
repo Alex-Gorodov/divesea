@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "../../components/layout/layout";
-import { Users } from "../../mocks/users";
+import { users } from "../../mocks/users";
 import { CreatorCard } from "../../components/creator-card/creator-card";
 
 export function CreatorsPage(): JSX.Element {
@@ -16,9 +16,9 @@ export function CreatorsPage(): JSX.Element {
           <h1 className="title title--2 title--secondary creators__title">Meet Our Great Creators</h1>
           <ul className="creators__list">
             {
-              Users.map((user) => {
+              users.map((user) => {
                 return (
-                  <li className="creators__item">
+                  <li className="creators__item" key={`user-id${user.id}`}>
                     <CreatorCard user={user}/>
                   </li>
                 )

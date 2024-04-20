@@ -1,17 +1,19 @@
-import { ReactComponent as Instagram} from '../../img/icons/instagram.svg'
-import { ReactComponent as Linkedin} from '../../img/icons/linkedin.svg'
-import { ReactComponent as Facebook} from '../../img/icons/facebook.svg'
-import { ReactComponent as Twitter} from '../../img/icons/twitter.svg'
-import { ReactComponent as Collection} from '../../img/icons/collection-icon.svg'
-import { ReactComponent as Activity} from '../../img/icons/activity-icon.svg'
-import { ReactComponent as Validation} from '../../img/icons/validation-icon.svg'
+import { ReactComponent as Validation} from '../../img/icons/validation-icon.svg';
+import { ReactComponent as Collection} from '../../img/icons/collection-icon.svg';
+import { ReactComponent as Activity} from '../../img/icons/activity-icon.svg';
+import { ReactComponent as Instagram} from '../../img/icons/instagram.svg';
+import { ReactComponent as Linkedin} from '../../img/icons/linkedin.svg';
+import { ReactComponent as Facebook} from '../../img/icons/facebook.svg';
+import { ReactComponent as Twitter} from '../../img/icons/twitter.svg';
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { ShopItem } from '../shop-item/shop-item';
 import { Link } from "react-router-dom";
 import { User } from "../../types/user";
 import { useState } from 'react';
 import cn from 'classnames';
-import { profile } from 'console'
-import { ShopItem } from '../shop-item/shop-item'
+import { ActivityItem } from '../activity-item/activity-item';
+import { items } from '../../mocks/items';
+import { users } from '../../mocks/users';
 
 type UserProfileProps = {
   user: User;
@@ -105,13 +107,17 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
               {
                 user.collection?.map((item) => {
                   return (
-                    <ShopItem item={item}/>
+                    <ShopItem item={item} key={`item-${item.name}`}/>
                   )
                 })
               }
             </div>
             :
-            ''
+            <div className="profile-nav__activity">
+              <ActivityItem item={{ ...items[0], addedBy: users[Math.floor(Math.random() * users.length)].firstname+users[Math.floor(Math.random() * users.length)].surname.charAt(0) }} />
+              <ActivityItem item={{ ...items[5], addedBy: users[Math.floor(Math.random() * users.length)].firstname+users[Math.floor(Math.random() * users.length)].surname.charAt(0) }} />
+              <ActivityItem item={{ ...items[11], addedBy: users[Math.floor(Math.random() * users.length)].firstname+users[Math.floor(Math.random() * users.length)].surname.charAt(0) }} />
+            </div>
           }
         </div>
       </div>

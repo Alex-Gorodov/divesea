@@ -10,7 +10,6 @@ export function SellPage(): JSX.Element {
         </title>
       </Helmet>
       <main className="main">
-        
       </main>
     </Layout>
   )

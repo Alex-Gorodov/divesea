@@ -4,6 +4,7 @@ import { ReactComponent as Logo} from '../../logo.svg';
 import cn from "classnames";
 import { useEffect, useState } from 'react';
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 export function Header(): JSX.Element {
   const location = useLocation();
@@ -37,6 +38,10 @@ export function Header(): JSX.Element {
       'navigation__link--current': currentPage === page,
     });
 
+  const menuRef = useOutsideClick(() => {
+    isMobile && setMenuOpened(false);
+  }) as React.RefObject<HTMLDivElement>;
+
   return (
     <header className="header">
       <nav className="header__nav navigation">
@@ -53,7 +58,7 @@ export function Header(): JSX.Element {
             : ''
           }
         </div>
-        <div className={navWrapperClassName}>
+        <div className={navWrapperClassName} ref={menuRef}>
           <ul className="navigation__list">
             <li className="navigation__item">
               <Link to={AppRoute.Discover} className={navLinkClassName(AppRoute.Discover)}>Discover</Link>

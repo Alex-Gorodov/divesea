@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { UserProfile } from "../../components/user-profile/user-profile";
 import { useParams } from "react-router-dom";
-import { Users } from "../../mocks/users";
+import { users } from "../../mocks/users";
 import { Layout } from "../../components/layout/layout";
 import { Helmet } from "react-helmet-async";
 import { User } from "../../types/user";
@@ -12,7 +12,7 @@ export function Profile(): JSX.Element {
 
   const [profile, setProfile] = useState<User>();
   useEffect(() => {
-    setProfile(Users.find((user) => user.id === Number(id)));
+    setProfile(users.find((user) => user.id === Number(id)));
   }, [id]);
 
   return (

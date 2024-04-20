@@ -1,6 +1,4 @@
 .profile-nav
-  // display: grid
-  // grid-template-columns: repeat(2, 1fr)
   &__buttons-wrapper
     display: flex
     width: 100%
@@ -12,6 +10,7 @@
     @include poppins-bold
     position: relative
     width: 100%
+    padding: 0
     display: flex
     align-items: center
     gap: 6px
@@ -37,3 +36,12 @@
     margin: 0
     @media (max-width: $tablet)
       max-width: unset
+  &__activity
+    display: flex
+    flex-direction: column
+    padding: 20px
+    justify-content: center
+    gap: 22px
+    @media (max-width: $tablet)
+      padding: 10px
+      align-items: center

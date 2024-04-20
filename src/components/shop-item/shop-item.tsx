@@ -15,7 +15,7 @@ export function ShopItem({item}: ItemProps): JSX.Element {
     return () => clearInterval(timerID);
   }, []);
   
-  const difference = Math.floor((currentTime.getTime() - item.added.getTime()) / 1000);
+  const difference = Math.floor((currentTime.getTime() - item.addedDate.getTime()) / 1000);
   const days = Math.floor(difference / (3600 * 24));
   const hours = Math.floor((difference % (3600 * 24)) / 3600);
   const minutes = Math.floor((difference % 3600) / 60);
