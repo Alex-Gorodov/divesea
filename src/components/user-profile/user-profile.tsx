@@ -46,7 +46,7 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
               <p className="profile-stats__description">Total sales</p>
             </li>
             <li className="profile-stats__item">
-              <p className="profile-stats__value">{user.followers < 1000 ? user.followers : user.followers / 1000 + 'K'}</p>
+              <p className="profile-stats__value">{user.followers < 1000 ? user.followers : Math.floor(user.followers / 1000) + 'K'}</p>
               <p className="profile-stats__description">Followers</p>
             </li>
             <li className="profile-stats__item">
