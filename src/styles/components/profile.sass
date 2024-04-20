@@ -29,15 +29,23 @@
   &-wrapper__right
     grid-column: 2
   &__avatar
-    position: absolute
-    left: 0
-    top: -128px
     border: 6px solid $white
     border-radius: 50%
-    transform: translateY(-50%)
-    @media (max-width: $tablet)
-      left: 40px
-      top: -70px
+    &-wrapper
+      position: absolute
+      left: 0
+      top: -128px
+      transform: translateY(-50%)
+      @media (max-width: $tablet)
+        left: 40px
+        top: -70px
+    &-validation
+      position: absolute
+      right: 16px
+      bottom: 16px
+      @media (max-width: $tablet)
+        right: 10px
+        bottom: 10px
   &__name
     @include poppins-semi-bold
     margin: 0

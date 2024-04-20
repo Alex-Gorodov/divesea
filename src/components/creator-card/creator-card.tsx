@@ -1,6 +1,7 @@
 import { Link, generatePath } from 'react-router-dom';
 import { AppRoute } from '../../const';
 import { ReactComponent as ValidationIcon} from '../../img/icons/validation-icon.svg';
+import { ReactComponent as Etherium} from '../../img/icons/etherium.svg';
 import { User } from "../../types/user";
 import { useIsMobile } from '../../hooks/useIsMobile';
 
@@ -24,6 +25,24 @@ export function CreatorCard({user}: CreatorCardProps): JSX.Element {
           <span className="creator__name">{user.firstname} {user.surname.charAt(0)}.</span>
           <ValidationIcon/>
         </Link>
+        <ul className="creator__stats-list">
+          <li className="creator__stats-item">
+            <span className="creator__stats-value">{user.collection && user.collection.length < 1000 ? `${user.collection.length}` : `${user.collection && user.collection.length / 1000}K`}</span>
+            <span className="creator__stats-description">Items</span>
+          </li>
+          <li className="creator__stats-item">
+            <span className="creator__stats-value">
+              <Etherium/>
+              {user.collection && user.collection.sort((a, b) => a.price - b.price)[0].price}</span>
+            <span className="creator__stats-description">Floor Price</span>
+          </li>
+          <li className="creator__stats-item">
+            <span className="creator__stats-value">
+              <Etherium/>
+              {user.totalSales < 1000 ? user.totalSales : `${user.totalSales / 1000}K`}</span>
+            <span className="creator__stats-description">Traded</span>
+          </li>
+        </ul>
         <ul className="creator__collection">
           {
             user.collection && user.collection.slice(0,3).map((item, index) => {

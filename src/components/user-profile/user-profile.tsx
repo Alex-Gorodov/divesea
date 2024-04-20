@@ -4,6 +4,7 @@ import { ReactComponent as Facebook} from '../../img/icons/facebook.svg'
 import { ReactComponent as Twitter} from '../../img/icons/twitter.svg'
 import { ReactComponent as Collection} from '../../img/icons/collection-icon.svg'
 import { ReactComponent as Activity} from '../../img/icons/activity-icon.svg'
+import { ReactComponent as Validation} from '../../img/icons/validation-icon.svg'
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { Link } from "react-router-dom";
 import { User } from "../../types/user";
@@ -30,7 +31,10 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
       <div className="profile__head-bg" style={{height: `${isMobile ? 270 : 355}px`, borderRadius: `${isMobile ? 0 : 22}px`}}></div>
       <div className="profile__wrapper profile-wrapper">
         <div className="profile-wrapper__left">
-          <img className="profile__avatar" src={user.avatar} width={isMobile ? 125 : 165} height={isMobile ? 125 : 165} alt={user.firstname} />
+          <div className="profile__avatar-wrapper">
+            <img className="profile__avatar" src={user.avatar} width={isMobile ? 125 : 165} height={isMobile ? 125 : 165} alt={user.firstname}/>
+            <span className="profile__avatar-validation">{<Validation/>}</span>
+          </div>
           <div className="profile__name-wrapper">
             <p className="profile__name">{user.firstname} {user.surname.charAt(0)}.</p>
             <span className="profile__nickname">{`@${user.nickname}`}</span>
@@ -42,7 +46,7 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
               <p className="profile-stats__description">Total sales</p>
             </li>
             <li className="profile-stats__item">
-              <p className="profile-stats__value">{user.followers < 1000 ? user.followers : user.followers % 1000 + 'K'}</p>
+              <p className="profile-stats__value">{user.followers < 1000 ? user.followers : user.followers / 1000 + 'K'}</p>
               <p className="profile-stats__description">Followers</p>
             </li>
             <li className="profile-stats__item">

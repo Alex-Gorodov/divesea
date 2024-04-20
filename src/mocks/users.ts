@@ -31,7 +31,7 @@ export const Users: User[] = [
     firstname: 'Eva',
     surname: "White",
     nickname: "eva_15",
-    totalSales: 12,
+    totalSales: 12000,
     followers: 5256,
     following: 653,
     bio: 'With a palette of pixels and passion, I sculpt digital masterpieces that blur the line between reality and imagination. NFTs are my canvas, and blockchain is my medium, enabling me to create art that resonates in the decentralized landscape of tomorrow.',
