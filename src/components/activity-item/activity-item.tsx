@@ -8,7 +8,8 @@ type ActivityItemProps = {
 }
 
 export function ActivityItem({item}: ActivityItemProps): JSX.Element {
-  const minutes = new Date().getMinutes() + item.id;
+  const minutes = new Date().getMinutes() + item.id * 4;
+
   return (
     <div className="activity-item">
       <div className="activity-item__container">
@@ -40,7 +41,7 @@ export function ActivityItem({item}: ActivityItemProps): JSX.Element {
         <ul className="activity-item__stats">
           <li className="activity-item__stats-item stats-item">
             <span className="stats-item__description">USD Price</span>
-            <span className="stats-item__value">${(useEthPrice() * item.price / 1000).toFixed(0)}K</span>
+            <span className="stats-item__value">${(useEthPrice() * item.price / 1000).toFixed(2)}K</span>
           </li>
           <li className="activity-item__stats-item stats-item">
             <span className="stats-item__description">Quantity</span>

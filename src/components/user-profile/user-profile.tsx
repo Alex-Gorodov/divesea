@@ -26,6 +26,10 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
     'profile-nav__btn--active': navActive === btnType
   });
 
+  const userNameFirst = Math.floor(Math.random() * users.length);
+  const userNameSecond = Math.floor(Math.random() * users.length);
+  const userNameThird = Math.floor(Math.random() * users.length);
+
   const isMobile = useIsMobile();
 
   return (
@@ -114,9 +118,9 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
             </div>
             :
             <div className="profile-nav__activity">
-              <ActivityItem item={{ ...items[0], addedBy: users[Math.floor(Math.random() * users.length)].firstname+users[Math.floor(Math.random() * users.length)].surname.charAt(0) }} />
-              <ActivityItem item={{ ...items[5], addedBy: users[Math.floor(Math.random() * users.length)].firstname+users[Math.floor(Math.random() * users.length)].surname.charAt(0) }} />
-              <ActivityItem item={{ ...items[11], addedBy: users[Math.floor(Math.random() * users.length)].firstname+users[Math.floor(Math.random() * users.length)].surname.charAt(0) }} />
+              <ActivityItem item={{ ...items[0], addedBy: users[userNameFirst].firstname+users[userNameFirst].surname.charAt(0) }} />
+              <ActivityItem item={{ ...items[5], addedBy: users[userNameSecond].firstname+users[userNameSecond].surname.charAt(0) }} />
+              <ActivityItem item={{ ...items[11], addedBy: users[userNameThird].firstname+users[userNameThird].surname.charAt(0) }} />
             </div>
           }
         </div>
