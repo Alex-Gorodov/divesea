@@ -67,25 +67,25 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
           <div className="profile__social">
             <ul className="profile__social-list">
               <li className="profile__social-item">
-                <Link to={'/'}>
+                <Link to={'/'} className="profile__social-link">
                   <Instagram/>
                   <span className="visually-hidden">go to {user.firstname}'s Instagram</span>
                 </Link>
               </li>
               <li className="profile__social-item">
-                <Link to={'/'}>
+                <Link to={'/'} className="profile__social-link">
                   <Linkedin/>
                   <span className="visually-hidden">go to {user.firstname}'s Linkedin</span>
                 </Link>
               </li>
               <li className="profile__social-item">
-                <Link to={'/'}>
+                <Link to={'/'} className="profile__social-link">
                   <Facebook/>
                   <span className="visually-hidden">go to {user.firstname}'s Facebook</span>
                 </Link>
               </li>
               <li className="profile__social-item">
-                <Link to={'/'}>
+                <Link to={'/'} className="profile__social-link">
                   <Twitter/>
                   <span className="visually-hidden">go to {user.firstname}'s Twitter</span>
                 </Link>

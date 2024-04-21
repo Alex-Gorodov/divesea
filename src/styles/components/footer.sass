@@ -1,6 +1,76 @@
 .footer
   @include inter-medium
-  padding: 90px 32px 80px
+  display: flex
+  flex-direction: column
+  padding: 20px 100px 30px
   background-color: $accent-dark
   color: $footer-gray
   font-size: 17px
+  @media (max-width: $mobile)
+    padding-inline: 20px
+    padding-bottom: 0
+  &__wrapper
+    position: relative
+    display: flex
+    padding: 60px 0 25px
+    align-items: center
+    justify-content: space-between
+    gap: 20px
+    &--mobile
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+    &--left::after
+      position: absolute
+      bottom: 0
+      left: 0
+      margin-top: 20px
+      display: block
+      width: 100%
+      height: 1px
+      background-color: $gray
+      content: ''
+    @media (max-width: $mobile)
+      flex-direction: column
+      gap: 50px
+      padding: 32px 0
+  &__logo
+    @include link-reset
+    @include poppins-semi-bold
+    display: flex
+    align-items: center
+    gap: 10px
+    font-size: 30px
+    color: $white
+    &:hover
+      opacity: 0.6
+    @media (max-width: $mobile)
+      font-size: 20px
+      gap: 6px
+      grid-column: 1 / 2
+      & svg
+        width: 43px
+  &__links
+    @include list-reset
+    display: flex
+    gap: 70px
+    text-transform: uppercase
+    @media (max-width: $mobile)
+      flex-direction: column
+      gap: 30px
+      grid-column: 1 / 3
+  &__link
+    @include link-reset
+    color: $footer-link
+  &__social
+    @include list-reset
+    display: flex
+    gap: 54px
+    align-items: center
+    &--mobile
+      grid-column: 2 / 3
+      gap: 20px
+  &__social-link
+    color: $footer-social
+    transition: 0.3s
+    &:hover
+      color: $white
