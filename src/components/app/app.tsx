@@ -1,7 +1,9 @@
 import { DiscoverPage } from "../../pages/discover/discover-page";
 import { CreatorsPage } from "../../pages/creators/creators-page";
 import { HistoryRouter } from "../history-route/history-route";
+import { NotFound } from "../../pages/not-found/not-found";
 import { StatsPage } from "../../pages/stats/stats-page";
+import { Profile } from "../../pages/profile/profile";
 import { HomePage } from "../../pages/home/home-page";
 import { SellPage } from "../../pages/sell/sell-page";
 import { HelmetProvider } from "react-helmet-async";
@@ -11,8 +13,6 @@ import { Provider } from "react-redux";
 import { AppRoute } from "../../const";
 import { store } from "../../store";
 import "../../styles/style.sass"
-import { Profile } from "../../pages/profile/profile";
-import { NotFound } from "../../pages/not-found/not-found";
 
 export function App() {
   return (
