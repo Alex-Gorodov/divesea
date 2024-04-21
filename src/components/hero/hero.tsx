@@ -21,7 +21,7 @@ const CountAnimation: React.FC<Props> = ({ end }) => {
 
   return (
     <animated.span style={{animationTimingFunction: 'ease-out'}}>
-      {number.interpolate((val) => {
+      {number.to((val) => {
         if (val >= 10000) {
           return `${Math.floor(val / 1000)}K+`;
         } else {

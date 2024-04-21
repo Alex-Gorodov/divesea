@@ -8,6 +8,10 @@ export function Explore(): JSX.Element {
   const scrollToTop = () => {
     window.scrollTo(0, 0)
   }
+
+  // const pageWidth = window.innerWidth;
+  // style={{paddingInline: `${pageWidth % 281 / 2}px`}} // style for section, for link align
+
   return (
     <section className="section explore">
       <h2 className="title title--2 title--secondary">Explore Marketplace</h2>
