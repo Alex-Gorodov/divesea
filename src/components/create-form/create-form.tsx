@@ -83,18 +83,18 @@ export function CreateForm(): JSX.Element {
         </div>
       }
 
-      <label htmlFor="name" className="create-form__label create-form__label--full-size">
+      <label htmlFor="name" className="create-form__label">
         Name
         <input type="text" className="create-form__input" id="name" placeholder="ArtWork Name" onChange={(e) => setFormData({...formData, name: e.target.value})}/>
       </label>
 
-      <label htmlFor="description" className="create-form__label create-form__label--full-size">
+      <label htmlFor="description" className="create-form__label">
         Description
         <textarea className="create-form__input create-form__input--textarea" id="description" rows={5} placeholder="Enter Your Description" onChange={(e) => setFormData({...formData, name: e.target.value})}/>
       </label>
 
       <div className="create-form__inner-wrapper">
-        <label htmlFor="royalty" className="create-form__label create-form__label--select  create-form__label--first-col">
+        <label htmlFor="royalty" className="create-form__label">
           Royalty
           <select className="create-form__input create-form__input--select" id="royalty" onChange={(e) => {setFormData({...formData, name: e.target.value}); handleRoyaltyChange(e);}} value={formData.royalty} style={{color: `${formData.royalty === 'Royalty' ? '#9596a6' : ''}`}}>
             <option className="create-form__input--option" value="Royalty" disabled>Royalty</option>
@@ -103,33 +103,33 @@ export function CreateForm(): JSX.Element {
           </select>
         </label>
 
-        <label htmlFor="size" className="create-form__label  create-form__label--second-col">
+        <label htmlFor="size" className="create-form__label">
           Size
           <input type="text" className="create-form__input" id="size" placeholder="Ex - 100 x 100"/>
         </label>
       </div>
 
-      <label htmlFor="tags" className="create-form__label create-form__label--full-size">
+      <label htmlFor="tags" className="create-form__label">
         Tags
         <input type="text" className="create-form__input" id="tags" placeholder="Beautiful Castle, Monkeys ETC"/>
       </label>
 
       <div className="create-form__inner-wrapper">
-        <label htmlFor="price" className="create-form__label  create-form__label--two-cols">
+        <label htmlFor="price" className="create-form__label">
           Price
           <input type="number" className="create-form__input" id="price" placeholder="0.00007 ETC" onChange={(e) => setFormData({...formData, priceValue: e.target.value})}/>
         </label>
 
-        <label htmlFor="in-stock" className="create-form__label create-form__label--last-col">
+        <label htmlFor="in-stock" className="create-form__label">
           In Stock
           <input type="text" className="create-form__input" id="in-stock"/>
         </label>
       </div>
 
 
-      <FormCheckbox label={"Put On Sale"} id={"putOnSale"} description={"People Will Bids On Your NFT Project"} checked={true} className={'create-form__label--full-size'}/>
+      <FormCheckbox label={"Put On Sale"} id={"putOnSale"} description={"People Will Bids On Your NFT Project"} checked={true}/>
 
-      <FormCheckbox label={"Direct Sale"} id={"directSale"} description={"No Bids - Only Direct Selling"} checked={false} className={'create-form__label--full-size'}/>
+      <FormCheckbox label={"Direct Sale"} id={"directSale"} description={"No Bids - Only Direct Selling"} checked={false}/>
 
       <button className="button button--dark create-form__button" type="submit">Create</button>
     </form>
