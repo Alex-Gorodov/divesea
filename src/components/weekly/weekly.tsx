@@ -1,16 +1,18 @@
 import { SliderButtons } from "../slider-buttons/slider-buttons";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { RootState } from "../../store/RootState";
 import { ShopItem } from "../shop-item/shop-item";
 import { Navigation } from 'swiper/modules';
-import { items } from "../../mocks/items";
+import { useSelector } from "react-redux";
 import 'swiper/css/navigation';
 import 'swiper/css';
-import { useIsMobile } from "../../hooks/useIsMobile";
 
 export function Weekly(): JSX.Element {
   const itemWidth = 281;
   const slidesPerView = Math.round(window.innerWidth / itemWidth)
   const spaceBetween = Math.round(window.innerWidth - itemWidth) / 2 / slidesPerView;
+  const items = useSelector((state: RootState) => state.sell.items)
   const mobileSlidesPerView = window.innerWidth / (itemWidth + spaceBetween/(items.length - 3));
   const isMobile = useIsMobile();
 

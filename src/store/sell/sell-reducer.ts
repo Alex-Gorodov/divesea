@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import { items } from "../../mocks/items";
 import { users } from "../../mocks/users";
 import { AppState } from "../../types/state";
-import { createNFT, redirectToRoute, setUploadedNftPath } from "./sell-actions";
+import { createNFT, setUploadedNftPath } from "./sell-actions";
 
 const initialState: AppState = {
   items: items,
