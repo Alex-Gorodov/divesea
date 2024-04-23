@@ -3,13 +3,13 @@ import { ReactComponent as UploadIcon } from "../../img/icons/upload-icon.svg";
 import { useDispatch } from "react-redux";
 import { setUploadedNftPath } from "../../store/sell/sell-actions";
 import { useDropzone } from "react-dropzone";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useIsMobileOnly } from "../../hooks/useIsMobile";
 
 export function Upload(): JSX.Element {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fileUrl, setFileUrl] = useState<string | null>(null);
   const dispatch = useDispatch();
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobileOnly();
 
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const { getRootProps, getInputProps } = useDropzone({
@@ -68,6 +68,13 @@ export function Upload(): JSX.Element {
           </div>
         }
       </div>
+      {
+        isMobile && fileUrl
+        ?
+        <img src={fileUrl} alt="Uploaded file" width={100} height={100} className="upload__preview" />
+        :
+        ''
+      }
       <button className="button button--dark upload__button" onClick={handleButtonClick}>
         Upload
       </button>

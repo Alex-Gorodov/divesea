@@ -13,3 +13,16 @@ export const useIsMobile = () => {
   }, []);
   return isMobile;
 }
+
+export const useIsMobileOnly = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= ScreenSizes.Mobile);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= ScreenSizes.Mobile);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return isMobile;
+}
