@@ -1,5 +1,4 @@
 import { animated, useSpring } from "react-spring"
-import { items } from "../../mocks/items";
 import cn from "classnames";
 import { useState } from "react";
 import { AppRoute, HeroItemSizes } from "../../const";
@@ -7,6 +6,8 @@ import React from "react";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/RootState";
 
 interface Props {
   end: number;
@@ -37,6 +38,8 @@ export function Hero(): JSX.Element {
   const [activeItem, setActiveItem] = useState(0);
   
   const isMobile = useIsMobile();
+
+  const items = useSelector((state: RootState) => state.sell.items)
   
   const handleActiveItemPrev = () => {
     setActiveItem(activeItem - 1)
