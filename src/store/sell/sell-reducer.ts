@@ -19,6 +19,5 @@ export const SellReducer = createReducer(initialState, (builder) => {
     .addCase(createNFT, (state, action) => {
       const { item } = action.payload;
       state.items.push(item);
-      console.log(state.items.length);
     })
 })
