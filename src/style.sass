@@ -9,6 +9,9 @@ $footer-link: #b9b9b9
 $footer-social: #535353
 $parallax-gray: #979797
 $nickname-gray: #93989a
+$input-gray: #efefef
+$input-text: #9596a6
+$mobile-background-color: #f9f9f9
 $dark-gray: #606060
 $gray: #848586
 $creator-bg: #f2f2f2
@@ -21,7 +24,6 @@ $pseudo_element_gray: #d0d0d0
 $slider-button-divider: #e6e8ec
 $weekly-section: #f1f1f1
 $slider-button: #fcfcfd
-$mobile-background-color: #f9f9f9
 $lighten-gray: #ededed
 $background-gray: #e5e5e5
 $white: #ffffff
@@ -51,6 +53,11 @@ $container-max-width: 1250px
   height: 3px
   background-color: $accent-dark
   border-radius: 4px
+
+@mixin input
+  border: none
+  background-color: $input-gray
+  border-radius: 11.53px
 
 // FONTS
 
@@ -153,10 +160,12 @@ html
 body
   margin: 0
   padding: 0
-  background-color: $background-gray
   overflow-x: hidden
-  @media (max-width: $tablet)
-    background-color: $mobile-background-color
+  background-color: $mobile-background-color
+  &:has(.hero)
+    background-color: $background-gray
+    @media (max-width: $tablet)
+      background-color: $mobile-background-color
 
 .page-container
   min-height: 100vh

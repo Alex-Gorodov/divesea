@@ -5,6 +5,8 @@
   margin-inline: auto
   &__list.items__list
     margin-bottom: 100px
+    @media (max-width: $mobile)
+      margin-bottom: 50px
   &__redirect-link
     @include link-reset
     @include poppins-medium
@@ -18,3 +20,5 @@
     &:hover
       opacity: 0.6
       gap: 24px
+    @media (max-width: $mobile)
+      align-self: center

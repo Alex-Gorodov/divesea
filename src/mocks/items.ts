@@ -1,6 +1,6 @@
 import { Item } from "../types/item";
 
-export const items: Item[] = [
+export let items: Item[] = [
   {
     id: 0,
     name: "Chroma",

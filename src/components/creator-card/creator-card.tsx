@@ -33,7 +33,7 @@ export function CreatorCard({user}: CreatorCardProps): JSX.Element {
           <li className="creator__stats-item">
             <span className="creator__stats-value">
               <Etherium/>
-              {user.collection && user.collection.sort((a, b) => a.price - b.price)[0].price}</span>
+              {user.collection && [...user.collection].sort((a, b) => a.price - b.price)[0].price}</span>
             <span className="creator__stats-description">Floor Price</span>
           </li>
           <li className="creator__stats-item">

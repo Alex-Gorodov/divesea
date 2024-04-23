@@ -1,11 +1,10 @@
-import { User } from "./user";
-
 export type Item = {
   id: number;
   name: string;
+  description?: string;
   img: string;
   price: number;
-  likes: number;
+  likes?: number;
   addedDate: Date;
   addedBy?: string;
 }

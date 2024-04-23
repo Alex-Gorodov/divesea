@@ -1,7 +1,9 @@
-import { items } from "../../mocks/items";
+import { useSelector } from "react-redux";
 import { ShopItem } from "../shop-item/shop-item";
+import { RootState } from "../../store/RootState";
 
 export function Discover(): JSX.Element {
+  const items = useSelector((state: RootState) => state.sell.items)
   return (
     <section className="section discover">
       <h1 className="title title--2 title--secondary">Discover NFTs</h1>
