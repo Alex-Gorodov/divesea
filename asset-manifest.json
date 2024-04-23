@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/divesea/static/css/main.d2e8819d.css",
-    "main.js": "/divesea/static/js/main.4b7da268.js",
+    "main.css": "/divesea/static/css/main.d38d2781.css",
+    "main.js": "/divesea/static/js/main.74986fdc.js",
     "static/media/profile-cover.png": "/divesea/static/media/profile-cover.415e0a91ba363fb3605f.png",
     "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
+    "static/media/input-pencil.svg": "/divesea/static/media/input-pencil.940ef24a3e33b296307e.svg",
     "static/media/logo.svg": "/divesea/static/media/logo.7df00eba56ccb2740e0dae05593fb1a3.svg",
     "static/media/instagram.svg": "/divesea/static/media/instagram.cb28b6f3917f67bea6d918c5bbd4226c.svg",
     "static/media/collection-icon.svg": "/divesea/static/media/collection-icon.baa61b5f58114bce01c0c13ac7043a49.svg",
+    "static/media/upload-icon.svg": "/divesea/static/media/upload-icon.11c83baa93523d6f5fdba2336a9e913d.svg",
     "static/media/validation-icon.svg": "/divesea/static/media/validation-icon.a9836c463922f14e01d9cb89882412cd.svg",
     "index.html": "/divesea/index.html",
     "static/media/twitter.svg": "/divesea/static/media/twitter.515bcaa5dbb1081102859188c681cec7.svg",
@@ -15,14 +17,15 @@
     "static/media/activity-icon.svg": "/divesea/static/media/activity-icon.f4d390fbc48f93b3043472d0a5290ed3.svg",
     "static/media/button-arrow.svg": "/divesea/static/media/button-arrow.838b01acaa4fd3c0b8c2c6e04c67d251.svg",
     "static/media/search.svg": "/divesea/static/media/search.98e74083d083a7680417.svg",
+    "static/media/select-arrow.svg": "/divesea/static/media/select-arrow.44a38cd7d3ce383cd588.svg",
     "static/media/facebook.svg": "/divesea/static/media/facebook.ad7dbaab024d67520eee0e128fb58073.svg",
     "static/media/redirect-arrow.svg": "/divesea/static/media/redirect-arrow.c11ebb0599b56ea3e094474f275cb15b.svg",
     "static/media/ethereum.svg": "/divesea/static/media/ethereum.b01f5ac86eb4d3d7cbcdde66645c3c65.svg",
-    "main.d2e8819d.css.map": "/divesea/static/css/main.d2e8819d.css.map",
-    "main.4b7da268.js.map": "/divesea/static/js/main.4b7da268.js.map"
+    "main.d38d2781.css.map": "/divesea/static/css/main.d38d2781.css.map",
+    "main.74986fdc.js.map": "/divesea/static/js/main.74986fdc.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2e8819d.css",
-    "static/js/main.4b7da268.js"
+    "static/css/main.d38d2781.css",
+    "static/js/main.74986fdc.js"
   ]
 }
