@@ -43,14 +43,6 @@ export function CreateForm(): JSX.Element {
       priceCurrency: value,
     }));
   };
-  
-  // const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { value } = event.target;
-  //   setFormData(prevFormData => ({
-  //     ...prevFormData,
-  //     priceValue: value,
-  //   }));
-  // };
 
   let price: number;
   switch (formData.priceCurrency) {
@@ -137,7 +129,7 @@ export function CreateForm(): JSX.Element {
 
         <label htmlFor="size" className="create-form__label">
           Size
-          <input type="text" className="create-form__input" id="size" placeholder="Ex - 100 x 100"/>
+          <input type="text" className="create-form__input create-form__input--right" id="size" placeholder="Ex - 100 x 100"/>
         </label>
       </div>
 
@@ -165,7 +157,7 @@ export function CreateForm(): JSX.Element {
 
         <label htmlFor="in-stock" className="create-form__label">
           In Stock
-          <input type="text" className="create-form__input" id="in-stock"/>
+          <input type="text" className="create-form__input create-form__input--right" id="in-stock"/>
         </label>
       </div>
 
