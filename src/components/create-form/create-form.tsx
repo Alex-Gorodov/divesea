@@ -72,6 +72,7 @@ export function CreateForm(): JSX.Element {
         img: uploadedUrl ? uploadedUrl : '',
         price: price,
         addedDate: new Date(),
+        description: formData.description,
       }
     }));
 
@@ -114,13 +115,13 @@ export function CreateForm(): JSX.Element {
 
       <label htmlFor="description" className="create-form__label">
         Description
-        <textarea className="create-form__input create-form__input--textarea" id="description" rows={5} placeholder="Enter Your Description" onChange={(e) => setFormData({...formData, name: e.target.value})}/>
+        <textarea className="create-form__input create-form__input--textarea" id="description" rows={5} placeholder="Enter Your Description" onChange={(e) => setFormData({...formData, description: e.target.value})}/>
       </label>
 
       <div className="create-form__inner-wrapper">
         <label htmlFor="royalty" className="create-form__label">
           Royalty
-          <select className="create-form__input create-form__input--select" id="royalty" onChange={(e) => {setFormData({...formData, name: e.target.value}); handleRoyaltyChange(e);}} value={formData.royalty} style={{color: `${formData.royalty === 'Royalty' ? '#9596a6' : ''}`}}>
+          <select className="create-form__input create-form__input--select" id="royalty" onChange={(e) => {setFormData({...formData, royalty: e.target.value}); handleRoyaltyChange(e);}} value={formData.royalty} style={{color: `${formData.royalty === 'Royalty' ? '#9596a6' : ''}`}}>
             <option className="create-form__input--option" value="Royalty" disabled>Royalty</option>
             <option className="create-form__input--option" value="Fixed">Fixed</option>
             <option className="create-form__input--option" value="Percentage">Percentage</option>

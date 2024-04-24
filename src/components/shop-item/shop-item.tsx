@@ -27,6 +27,12 @@ export function ShopItem({item}: ItemProps): JSX.Element {
   const minutes = Math.floor((difference % 3600) / 60);
   const seconds = Math.floor(difference % 60);
 
+  const name = item.name.substring(0, 15);
+
+  const shortName = () => {
+    return item.name.substring(0, 15) + '...';
+  }
+
   return (
     <div className="item">
       <div className="item__image-wrapper">
@@ -42,7 +48,7 @@ export function ShopItem({item}: ItemProps): JSX.Element {
           <span className="item__time">{seconds < 10 ? '0' + seconds : seconds}s </span>
         </p>
       </div>
-      <p className="item__name">{item.name}</p>
+      <p className="item__name">{item.name.length > 12 ? shortName() : item.name}</p>
       <div className="item__price-wrapper">
         <span className="item__price-description">Current bid</span>
         <span className="item__price">{item.price}</span>
