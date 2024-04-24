@@ -1,12 +1,16 @@
 .discover
   display: flex
   flex-direction: column
+  gap: 40px
   align-items: center
+  &__buttons-wrapper
+    display: flex
+    gap: 20px
   &__list
     @include list-reset
     display: grid
     max-width: $container-max-width
-    margin: 60px 0
+    margin: 30px 0
     grid-template-columns: repeat(auto-fit, minmax(120px, 282px))
     gap: 60px 40px
     justify-content: center

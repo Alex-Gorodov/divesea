@@ -1,15 +1,13 @@
 .product-page
   &__breadcrumb
     background-color: #e6e8ec
+    &:hover
+      opacity: 0.6
     &-wrapper
       @include link-reset
       color: $black
       display: inline-flex
       gap: 34px
-      cursor: pointer
-      transition: 0.3s
-      &:hover
-        opacity: 0.6
     &-title
       @include poppins-semi-bold
       font-size: 31px
@@ -22,6 +20,7 @@
     box-shadow: 17px 17px 60px 0 rgba($black, 12%)
     @media (max-width: $mobile-only)
       padding: 20px
+      gap: 40px
       flex-direction: column
     &-container
       display: flex
@@ -34,8 +33,13 @@
     display: flex
     margin: 50px 0
     gap: 80px
+    @media (max-width: $mobile-only)
+      flex-direction: column
+      margin: 20px 0
+      gap: 30px
   &__owner
     display: flex
+    margin: 0
     align-items: center
     gap: 16px
     &-avatar
