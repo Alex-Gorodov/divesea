@@ -22,3 +22,7 @@ export enum ScreenSizes {
   Desktop = 1440,
   ContainerMaxWidth = 1250
 }
+
+export const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];

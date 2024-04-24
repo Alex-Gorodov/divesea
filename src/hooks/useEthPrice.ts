@@ -20,3 +20,24 @@ export const useEthPrice = () => {
 
   return ethereumData && Number(ethereumData.priceUsd).toFixed(2);
 }
+
+export const useBtcPrice = () => {
+  const [bitcoinData, setBitcoinData] = useState<any>(null);
+
+  const fetchBitcoinData = () => {
+    axios.get('https://api.coincap.io/v2/assets/bitcoin')
+    .then(response => {
+      setBitcoinData(response.data.data);
+    })
+    .catch(error => {
+      console.log('Error fetching Bitcoin data:', error);
+    
+    });
+  }
+
+  useEffect(() => {
+    fetchBitcoinData();
+  }, []);
+
+  return bitcoinData && Number(bitcoinData.priceUsd).toFixed(2);
+}

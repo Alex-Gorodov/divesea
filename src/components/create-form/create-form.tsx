@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/sell/sell-actions";
 import { RootState } from "../../store/RootState";
 import { AppRoute } from "../../const";
+import { useBtcPrice, useEthPrice } from "../../hooks/useEthPrice";
 
 export function CreateForm(): JSX.Element {
   const items = useSelector((state: RootState) => state.sell.items)
   const dispatch = useDispatch();
   const uploadedUrl = useSelector((state: RootState) => state.sell.uploadedNftPath)
   const [isFormCorrect, setFormCorrectness] = useState(true);
+  const ethPrice = useEthPrice();
+  const btcPrice = useBtcPrice();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -33,6 +36,35 @@ export function CreateForm(): JSX.Element {
     }));
   };
 
+  const handleCurrencyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      priceCurrency: value,
+    }));
+  };
+  
+  // const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { value } = event.target;
+  //   setFormData(prevFormData => ({
+  //     ...prevFormData,
+  //     priceValue: value,
+  //   }));
+  // };
+
+  let price: number;
+  switch (formData.priceCurrency) {
+    case 'ETH':
+      price = Number(parseFloat(formData.priceValue).toFixed(2));
+      break;
+    case 'BTC':
+      price = Number((Number(btcPrice) / Number(ethPrice)).toFixed(2));
+      break;
+    default:
+      price = Number((Number(formData.priceValue) / Number(ethPrice)).toFixed(2));
+      break;
+  }
+
   const handleAddItem = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -46,8 +78,8 @@ export function CreateForm(): JSX.Element {
         id: items.length,
         name: formData.name,
         img: uploadedUrl ? uploadedUrl : '',
-        price: parseFloat(formData.priceValue),
-        addedDate: new Date()
+        price: price,
+        addedDate: new Date(),
       }
     }));
 
@@ -115,9 +147,20 @@ export function CreateForm(): JSX.Element {
       </label>
 
       <div className="create-form__inner-wrapper">
-        <label htmlFor="price" className="create-form__label">
+        <label htmlFor="price" className="create-form__label create-form__label--price">
           Price
-          <input type="number" className="create-form__input" id="price" placeholder="0.00007 ETC" onChange={(e) => setFormData({...formData, priceValue: e.target.value})}/>
+          <select className="create-form__input create-form__input--select-currency" name="price-currency" id="price-currency" onChange={(e) => {setFormData({...formData, priceCurrency: e.target.value}); handleCurrencyChange(e)}}>
+            <option value="ETH">ETH</option>
+            <option value="BTC">BTC</option>
+            <option value="USDT">USDT</option>
+          </select>
+          <input 
+            type="number" 
+            className="create-form__input create-form__input--currency" 
+            id="price" 
+            placeholder={`0.00007 ${formData.priceCurrency}`} 
+            onChange={(e) => setFormData({...formData, priceValue: e.target.value})} 
+          />
         </label>
 
         <label htmlFor="in-stock" className="create-form__label">

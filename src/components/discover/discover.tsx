@@ -1,6 +1,9 @@
-import { useSelector } from "react-redux";
+import { ReactComponent as Category } from "../../img/icons/category-icon.svg";
+import { ReactComponent as Collection } from "../../img/icons/collection-icon.svg";
+import { ReactComponent as Price } from "../../img/icons/price-icon.svg";
 import { ShopItem } from "../shop-item/shop-item";
 import { RootState } from "../../store/RootState";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 
 export function Discover(): JSX.Element {
@@ -26,9 +29,18 @@ export function Discover(): JSX.Element {
     <section className="section discover">
       <h1 className="title title--2 title--secondary">Discover NFTs</h1>
       <div className="discover__buttons-wrapper">
-        <button className="button button--light" onClick={() => sortByCategory()}>Category</button>
-        <button className="button button--light" onClick={() => sortByCollection()}>Collection</button>
-        <button className="button button--light" onClick={() => sortByPrice()}>Price</button>
+        <button className="button button--light discover__btn" onClick={() => sortByCategory()}>
+          <Category/>
+          Category
+        </button>
+        <button className="button button--light discover__btn" onClick={() => sortByCollection()}>
+          <Collection/>
+          Collection
+        </button>
+        <button className="button button--light discover__btn" onClick={() => sortByPrice()}>
+          <Price/>
+          Price
+        </button>
       </div>
       <ul className="discover__list items__grid">
         {

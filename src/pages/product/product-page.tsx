@@ -1,4 +1,5 @@
 import { ReactComponent as BackArrow } from "../../img/icons/back-arrow.svg";
+import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
@@ -11,6 +12,7 @@ import { Layout } from "../../components/layout/layout";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { users } from "../../mocks/users";
 import browserHistory from "../../browser-history";
+import { monthNames } from "../../const";
 
 export function ProductPage(): JSX.Element {
   const { id } = useParams();
@@ -18,7 +20,10 @@ export function ProductPage(): JSX.Element {
   const isMobile = useIsMobileOnly();
   
   const [product, setProduct] = useState<Item | null>(null);
-  const items = useSelector((state: RootState) => state.sell.items)
+  const items = useSelector((state: RootState) => state.sell.items);
+
+  const date = new Date();
+
   useEffect(() => {
     const itemId = Number(id);
     const foundProduct = items.find((item) => item.id === itemId);
@@ -47,13 +52,13 @@ export function ProductPage(): JSX.Element {
         <section className="section section--centered product-page">
           <h1 className="visually-hidden">The page of {product.name}.</h1>
           <div className="button-wrapper product-page__breadcrumb-wrapper">
-            <Link className="button button--circle product-page__breadcrumb"  to="#" onClick={() => browserHistory.back()}>
+            <Link className="button button--circle product-page__breadcrumb-link"  to="#" onClick={() => browserHistory.back()}>
               <BackArrow/>
             </Link>
             <p className="product-page__breadcrumb-title">Product Detail</p>
           </div>
           <div className="product-page__item">
-            <img src={product.img} alt={product.name} width={isMobile ? 280 : 564} height={isMobile ? 280 : 564} />
+            <img className="product-page__item-image" src={product.img} alt={product.name} width={isMobile ? 280 : 564} height={isMobile ? 280 : 564} />
             <div className="product-page__item-container">
               <h2 className="title title--2">{product.name}</h2>
               <p className="product-page__item-description">{product.description}</p>
@@ -73,6 +78,24 @@ export function ProductPage(): JSX.Element {
                   </p>
                 </div>
               </div>
+              <div className="product-page__price-wrapper">
+                <div className="product-page__price">
+                  <span className="product-page__price-description">Current bid</span>
+                  <span className="product-page__price-value">{product.price}</span>
+                </div>
+                <div className="product-page__end">
+                  <span className="product-page__end-description">End in</span>
+                  <span className="product-page__end-value">
+                    {
+                      `${monthNames[date.getUTCMonth()]}, ${date.getDate() + 5} ${date.getFullYear()} at 15:08`
+                    }
+                  </span>
+                </div>
+              </div>
+              <button className="button button--dark product-page__btn">
+                <BidIcon/>
+                Place Bid
+              </button>
             </div>
           </div>
         </section>

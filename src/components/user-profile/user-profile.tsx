@@ -1,5 +1,5 @@
 import { ReactComponent as Validation} from '../../img/icons/validation-icon.svg';
-import { ReactComponent as Collection} from '../../img/icons/collection-icon.svg';
+import { ReactComponent as Collection} from '../../img/icons/user-collection-icon.svg';
 import { ReactComponent as Activity} from '../../img/icons/activity-icon.svg';
 import { ReactComponent as Instagram} from '../../img/icons/instagram.svg';
 import { ReactComponent as Linkedin} from '../../img/icons/linkedin.svg';
