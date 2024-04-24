@@ -16,6 +16,7 @@ export enum HeroItemSizes {
 
 export enum ScreenSizes {
   Mobile= 430,
+  MobileOnly = 768,
   Tablet = 1024,
   Desktop = 1440,
   ContainerMaxWidth = 1250
