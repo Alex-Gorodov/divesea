@@ -1,0 +1,55 @@
+.product-page
+  &__breadcrumb
+    background-color: #e6e8ec
+    &-wrapper
+      @include link-reset
+      color: $black
+      display: inline-flex
+      gap: 34px
+      cursor: pointer
+      transition: 0.3s
+      &:hover
+        opacity: 0.6
+    &-title
+      @include poppins-semi-bold
+      font-size: 31px
+  &__item
+    padding: 36px
+    display: flex
+    gap: 135px
+    border-radius: 24px
+    background-color: #fafafa
+    box-shadow: 17px 17px 60px 0 rgba($black, 12%)
+    @media (max-width: $mobile-only)
+      padding: 20px
+      flex-direction: column
+    &-container
+      display: flex
+      flex-direction: column
+    &-description
+      @include poppins-regular
+      font-size: 19px
+      color: $gray
+  &__owners-wrapper
+    display: flex
+    margin: 50px 0
+    gap: 80px
+  &__owner
+    display: flex
+    align-items: center
+    gap: 16px
+    &-avatar
+      border-radius: 50%
+    & p
+      display: flex
+      flex-direction: column
+    &-description
+      @include poppins-regular
+      margin: 0
+      padding: 0
+      font-size: 17px
+      color: #8d8d8d
+      white-space: nowrap
+    &-name
+      @include poppins-medium
+      font-size: 26px

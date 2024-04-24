@@ -3,6 +3,7 @@ export enum AppRoute {
   Discover = "/divesea/discover",
   Creators = "/divesea/creators",
   UserPage = "/divesea/creators/:id",
+  ProductPage = "/divesea/item/:id",
   Sell = "/divesea/sell",
   Stats = "/divesea/stats",
 }

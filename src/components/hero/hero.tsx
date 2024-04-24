@@ -5,7 +5,7 @@ import { AppRoute, HeroItemSizes } from "../../const";
 import React from "react";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
 import { useIsMobile } from "../../hooks/useIsMobile";
-import { Link } from "react-router-dom";
+import { Link, generatePath } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/RootState";
 
@@ -50,7 +50,7 @@ export function Hero(): JSX.Element {
   }
 
   return (
-    <section className="section hero">
+    <section className="section section--centered hero">
       <div className="hero__left">
         <div className="hero__wrapper">
           <div className="hero__text">
@@ -98,8 +98,11 @@ export function Hero(): JSX.Element {
                 'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items.length - 1),
                 'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
               })
+              const link = generatePath(AppRoute.ProductPage, {
+                id: `${item.id}`,
+              });
               return (
-                <div className={itemClassName} key={`hero-${item.name}`}>
+                <Link className={itemClassName} key={`hero-${item.name}`} to={link}>
                   <img
                     src={item.img}
                     alt={item.name} 
@@ -117,7 +120,7 @@ export function Hero(): JSX.Element {
                       : isMobile
                         ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
                     }/>
-                </div>
+                </Link>
               )
             })
           }

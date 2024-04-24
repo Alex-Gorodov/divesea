@@ -13,7 +13,7 @@ export function Explore(): JSX.Element {
   const isMobile = useIsMobile();
 
   return (
-    <section className="section explore">
+    <section className="section section--centered explore">
       <h2 className="title title--2 title--secondary">Explore Marketplace</h2>
       <ul className="explore__list items__list">
         {

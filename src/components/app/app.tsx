@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import { AppRoute } from "../../const";
 import { store } from "../../store";
 import "../../styles/style.sass"
+import { ProductPage } from "../../pages/product/product-page";
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
             <Route path={AppRoute.Discover} element={<DiscoverPage/>}/>
             <Route path={AppRoute.Creators} element={<CreatorsPage/>}/>
             <Route path={AppRoute.UserPage} element={<Profile/>}/>
+            <Route path={AppRoute.ProductPage} element={<ProductPage/>}/>
             <Route path={AppRoute.Sell} element={<SellPage/>}/>
             <Route path={AppRoute.Stats} element={<StatsPage/>}/>
             <Route path="*" element={<NotFound/>}/>

@@ -4,6 +4,7 @@ export let items: Item[] = [
   {
     id: 0,
     name: "Chroma",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-1.png",
     price: 7.5,
     likes: 200,
@@ -12,6 +13,7 @@ export let items: Item[] = [
   {
     id: 1,
     name: "Prismi",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-2.png",
     price: 5.2,
     likes: 200,
@@ -20,6 +22,7 @@ export let items: Item[] = [
   {
     id: 2,
     name: "Synthi",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-3.png",
     price: 1.75,
     likes: 200,
@@ -28,6 +31,7 @@ export let items: Item[] = [
   {
     id: 3,
     name: "Lumino",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-4.png",
     price: 1.15,
     likes: 200,
@@ -36,6 +40,7 @@ export let items: Item[] = [
   {
     id: 4,
     name: "Spectra",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-5.png",
     price: 2.4,
     likes: 200,
@@ -44,6 +49,7 @@ export let items: Item[] = [
   {
     id: 5,
     name: "NuEvey",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-6.png",
     price: 4.35,
     likes: 200,
@@ -52,6 +58,7 @@ export let items: Item[] = [
   {
     id: 6,
     name: "Edan",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-7.png",
     price: 15.5,
     likes: 200,
@@ -60,6 +67,7 @@ export let items: Item[] = [
   {
     id: 7,
     name: "Waving",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-8.png",
     price: 17.2,
     likes: 200,
@@ -68,6 +76,7 @@ export let items: Item[] = [
   {
     id: 8,
     name: "Heizenberg",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-9.png",
     price: 11,
     likes: 200,
@@ -76,6 +85,7 @@ export let items: Item[] = [
   {
     id: 9,
     name: "Head",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-10.png",
     price: 5,
     likes: 200,
@@ -84,6 +94,7 @@ export let items: Item[] = [
   {
     id: 10,
     name: "Helmon",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-11.png",
     price: 7,
     likes: 200,
@@ -92,6 +103,7 @@ export let items: Item[] = [
   {
     id: 11,
     name: "Ee",
+    description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-12.png",
     price: 3,
     likes: 200,
