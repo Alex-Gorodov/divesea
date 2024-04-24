@@ -40,7 +40,8 @@
   &__owners-wrapper
     display: flex
     margin-bottom: 20px
-    gap: 80px
+    flex-wrap: wrap
+    justify-content: space-between
     @media (max-width: $mobile-only)
       flex-direction: column
       margin: 20px 0
@@ -71,7 +72,7 @@
     flex-direction: column
     &-wrapper
       display: flex
-      gap: 80px
+      flex-wrap: wrap
       margin-bottom: auto
       justify-content: space-between
       @media (max-width: $mobile-only)
