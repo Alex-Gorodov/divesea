@@ -10,4 +10,5 @@ export type AppState = {
   items: Item[];
   users: User[];
   uploadedNftPath: string | null;
+  isBidFormOpened: boolean;
 }

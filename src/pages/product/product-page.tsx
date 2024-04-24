@@ -7,14 +7,19 @@ import { Spinner } from "../../components/spinner/spinner";
 import { NotFound } from "../not-found/not-found";
 import { Item } from "../../types/item";
 import { RootState } from "../../store/RootState";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Layout } from "../../components/layout/layout";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { users } from "../../mocks/users";
 import browserHistory from "../../browser-history";
 import { monthNames } from "../../const";
+import { BidForm } from "../../components/bid-form/bid-form";
+import { toggleBidForm } from "../../store/sell/sell-actions";
 
 export function ProductPage(): JSX.Element {
+  const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
+  const dispatch = useDispatch();
+
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const isMobile = useIsMobileOnly();
@@ -92,7 +97,7 @@ export function ProductPage(): JSX.Element {
                   </span>
                 </div>
               </div>
-              <button className="button button--dark product-page__btn">
+              <button className="button button--dark product-page__btn" onClick={() => dispatch(toggleBidForm({ isOpened : !isFormOpened}))}>
                 <BidIcon/>
                 Place Bid
               </button>

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Item } from "../../types/item";
 import { Link, generatePath } from "react-router-dom";
 import { AppRoute } from "../../const";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/RootState";
+import { toggleBidForm } from "../../store/sell/sell-actions";
 
 type ItemProps = {
   item: Item;
@@ -17,6 +20,10 @@ export function ShopItem({item}: ItemProps): JSX.Element {
     return () => clearInterval(timerID);
   }, []);
 
+
+  const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
+  const dispatch = useDispatch();
+
   const link = generatePath(AppRoute.ProductPage, {
     id: `${item.id}`,
   });
@@ -26,8 +33,6 @@ export function ShopItem({item}: ItemProps): JSX.Element {
   const hours = Math.floor((difference % (3600 * 24)) / 3600);
   const minutes = Math.floor((difference % 3600) / 60);
   const seconds = Math.floor(difference % 60);
-
-  const name = item.name.substring(0, 15);
 
   const shortName = () => {
     return item.name.substring(0, 15) + '...';
@@ -52,7 +57,13 @@ export function ShopItem({item}: ItemProps): JSX.Element {
       <div className="item__price-wrapper">
         <span className="item__price-description">Current bid</span>
         <span className="item__price">{item.price}</span>
-        <button className="item__button button button--dark">Place bid</button>
+        <button className="item__button button button--dark" onClick={() => 
+          {
+            dispatch(toggleBidForm({isOpened: !isFormOpened}));
+            console.log('clicked');
+            
+          }
+        }>Place bid</button>
       </div>
     </div>
   )

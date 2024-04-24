@@ -9,3 +9,5 @@ export const getUploadedNftPath = createAction<{ path: string }>('sell/getUpload
 export const createNFT = createAction<{ item: Item }>('sell/createNFH');
 
 export const redirectToRoute = createAction<AppRoute>('page/redirectToRoute');
+
+export const toggleBidForm = createAction<{ isOpened: boolean }>('page/toggleBidForm');
