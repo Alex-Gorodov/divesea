@@ -33,10 +33,6 @@
     margin-bottom: 45px
     flex-direction: column
     gap: 18px
-  &__bids-item
-    padding: 18px
-    border-radius: 11px
-    box-shadow: -6px 11px 20px 0 rgba(#101010, 15%)
   &__form
     display: flex
     flex-direction: column
@@ -45,28 +41,28 @@
     display: grid
     grid-template-columns: 1fr 2fr
     @media (max-width: $mobile-only)
-      grid-template-columns: 1fr 1.5fr
+      grid-template-columns: 120px auto
   &__input
     @include poppins-semi-bold
     padding: 20px
     font-size: 20px
     border: none
+    text-align: center
     -webkit-appearance: none
     &::-webkit-inner-spin-button
       display: none
-    &--currency
+    &--value
       border-top-right-radius: 18px
       border-bottom-right-radius: 18px
       box-shadow: inset 0px 0px 0px 1px $accent-dark
-      text-align: center
+      @media (max-width: $mobile-only)
+        max-width: 200px
       &:focus-visible
         outline: none
         border: none
         box-shadow: inset 0px 0px 4px 1px $accent-dark
-      @media (max-width: $mobile-only)
-        max-width: 200px
       
-    &--select-currency
+    &--currency
       border: 1px solid $accent-dark
       border-top-left-radius: 18px
       border-bottom-left-radius: 18px

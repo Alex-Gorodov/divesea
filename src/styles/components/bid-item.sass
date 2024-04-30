@@ -1,0 +1,26 @@
+.bid-item
+  display: flex
+  width: 100%
+  padding: 18px
+  gap: 10px
+  align-items: center
+  border-radius: 11px
+  box-shadow: -6px 11px 20px 0 rgba(#101010, 15%)
+  &__text
+    display: flex
+    flex-direction: column
+  &__username
+    @include poppins-medium
+    font-size: 12px
+  &__date
+    @include poppins-regular
+    font-size: 10px
+    color: $gray
+  &__price-wrapper
+    display: flex
+    align-items: center
+    margin-left: auto
+    gap: 5px
+  &__price
+    @include poppins-medium
+    font-size: 14px
