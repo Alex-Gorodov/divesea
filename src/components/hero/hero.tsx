@@ -92,38 +92,34 @@ export function Hero(): JSX.Element {
         </div>
       </div>
       <div className="hero__right">
-          {
-            items.map((item) => {
-              const itemClassName = cn('hero__item', {
-                'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items.length - 1),
-                'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
-              })
-              const link = generatePath(AppRoute.ProductPage, {
-                id: `${item.id}`,
-              });
-              return (
-                <Link className={itemClassName} key={`hero-${item.name}`} to={link}>
-                  <img
-                    src={item.img}
-                    alt={item.name} 
-                    width={
-                      activeItem === item.id
-                      ? isMobile
-                        ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
-                      : isMobile
-                        ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
-                    }
-                    height={
-                      activeItem === item.id
-                      ? isMobile
-                        ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
-                      : isMobile
-                        ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive
-                    }/>
-                </Link>
-              )
+        {
+          items.map((item) => {
+            const itemClassName = cn('hero__item', {
+              'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items.length - 1),
+              'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
             })
-          }
+            const link = generatePath(AppRoute.ProductPage, {
+              id: `${item.id}`,
+            });
+
+            const size = activeItem === item.id
+              ? isMobile
+                ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
+              : isMobile
+                ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive;
+
+            return (
+              <Link className={itemClassName} key={`hero-${item.name}`} to={link}>
+                <img
+                  src={item.img}
+                  alt={item.name} 
+                  width={size}
+                  height={size}
+                />
+              </Link>
+            )
+          })
+        }
         <SliderButtons classNames={['hero__slider-buttons', 'hero__slider-btn--prev', 'hero__slider-btn--next']} onClickPrev={() => handleActiveItemPrev()} onClickNext={() => handleActiveItemNext()} isPrevDisabled={activeItem === 0} isNextDisabled={activeItem === items.length - 1}/>
       </div>
     </section>

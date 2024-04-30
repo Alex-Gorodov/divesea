@@ -64,18 +64,25 @@
         right: -35%
         scale: 0.7
   &__item
+    position: relative
+    right: 0
+    bottom: 0
+    display: block
+    transition: 0.3s
     @media (max-width: $mobile)
-      position: relative
-      left: -50px
+      right: 50px
     &--inactive
       position: absolute
       right: -100%
       bottom: -20%
       @media (max-width: $mobile)
-        left: unset
         right: -70%
     &--invisible
-      display: none
+      position: absolute
+      right: 0
+      bottom: 0
+      transform: scale(0)
+      transition: transform 0s, right 0.3s, bottom 0.3s
     & img
       border-radius: 56px
       box-shadow: 32px 32px 80px 0px $gray
