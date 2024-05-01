@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/divesea/static/css/main.dd7c32b9.css",
-    "main.js": "/divesea/static/js/main.13b5151b.js",
+    "main.css": "/divesea/static/css/main.b8d29a43.css",
+    "main.js": "/divesea/static/js/main.b7b2f2e3.js",
     "static/media/profile-cover.png": "/divesea/static/media/profile-cover.415e0a91ba363fb3605f.png",
     "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
     "static/media/input-pencil.svg": "/divesea/static/media/input-pencil.940ef24a3e33b296307e.svg",
@@ -26,12 +26,13 @@
     "static/media/select-arrow.svg": "/divesea/static/media/select-arrow.44a38cd7d3ce383cd588.svg",
     "static/media/facebook.svg": "/divesea/static/media/facebook.ad7dbaab024d67520eee0e128fb58073.svg",
     "static/media/redirect-arrow.svg": "/divesea/static/media/redirect-arrow.c11ebb0599b56ea3e094474f275cb15b.svg",
+    "static/media/cross.svg": "/divesea/static/media/cross.bfea2c058f091f5f405b78406d1757dd.svg",
     "static/media/ethereum.svg": "/divesea/static/media/ethereum.b01f5ac86eb4d3d7cbcdde66645c3c65.svg",
-    "main.dd7c32b9.css.map": "/divesea/static/css/main.dd7c32b9.css.map",
-    "main.13b5151b.js.map": "/divesea/static/js/main.13b5151b.js.map"
+    "main.b8d29a43.css.map": "/divesea/static/css/main.b8d29a43.css.map",
+    "main.b7b2f2e3.js.map": "/divesea/static/js/main.b7b2f2e3.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd7c32b9.css",
-    "static/js/main.13b5151b.js"
+    "static/css/main.b8d29a43.css",
+    "static/js/main.b7b2f2e3.js"
   ]
 }
