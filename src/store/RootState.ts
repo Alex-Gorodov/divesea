@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { SellReducer } from "./sell/sell-reducer";
+import { SellReducer } from "./page/page-reducer";
 
 export const rootReducer = combineReducers({
   sell: SellReducer

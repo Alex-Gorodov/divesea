@@ -4,7 +4,7 @@ export type Item = {
   description?: string;
   img: string;
   price: number;
-  likes?: number;
+  likes: number;
   addedDate: Date;
   addedBy?: string;
 }

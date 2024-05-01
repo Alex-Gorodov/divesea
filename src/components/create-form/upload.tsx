@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { ReactComponent as UploadIcon } from "../../img/icons/upload-icon.svg";
 import { useDispatch } from "react-redux";
-import { setUploadedNftPath } from "../../store/sell/sell-actions";
+import { setUploadedNftPath } from "../../store/page/page-actions";
 import { useDropzone } from "react-dropzone";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
 

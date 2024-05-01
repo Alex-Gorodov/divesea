@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../store/RootState"
 import cn from "classnames";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import { addBid, toggleBidForm } from "../../store/sell/sell-actions";
+import { addBid, toggleBidForm } from "../../store/page/page-actions";
 import { monthNames } from "../../const";
 import { FormEvent, useState } from "react";
 import { useEthPrice, useBtcPrice } from "../../hooks/useEthPrice";

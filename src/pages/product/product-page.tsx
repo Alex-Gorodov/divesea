@@ -1,8 +1,9 @@
 import { ReactComponent as BackArrow } from "../../img/icons/back-arrow.svg";
 import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg";
+import { ReactComponent as Like } from "../../img/icons/like-icon.svg";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useParams } from "react-router-dom";
+import { Link, generatePath, useParams } from "react-router-dom";
 import { Spinner } from "../../components/spinner/spinner";
 import { NotFound } from "../not-found/not-found";
 import { Item } from "../../types/item";
@@ -12,9 +13,8 @@ import { Layout } from "../../components/layout/layout";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { users } from "../../mocks/users";
 import browserHistory from "../../browser-history";
-import { monthNames } from "../../const";
-import { BidForm } from "../../components/bid-form/bid-form";
-import { toggleBidForm } from "../../store/sell/sell-actions";
+import { AppRoute, monthNames } from "../../const";
+import { toggleBidForm, toggleLike } from "../../store/page/page-actions";
 
 export function ProductPage(): JSX.Element {
   const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
@@ -28,6 +28,22 @@ export function ProductPage(): JSX.Element {
   const items = useSelector((state: RootState) => state.sell.items);
 
   const date = new Date();
+
+  const [similarItemsLiked, setSimilarItemsLiked] = useState<boolean[]>([]); // Массив состояний isLiked для каждого similar-item
+
+  useEffect(() => {
+    // Инициализация массива состояний для каждого элемента similar-item
+    setSimilarItemsLiked(Array(items.length).fill(false));
+  }, [items.length]);
+
+  // Функция для обновления состояния isLiked для конкретного similar-item
+  const toggleSimilarItemLike = (index: number) => {
+    setSimilarItemsLiked((prev) => {
+      const updatedLikes = [...prev];
+      updatedLikes[index] = !prev[index]; // Инвертируем состояние isLiked для данного элемента
+      return updatedLikes;
+    });
+  };
 
   useEffect(() => {
     const itemId = Number(id);
@@ -46,6 +62,10 @@ export function ProductPage(): JSX.Element {
 
   if (!product) {
     return <NotFound/>
+  }
+
+  const shortName = (s: Item) => {
+    return s.name.substring(0, 15) + '...';
   }
 
   return (
@@ -102,6 +122,30 @@ export function ProductPage(): JSX.Element {
                 Place Bid
               </button>
             </div>
+          </div>
+          <div className="product-page__similar">
+            <h2 className="title title--2 product-page__similar-title">From creator</h2>
+            <ul className="product-page__similar-list">
+              {
+                items.slice(0,5).map((item) => (
+                  <div className="item product-page__similar-item" key={`similar-${item.name}`}>
+                    <div className="item__image-wrapper">
+                      <Link to={generatePath(AppRoute.ProductPage, {id: `${item.id}`})}>
+                        <img className="item__image" src={item.img} alt={item.name} width={188} height={164}/>
+                      </Link>
+                    </div>
+                    <p className="item__name">{item.name.length > 12 ? shortName(item) : item.name}</p>
+                    <div className="item__price-wrapper">
+                      <span className="item__price product-page__similar-price">{item.price}</span>
+                      <button className={`product-page__likes-btn ${similarItemsLiked[item.id] && 'product-page__likes-btn--liked' }`} type="button" onClick={() => {dispatch(toggleLike({ like: !similarItemsLiked[item.id], item: item})); toggleSimilarItemLike(item.id)}}>
+                        <Like/>
+                        <span className="product-page__likes-count">{item.likes}</span>
+                      </button>
+                    </div>
+                  </div>
+                ))
+              }
+            </ul>
           </div>
         </section>
       </main>

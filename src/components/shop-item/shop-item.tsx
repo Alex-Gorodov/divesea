@@ -4,7 +4,7 @@ import { Link, generatePath } from "react-router-dom";
 import { AppRoute } from "../../const";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store/RootState";
-import { toggleBidForm } from "../../store/sell/sell-actions";
+import { toggleBidForm } from "../../store/page/page-actions";
 
 type ItemProps = {
   item: Item;

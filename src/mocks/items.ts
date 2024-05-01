@@ -7,7 +7,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-1.png",
     price: 7.5,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T09:00:52'),
   },
   {
@@ -16,7 +16,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-2.png",
     price: 5.2,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T09:04:39'),
   },
   {
@@ -25,7 +25,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-3.png",
     price: 1.75,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-14T19:43:30'),
   },
   {
@@ -34,7 +34,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-4.png",
     price: 1.15,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T02:00:24'),
   },
   {
@@ -43,7 +43,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-5.png",
     price: 2.4,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T09:00:10'),
   },
   {
@@ -52,7 +52,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-6.png",
     price: 4.35,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-18T09:00:44'),
   },
   {
@@ -61,7 +61,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-7.png",
     price: 15.5,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T09:00:10'),
   },
   {
@@ -70,7 +70,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-8.png",
     price: 17.2,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-18T09:00:44'),
   },
   {
@@ -79,7 +79,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-9.png",
     price: 11,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T09:00:10'),
   },
   {
@@ -88,7 +88,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-10.png",
     price: 5,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-18T09:00:44'),
   },
   {
@@ -97,7 +97,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-11.png",
     price: 7,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-17T09:00:10'),
   },
   {
@@ -106,7 +106,7 @@ export let items: Item[] = [
     description: "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
     img: process.env.PUBLIC_URL + "/img/items/item-12.png",
     price: 3,
-    likes: 200,
+    likes: Math.round(Math.random() * 200),
     addedDate: new Date('2024-04-18T09:00:44'),
   },
 ]

@@ -14,3 +14,5 @@ export const redirectToRoute = createAction<AppRoute>('page/redirectToRoute');
 export const toggleBidForm = createAction<{ isOpened: boolean }>('page/toggleBidForm');
 
 export const addBid = createAction<{bid: Bid}>('page/addBid');
+
+export const toggleLike = createAction<{like: boolean, item: Item}>('page/toggleLike');

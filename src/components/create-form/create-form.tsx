@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { FormCheckbox } from "./form-checkbox";
 import { useDispatch, useSelector } from "react-redux";
-import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/sell/sell-actions";
+import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/page/page-actions";
 import { RootState } from "../../store/RootState";
 import { AppRoute } from "../../const";
 import { useBtcPrice, useEthPrice } from "../../hooks/useEthPrice";
@@ -73,6 +73,7 @@ export function CreateForm(): JSX.Element {
         price: price,
         addedDate: new Date(),
         description: formData.description,
+        likes: 0
       }
     }));
 

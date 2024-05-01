@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import { items } from "../../mocks/items";
 import { users } from "../../mocks/users";
 import { AppState } from "../../types/state";
-import { addBid, createNFT, setUploadedNftPath, toggleBidForm } from "./sell-actions";
+import { addBid, createNFT, setUploadedNftPath, toggleBidForm, toggleLike } from "./page-actions";
 import { bids } from "../../mocks/bids";
 
 const initialState: AppState = {
@@ -30,5 +30,9 @@ export const SellReducer = createReducer(initialState, (builder) => {
     .addCase(addBid, (state, action) => {
       const { bid } = action.payload;
       state.bids.unshift(bid);
+    })
+    .addCase(toggleLike, (state, action) => {
+      const { like, item } = action.payload;
+      state.items[item.id].likes = like ? state.items[item.id].likes + 1 : state.items[item.id].likes - 1;
     })
 })
