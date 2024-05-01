@@ -11,6 +11,7 @@
     position: relative
     width: 100%
     padding: 0
+    padding-bottom: 15px
     display: flex
     align-items: center
     gap: 6px
@@ -20,11 +21,14 @@
     font-size: 16px
     color: $light-gray
     cursor: pointer
+    transition: 0.3s
+    &:not(.profile-nav__btn--active):hover
+      color: rgba($black, 60%)
     &--active
       color: $black
       &::after
         position: absolute
-        bottom: -15px
+        bottom: 0
         left: 0
         display: block
         height: 3px

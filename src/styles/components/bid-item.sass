@@ -5,7 +5,25 @@
   gap: 10px
   align-items: center
   border-radius: 11px
-  box-shadow: -6px 11px 20px 0 rgba(#101010, 15%)
+  box-shadow: 0px 4px 54px 0 rgba(#101010, 15%)
+  &:first-of-type
+    box-shadow: -6px 11px 20px 0 rgba(#101010, 15%)
+  &__image
+    border-radius: 50%
+    &-wrapper
+      position: relative
+      &::after
+        position: absolute
+        top: 0px
+        right: 0px
+        display: block
+        width: 20px
+        height: 20px
+        background-image: url("../../img/icons/validation-icon.svg")
+        background-size: 20px 20px
+        background-position: center
+        background-repeat: no-repeat
+        content: ''
   &__text
     display: flex
     flex-direction: column

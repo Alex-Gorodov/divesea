@@ -8,21 +8,32 @@ import { FormEvent, useState } from "react";
 import { useEthPrice, useBtcPrice } from "../../hooks/useEthPrice";
 import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg"
 import { ReactComponent as Ethereum } from "../../img/icons/ethereum.svg"
+import { ReactComponent as CloseCross } from "../../img/icons/cross.svg"
 import { users } from "../../mocks/users";
+import { useIsMobileOnly } from "../../hooks/useIsMobile";
 
 export function BidForm(): JSX.Element {
   const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
   const bids = useSelector((state: RootState) => state.sell.bids)
   const dispatch = useDispatch();
   const [isFormCorrect, setFormCorrectness] = useState(true);
+  const isMobile = useIsMobileOnly();
   
   const formClassName = cn('bid-form', {
     'bid-form--opened' : isFormOpened,
   })
 
+  const handleCloseForm = () => {
+    dispatch(toggleBidForm({isOpened : false}));
+    setFormCorrectness(true);
+    setFormData({
+      bidCurrency: 'ETH',
+      bidValue: '',
+    });
+  }
 
   const ref = useOutsideClick(() => {
-    dispatch(toggleBidForm({isOpened : false}));
+    handleCloseForm();
   }) as React.RefObject<HTMLDivElement>;
 
   const date = new Date();
@@ -52,7 +63,7 @@ export function BidForm(): JSX.Element {
       price = Number((Number(btcPrice) / Number(ethPrice)).toFixed(2));
       break;
     default:
-      price = Number((Number(formData.bidValue) / Number(ethPrice)).toFixed(2));
+      price = Number((Number(formData.bidValue) / Number(ethPrice)).toFixed(3));
       break;
   }
 
@@ -83,12 +94,17 @@ export function BidForm(): JSX.Element {
     <div className={formClassName}>
       <div className="bid-form__wrapper" ref={ref}>
         <h3 className="title title--3">History of Bid</h3>
+        <button className="bid-form__close-btn" type="button" onClick={handleCloseForm}>
+          <CloseCross/>
+        </button>
         <span className="bid-form__date">{`${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</span>
         <ul className="bid-form__bids-list">
           {
             bids.slice(0,3).map((bid) => (
               <li className="bid-form__bids-item bid-item">
-                <img src={bid.user.avatar} alt={bid.user.firstname} width={45} height={45}/>
+                <div className="bid-item__image-wrapper">
+                  <img className="bid-item__image" src={bid.user.avatar} alt={bid.user.firstname} width={isMobile ? 45 : 64} height={isMobile ? 45 : 64}/>
+                </div>
                 <div className="bid-item__text">
                   <span className="bid-item__username">{bid.user.firstname}</span>
                   <span className="bid-item__date">{monthNames[bid.date.getMonth()] + ' ' + bid.date.getDate() + ', ' + bid.date.getFullYear() + ` at ${(bid.date.getHours() < 10 ? '0' + bid.date.getHours() : bid.date.getHours())}:${bid.date.getMinutes() < 10 ? '0' + bid.date.getMinutes() : bid.date.getMinutes()}`}</span>

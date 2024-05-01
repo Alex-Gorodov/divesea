@@ -68,21 +68,25 @@
     right: 0
     bottom: 0
     display: block
-    transition: 0.3s
+    // transition: 0.3s
+    transition: transform 0s, right 0.3s, bottom 0.3s
+    z-index: 1
     @media (max-width: $mobile)
       right: 50px
+      bottom: 0
     &--inactive
       position: absolute
       right: -100%
       bottom: -20%
       @media (max-width: $mobile)
         right: -70%
+        bottom: -20%
     &--invisible
       position: absolute
       right: 0
       bottom: 0
       transform: scale(0)
-      transition: transform 0s, right 0.3s, bottom 0.3s
+      // transition: transform 0s, right 0.3s, bottom 0.3s
     & img
       border-radius: 56px
       box-shadow: 32px 32px 80px 0px $gray

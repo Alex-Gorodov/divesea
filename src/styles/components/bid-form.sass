@@ -21,6 +21,20 @@
     border-radius: 15px
     background-color: $white
     transform: translate(-50%, -50%)
+    overflow: hidden
+  &__close-btn
+    position: absolute
+    top: 44px
+    right: 18px
+    padding: 10px
+    background-color: transparent
+    border: none
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+      opacity: 0.6
+    &:active
+      opacity: 0.3
   &__date
     @include poppins-regular
     display: inline-block
@@ -75,3 +89,10 @@
     width: 100%
     padding: 23px 24px
     border-radius: 18px
+  &__error-message
+    position: absolute
+    transition: 0.3s
+    &--closed
+      left: -50%
+    &--opened
+      left: 50%

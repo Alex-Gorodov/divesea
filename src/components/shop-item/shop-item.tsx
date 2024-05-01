@@ -60,8 +60,6 @@ export function ShopItem({item}: ItemProps): JSX.Element {
         <button className="item__button button button--dark" onClick={() => 
           {
             dispatch(toggleBidForm({isOpened: !isFormOpened}));
-            console.log('clicked');
-            
           }
         }>Place bid</button>
       </div>
