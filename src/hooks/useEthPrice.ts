@@ -30,8 +30,7 @@ export const useBtcPrice = () => {
       setBitcoinData(response.data.data);
     })
     .catch(error => {
-      console.log('Error fetching Bitcoin data:', error);
-    
+      console.error('Error fetching Bitcoin data:', error);
     });
   }
 

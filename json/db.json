@@ -1,0 +1,427 @@
+{
+  "divesea-db" : {
+    "items" : [
+      {
+        "id": 0,
+        "name": "Chroma",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-1.png",
+        "price": 7.5,
+        "likes": 50,
+        "addedDate": "2024-04-17T09:00:52.000Z"
+      },
+      {
+        "id": 1,
+        "name": "Prismi",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-2.png",
+        "price": 5.2,
+        "likes": 150,
+        "addedDate": "2024-04-17T09:04:39.000Z"
+      },
+      {
+        "id": 2,
+        "name": "Synthi",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-3.png",
+        "price": 1.75,
+        "likes": 100,
+        "addedDate": "2024-04-14T19:43:30.000Z"
+      },
+      {
+        "id": 3,
+        "name": "Lumino",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-4.png",
+        "price": 1.15,
+        "likes": 120,
+        "addedDate": "2024-04-17T02:00:24.000Z"
+      },
+      {
+        "id": 4,
+        "name": "Spectra",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-5.png",
+        "price": 2.4,
+        "likes": 80,
+        "addedDate": "2024-04-17T09:00:10.000Z"
+      },
+      {
+        "id": 5,
+        "name": "NuEvey",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-6.png",
+        "price": 4.35,
+        "likes": 180,
+        "addedDate": "2024-04-18T09:00:44.000Z"
+      },
+      {
+        "id": 6,
+        "name": "Edan",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-7.png",
+        "price": 15.5,
+        "likes": 30,
+        "addedDate": "2024-04-17T09:00:10.000Z"
+      },
+      {
+        "id": 7,
+        "name": "Waving",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-8.png",
+        "price": 17.2,
+        "likes": 20,
+        "addedDate": "2024-04-18T09:00:44.000Z"
+      },
+      {
+        "id": 8,
+        "name": "Heizenberg",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-9.png",
+        "price": 11,
+        "likes": 70,
+        "addedDate": "2024-04-17T09:00:10.000Z"
+      },
+      {
+        "id": 9,
+        "name": "Head",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-10.png",
+        "price": 5,
+        "likes": 190,
+        "addedDate": "2024-04-18T09:00:44.000Z"
+      },
+      {
+        "id": 10,
+        "name": "Helmon",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-11.png",
+        "price": 7,
+        "likes": 40,
+        "addedDate": "2024-04-17T09:00:10.000Z"
+      },
+      {
+        "id": 11,
+        "name": "Ee",
+        "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+        "img": "/divesea/img/items/item-12.png",
+        "price": 3,
+        "likes": 160,
+        "addedDate": "2024-04-18T09:00:44.000Z"
+      }    
+    ],
+    "users" : [
+      {
+        "id": 0,
+        "firstname": "Alex",
+        "surname": "Gorodov",
+        "nickname": "user0",
+        "totalSales": 27,
+        "followers": 23561,
+        "following": 245,
+        "bio": "As an NFT artist, I blend traditional techniques with digital innovation, transcending boundaries in the art world. With a passion for exploring the intersection of technology and creativity, my work reflects a deep appreciation for both the tangible and the virtual. Inspired by the infinite possibilities of blockchain and the decentralized nature of NFTs, I strive to create pieces that provoke thought, evoke emotion, and challenge perceptions. Each artwork is a unique expression of my journey, inviting viewers to join me in exploring new realms of imagination and possibility. Welcome to my digital gallery, where art meets innovation and the future is limitless.",
+        "collection": [
+          {
+            "id": 0,
+            "name": "Chroma",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-1.png",
+            "price": 7.5,
+            "likes": 50,
+            "addedDate": "2024-04-17T09:00:52.000Z"
+          },
+          {
+            "id": 1,
+            "name": "Prismi",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-2.png",
+            "price": 5.2,
+            "likes": 150,
+            "addedDate": "2024-04-17T09:04:39.000Z"
+          }
+        ],
+        "avatar": "/divesea/img/users/user-1.png"
+      },
+      {
+        "id": 1,
+        "firstname": "John",
+        "surname": "Smith",
+        "nickname": "j.smith",
+        "totalSales": 53,
+        "followers": 5256,
+        "following": 953,
+        "bio": "As an NFT artist, I merge traditional artistry with digital evolution, crafting pieces that redefine the boundaries of creativity. Inspired by blockchain's decentralized ethos, each artwork is a testament to innovation, inviting viewers into a realm where imagination knows no bounds. Welcome to my digital canvas, where art transcends convention and embraces the future.",
+        "collection": [
+          {
+            "id": 2,
+            "name": "Synthi",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-3.png",
+            "price": 1.75,
+            "likes": 100,
+            "addedDate": "2024-04-14T19:43:30.000Z"
+          },
+          {
+            "id": 3,
+            "name": "Lumino",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-4.png",
+            "price": 1.15,
+            "likes": 120,
+            "addedDate": "2024-04-17T02:00:24.000Z"
+          }
+        ],
+        "avatar": "/divesea/img/users/user-2.png"
+      },
+      {
+        "id": 2,
+        "firstname": "Eva",
+        "surname": "White",
+        "nickname": "eva_15",
+        "totalSales": 12000,
+        "followers": 5256,
+        "following": 653,
+        "bio": "With a palette of pixels and passion, I sculpt digital masterpieces that blur the line between reality and imagination. NFTs are my canvas, and blockchain is my medium, enabling me to create art that resonates in the decentralized landscape of tomorrow.",
+        "collection": [
+          {
+            "id": 4,
+            "name": "Spectra",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-5.png",
+            "price": 2.4,
+            "likes": 80,
+            "addedDate": "2024-04-17T09:00:10.000Z"
+          },
+          {
+            "id": 5,
+            "name": "NuEvey",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-6.png",
+            "price": 4.35,
+            "likes": 180,
+            "addedDate": "2024-04-18T09:00:44.000Z"
+          }
+        ],
+        "avatar": "/divesea/img/users/user-12.png"
+      },
+      {
+        "id": 3,
+        "firstname": "Lana",
+        "surname": "Del Gray",
+        "nickname": "i'm.gray",
+        "totalSales": 103,
+        "followers": 24496,
+        "following": 573,
+        "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
+        "collection": [
+          {
+            "id": 6,
+            "name": "Edan",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-7.png",
+            "price": 15.5,
+            "likes": 30,
+            "addedDate": "2024-04-17T09:00:10.000Z"
+          },
+          {
+            "id": 7,
+            "name": "Waving",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-8.png",
+            "price": 17.2,
+            "likes": 20,
+            "addedDate": "2024-04-18T09:00:44.000Z"
+          }
+        ],
+        "avatar": "/divesea/img/users/user-4.png"
+      },
+      {
+        "id": 4,
+        "firstname": "Clara",
+        "surname": "Tsvetkin",
+        "nickname": "Tsvetkin",
+        "totalSales": 8,
+        "followers": 524,
+        "following": 423,
+        "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+        "collection": [
+          {
+            "id": 8,
+            "name": "Heizenberg",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-9.png",
+            "price": 11,
+            "likes": 70,
+            "addedDate": "2024-04-17T09:00:10.000Z"
+          },
+          {
+            "id": 9,
+            "name": "Head",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-10.png",
+            "price": 5,
+            "likes": 190,
+            "addedDate": "2024-04-18T09:00:44.000Z"
+          },
+          {
+            "id": 10,
+            "name": "Helmon",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-11.png",
+            "price": 7,
+            "likes": 40,
+            "addedDate": "2024-04-17T09:00:10.000Z"
+          },
+          {
+            "id": 11,
+            "name": "Ee",
+            "description": "A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits. ",
+            "img": "/divesea/img/items/item-12.png",
+            "price": 3,
+            "likes": 160,
+            "addedDate": "2024-04-18T09:00:44.000Z"
+          }
+        ],
+        "avatar": "/divesea/img/users/user-5.png"
+      }
+    ],
+    "bids" : [
+      {
+        "id": 0,
+        "user": {
+          "id": 0,
+          "firstname": "Alex",
+          "surname": "Gorodov",
+          "nickname": "user0",
+          "totalSales": 27,
+          "followers": 23561,
+          "following": 245,
+          "bio": "As an NFT artist, I blend traditional techniques with digital innovation, transcending boundaries in the art world. With a passion for exploring the intersection of technology and creativity, my work reflects a deep appreciation for both the tangible and the virtual. Inspired by the infinite possibilities of blockchain and the decentralized nature of NFTs, I strive to create pieces that provoke thought, evoke emotion, and challenge perceptions. Each artwork is a unique expression of my journey, inviting viewers to join me in exploring new realms of imagination and possibility. Welcome to my digital gallery, where art meets innovation and the future is limitless.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-1.png"
+        },
+        "date": "2024-07-08T18:30:44.244Z",
+        "price": 1.45
+      },
+      {
+        "id": 1,
+        "user": {
+          "id": 1,
+          "firstname": "John",
+          "surname": "Smith",
+          "nickname": "j.smith",
+          "totalSales": 53,
+          "followers": 5256,
+          "following": 953,
+          "bio": "As an NFT artist, I merge traditional artistry with digital evolution, crafting pieces that redefine the boundaries of creativity. Inspired by blockchain's decentralized ethos, each artwork is a testament to innovation, inviting viewers into a realm where imagination knows no bounds. Welcome to my digital canvas, where art transcends convention and embraces the future.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-2.png"
+        },
+        "date": "2024-04-21T15:08:35.429Z",
+        "price": 1.6
+      },
+      {
+        "id": 2,
+        "user": {
+          "id": 2,
+          "firstname": "Eva",
+          "surname": "White",
+          "nickname": "eva_15",
+          "totalSales": 12000,
+          "followers": 5256,
+          "following": 653,
+          "bio": "With a palette of pixels and passion, I sculpt digital masterpieces that blur the line between reality and imagination. NFTs are my canvas, and blockchain is my medium, enabling me to create art that resonates in the decentralized landscape of tomorrow.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-12.png"
+        },
+        "date": "2024-05-02T21:51:02.873Z",
+        "price": 1.32
+      },
+      {
+        "id": 3,
+        "user": {
+          "id": 3,
+          "firstname": "Lana",
+          "surname": "Del Gray",
+          "nickname": "i'm.gray",
+          "totalSales": 103,
+          "followers": 24496,
+          "following": 573,
+          "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-4.png"
+        },
+        "date": "2024-08-04T04:02:37.572Z",
+        "price": 1.1
+      },
+      {
+        "id": 4,
+        "user": {
+          "id": 4,
+          "firstname": "Clara",
+          "surname": "Tsvetkin",
+          "nickname": "Tsvetkin",
+          "totalSales": 8,
+          "followers": 524,
+          "following": 423,
+          "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-5.png"
+        },
+        "date": "2024-08-13T14:57:39.649Z",
+        "price": 1.15
+      },
+      {
+        "id": 5,
+        "user": {
+          "id": 5,
+          "firstname": "NuEvey",
+          "surname": "",
+          "nickname": "",
+          "totalSales": 0,
+          "followers": 0,
+          "following": 0,
+          "bio": "",
+          "collection": [],
+          "avatar": ""
+        },
+        "date": "2024-05-24T16:40:03.701Z",
+        "price": 1.67
+      },
+      {
+        "id": 6,
+        "user": {
+          "id": 4,
+          "firstname": "Clara",
+          "surname": "Tsvetkin",
+          "nickname": "Tsvetkin",
+          "totalSales": 8,
+          "followers": 524,
+          "following": 423,
+          "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-5.png"
+        },
+        "date": "2024-07-20T21:06:07.889Z",
+        "price": 1.43
+      },
+      {
+        "id": 7,
+        "user": {
+          "id": 3,
+          "firstname": "Lana",
+          "surname": "Del Gray",
+          "nickname": "i'm.gray",
+          "totalSales": 103,
+          "followers": 24496,
+          "following": 573,
+          "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
+          "collection": [],
+          "avatar": "/divesea/img/users/user-4.png"
+        },
+        "date": "2024-05-29T04:45:18.369Z",
+        "price": 1.2
+      }        
+    ]
+  }
+}

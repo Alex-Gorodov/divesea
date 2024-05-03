@@ -8,6 +8,12 @@ export enum AppRoute {
   Stats = "/divesea/stats",
 }
 
+export enum APIRoute {
+  Users = "divesea-db/users",
+  Items = "divesea-db/items",
+  Bids = "divesea-db/bids",
+}
+
 export enum HeroItemSizes {
   Active = 392,
   ActiveMobile = 210,

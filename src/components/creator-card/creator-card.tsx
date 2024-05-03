@@ -47,7 +47,7 @@ export function CreatorCard({user}: CreatorCardProps): JSX.Element {
           {
             user.collection && user.collection.slice(0,3).map((item, index) => {
               return (
-                <li className={`creator__collection-item ${ index === 2 && 'creator__collection-item--last'}`} key={`item-id${item.id}`}>
+                <li className={`creator__collection-item ${ index === 2 ? 'creator__collection-item--last' : ''}`} key={`item-id${item.id}`}>
                   <img src={item.img} alt={item.name} width={isMobile? 83 : 99} height={isMobile? 83 : 99} className="creator__collection-item__image" />
                   {
                     index === 2 && user.collection && user.collection.length > 3 ? <Link className='creator__collection-item__remaining' to={link}>{`+${user.collection && user.collection.length - 2}`}</Link> : ''

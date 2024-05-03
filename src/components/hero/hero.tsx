@@ -7,7 +7,8 @@ import { SliderButtons } from "../slider-buttons/slider-buttons";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { Link, generatePath } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/RootState";
+import { RootState } from "../../store/root-state";
+import { Spinner } from "../spinner/spinner";
 
 interface Props {
   end: number;
@@ -39,8 +40,9 @@ export function Hero(): JSX.Element {
   
   const isMobile = useIsMobile();
 
-  const items = useSelector((state: RootState) => state.sell.items)
-  
+  const items = useSelector((state: RootState) => state.data.items)
+  const isItemsLoading = useSelector((state: RootState) => state.data.isItemsDataLoading)
+
   const handleActiveItemPrev = () => {
     setActiveItem(activeItem - 1)
   }
@@ -91,37 +93,41 @@ export function Hero(): JSX.Element {
           </ul>
         </div>
       </div>
-      <div className="hero__right">
-        {
-          items.map((item) => {
-            const itemClassName = cn('hero__item', {
-              'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items.length - 1),
-              'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
+      {
+        isItemsLoading ? <Spinner size="40"/>
+        :
+        <div className="hero__right">
+          {
+            items?.map((item) => {
+              const itemClassName = cn('hero__item', {
+                'hero__item--inactive' : item.id === activeItem + 1 || (item.id === 0 && activeItem === items?.length - 1),
+                'hero__item--invisible' : item.id < activeItem || item.id > activeItem + 1 
+              })
+              const link = generatePath(AppRoute.ProductPage, {
+                id: `${item.id}`,
+              });
+
+              const size = activeItem === item.id
+                ? isMobile
+                  ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
+                : isMobile
+                  ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive;
+
+              return (
+                <Link className={itemClassName} key={`hero-${item.name}`} to={link}>
+                  <img
+                    src={item.img}
+                    alt={item.name} 
+                    width={size}
+                    height={size}
+                  />
+                </Link>
+              )
             })
-            const link = generatePath(AppRoute.ProductPage, {
-              id: `${item.id}`,
-            });
-
-            const size = activeItem === item.id
-              ? isMobile
-                ? HeroItemSizes.ActiveMobile : HeroItemSizes.Active
-              : isMobile
-                ? HeroItemSizes.InactiveMobile : HeroItemSizes.Inactive;
-
-            return (
-              <Link className={itemClassName} key={`hero-${item.name}`} to={link}>
-                <img
-                  src={item.img}
-                  alt={item.name} 
-                  width={size}
-                  height={size}
-                />
-              </Link>
-            )
-          })
-        }
-        <SliderButtons classNames={['hero__slider-buttons', 'hero__slider-btn--prev', 'hero__slider-btn--next']} onClickPrev={() => handleActiveItemPrev()} onClickNext={() => handleActiveItemNext()} isPrevDisabled={activeItem === 0} isNextDisabled={activeItem === items.length - 1}/>
-      </div>
+          }
+          <SliderButtons classNames={['hero__slider-buttons', 'hero__slider-btn--prev', 'hero__slider-btn--next']} onClickPrev={() => handleActiveItemPrev()} onClickNext={() => handleActiveItemNext()} isPrevDisabled={activeItem === 0} isNextDisabled={activeItem === items?.length - 1}/>
+        </div>
+      }
     </section>
   )
 }

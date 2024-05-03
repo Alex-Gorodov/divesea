@@ -25,7 +25,7 @@ export function Profile(): JSX.Element {
   }, [id]);
 
   if (isLoading) {
-    return <Spinner size={"40"} color={"#141416"}/>
+    return <Spinner size={"40"}/>
   }
 
   if (!profile) {

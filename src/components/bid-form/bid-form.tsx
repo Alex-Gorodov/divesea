@@ -1,24 +1,26 @@
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../../store/RootState"
 import cn from "classnames";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
-import { addBid, toggleBidForm } from "../../store/page/page-actions";
+import { addBid, toggleBidForm } from "../../store/actions";
 import { monthNames } from "../../const";
 import { FormEvent, useState } from "react";
 import { useEthPrice, useBtcPrice } from "../../hooks/useEthPrice";
 import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg"
 import { ReactComponent as Ethereum } from "../../img/icons/ethereum.svg"
 import { ReactComponent as CloseCross } from "../../img/icons/cross.svg"
-import { users } from "../../mocks/users";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
+import { addBidToDatabase } from "../../services/database";
+import { RootState } from "../../store/root-state";
+import { Spinner } from "../spinner/spinner";
 
 export function BidForm(): JSX.Element {
-  const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
-  const bids = useSelector((state: RootState) => state.sell.bids)
+  const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
+  const bids = useSelector((state: RootState) => state.data.bids);
+  const isBidsLoading = useSelector((state: RootState) => state.data.isBidsDataLoading)
+  const users = useSelector((state: RootState) => state.data.users);
   const dispatch = useDispatch();
   const [isFormCorrect, setFormCorrectness] = useState(true);
   const isMobile = useIsMobileOnly();
-  
   const formClassName = cn('bid-form', {
     'bid-form--opened' : isFormOpened,
   })
@@ -73,15 +75,25 @@ export function BidForm(): JSX.Element {
       setFormCorrectness(false);
       return;
     }
+  const bidDate = new Date();
 
+  const bid = {
+    id: bids.length,
+    user: users[Math.round(Math.random() * (users?.length - 1))],
+    date: bidDate,
+    price: price
+  }
+    
     formData.bidValue
       ?
-        dispatch(addBid({bid: {
-          id: bids.length,
-          user: users[Math.round(Math.random() * (users.length - 1))],
-          date: new Date(),
-          price: price
-        }}))
+        addBidToDatabase(bid)
+        .then(() => {
+          dispatch(addBid({bid: bid}));
+          console.log('added bid with id: ' + bid.id);
+        })
+        .catch((error) => {
+          console.error("Error adding bid: ", error);
+        })
       :
         window.alert('Place your bid first!')
     setFormData({
@@ -100,24 +112,31 @@ export function BidForm(): JSX.Element {
         <span className="bid-form__date">{`${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</span>
         <ul className="bid-form__bids-list">
           {
-            bids.slice(0,3).map((bid) => (
-              <li className="bid-form__bids-item bid-item">
-                <div className="bid-item__image-wrapper">
-                  <img className="bid-item__image" src={bid.user.avatar} alt={bid.user.firstname} width={isMobile ? 45 : 64} height={isMobile ? 45 : 64}/>
-                </div>
-                <div className="bid-item__text">
-                  <span className="bid-item__username">{bid.user.firstname}</span>
-                  <span className="bid-item__date">{monthNames[bid.date.getMonth()] + ' ' + bid.date.getDate() + ', ' + bid.date.getFullYear() + ` at ${(bid.date.getHours() < 10 ? '0' + bid.date.getHours() : bid.date.getHours())}:${bid.date.getMinutes() < 10 ? '0' + bid.date.getMinutes() : bid.date.getMinutes()}`}</span>
-                </div>
-                <div className="bid-item__price-wrapper">
-                  <Ethereum/>
-                  <span className="bid-item__price">{bid.price}</span>
-                </div>
-                
-              </li>
-            ))
+            isBidsLoading
+            ?
+            <Spinner size={"40"}/>
+            :
+            bids.slice(0,3).map((bid, index) => {
+              const bidDate = new Date(bid.date);
+              return (
+                <li className="bid-form__bids-item bid-item" key={`bid-${index}`}>
+                  <div className="bid-item__image-wrapper">
+                    <img className="bid-item__image" src={bid.user.avatar} alt={bid.user.firstname} width={isMobile ? 45 : 64} height={isMobile ? 45 : 64}/>
+                  </div>
+                  <div className="bid-item__text">
+                    <span className="bid-item__username">{bid.user.firstname}</span>
+                    <span className="bid-item__date">{monthNames[bidDate.getMonth()] + ' ' + bidDate.getDate() + ', ' + bidDate.getFullYear() + ` at ${(bidDate.getHours() < 10 ? '0' + bidDate.getHours() : bidDate.getHours())}:${bidDate.getMinutes() < 10 ? '0' + bidDate.getMinutes() : bidDate.getMinutes()}`}</span>
+                  </div>
+                  <div className="bid-item__price-wrapper">
+                    <Ethereum/>
+                    <span className="bid-item__price">{bid.price ? bid.price : 'N/A'}</span>
+                  </div>
+                </li>
+              );
+            })
           }
         </ul>
+
         <form className="bid-form__form" action="/" onSubmit={submit}>
           {
             !isFormCorrect &&

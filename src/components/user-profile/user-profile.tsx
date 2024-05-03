@@ -26,9 +26,9 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
     'profile-nav__btn--active': navActive === btnType
   });
 
-  const userNameFirst = Math.floor(Math.random() * users.length);
-  const userNameSecond = Math.floor(Math.random() * users.length);
-  const userNameThird = Math.floor(Math.random() * users.length);
+  const userNameFirst = Math.floor(Math.random() * users?.length);
+  const userNameSecond = Math.floor(Math.random() * users?.length);
+  const userNameThird = Math.floor(Math.random() * users?.length);
 
   const isMobile = useIsMobile();
 

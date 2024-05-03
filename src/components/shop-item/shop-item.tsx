@@ -3,8 +3,8 @@ import { Item } from "../../types/item";
 import { Link, generatePath } from "react-router-dom";
 import { AppRoute } from "../../const";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/RootState";
-import { toggleBidForm } from "../../store/page/page-actions";
+import { toggleBidForm } from "../../store/actions";
+import { RootState } from "../../store/root-state";
 
 type ItemProps = {
   item: Item;
@@ -21,14 +21,16 @@ export function ShopItem({item}: ItemProps): JSX.Element {
   }, []);
 
 
-  const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
+  const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
   const dispatch = useDispatch();
 
   const link = generatePath(AppRoute.ProductPage, {
     id: `${item.id}`,
   });
-  
-  const difference = Math.floor((currentTime.getTime() - item.addedDate.getTime()) / 1000);
+
+  const itemAddedDate = new Date(item.addedDate);
+
+  const difference = Math.floor((currentTime.getTime() - itemAddedDate.getTime()) / 1000);
   const days = Math.floor(difference / (3600 * 24));
   const hours = Math.floor((difference % (3600 * 24)) / 3600);
   const minutes = Math.floor((difference % 3600) / 60);

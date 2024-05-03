@@ -7,17 +7,17 @@ import { Link, generatePath, useParams } from "react-router-dom";
 import { Spinner } from "../../components/spinner/spinner";
 import { NotFound } from "../not-found/not-found";
 import { Item } from "../../types/item";
-import { RootState } from "../../store/RootState";
 import { useDispatch, useSelector } from "react-redux";
 import { Layout } from "../../components/layout/layout";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { users } from "../../mocks/users";
 import browserHistory from "../../browser-history";
 import { AppRoute, monthNames } from "../../const";
-import { toggleBidForm, toggleLike } from "../../store/page/page-actions";
+import { toggleBidForm, toggleLike } from "../../store/actions";
+import { RootState } from "../../store/root-state";
 
 export function ProductPage(): JSX.Element {
-  const isFormOpened = useSelector((state: RootState) => state.sell.isBidFormOpened);
+  const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -25,25 +25,26 @@ export function ProductPage(): JSX.Element {
   const isMobile = useIsMobileOnly();
   
   const [product, setProduct] = useState<Item | null>(null);
-  const items = useSelector((state: RootState) => state.sell.items);
+  const items = useSelector((state: RootState) => state.data.items);
 
   const date = new Date();
 
-  const [similarItemsLiked, setSimilarItemsLiked] = useState<boolean[]>([]); // Массив состояний isLiked для каждого similar-item
+  const [similarItemsLiked, setSimilarItemsLiked] = useState<boolean[]>([]);
 
   useEffect(() => {
-    // Инициализация массива состояний для каждого элемента similar-item
-    setSimilarItemsLiked(Array(items.length).fill(false));
+    setSimilarItemsLiked(Array(items?.length).fill(false));
   }, [items.length]);
 
-  // Функция для обновления состояния isLiked для конкретного similar-item
   const toggleSimilarItemLike = (index: number) => {
     setSimilarItemsLiked((prev) => {
       const updatedLikes = [...prev];
-      updatedLikes[index] = !prev[index]; // Инвертируем состояние isLiked для данного элемента
+      updatedLikes[index] = !prev[index];
       return updatedLikes;
     });
   };
+
+  console.log(isFormOpened);
+  
 
   useEffect(() => {
     const itemId = Number(id);
@@ -57,7 +58,7 @@ export function ProductPage(): JSX.Element {
   }, [id, items]);
 
   if (isLoading) {
-    return <Spinner size={"40"} color={"#141416"}/>
+    return <Spinner size={"40"}/>
   }
 
   if (!product) {
@@ -127,7 +128,7 @@ export function ProductPage(): JSX.Element {
             <h2 className="title title--2 product-page__similar-title">From creator</h2>
             <ul className="product-page__similar-list">
               {
-                items.slice(0,5).map((item) => (
+                items?.slice(0,5).map((item) => (
                   <div className="item product-page__similar-item" key={`similar-${item.name}`}>
                     <div className="item__image-wrapper">
                       <Link to={generatePath(AppRoute.ProductPage, {id: `${item.id}`})}>

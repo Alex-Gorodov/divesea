@@ -1,15 +1,16 @@
 import { FormEvent, useState } from "react";
 import { FormCheckbox } from "./form-checkbox";
 import { useDispatch, useSelector } from "react-redux";
-import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/page/page-actions";
-import { RootState } from "../../store/RootState";
+import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/actions";
 import { AppRoute } from "../../const";
 import { useBtcPrice, useEthPrice } from "../../hooks/useEthPrice";
+import { RootState } from "../../store/root-state";
+import { addItemToStore } from "../../services/database";
 
 export function CreateForm(): JSX.Element {
-  const items = useSelector((state: RootState) => state.sell.items)
+  const items = useSelector((state: RootState) => state.data.items);
   const dispatch = useDispatch();
-  const uploadedUrl = useSelector((state: RootState) => state.sell.uploadedNftPath)
+  const uploadedUrl = useSelector((state: RootState) => state.page.uploadedNftPath)
   const [isFormCorrect, setFormCorrectness] = useState(true);
   const ethPrice = useEthPrice();
   const btcPrice = useBtcPrice();
@@ -78,7 +79,15 @@ export function CreateForm(): JSX.Element {
     }));
 
     dispatch(setUploadedNftPath({path: null}));
-
+    addItemToStore({
+      id: items.length,
+      name: formData.name,
+      img: uploadedUrl ? uploadedUrl : '',
+      price: price,
+      addedDate: new Date(),
+      description: formData.description,
+      likes: 0
+    });
     setFormData({
       name: '',
       description: '',
