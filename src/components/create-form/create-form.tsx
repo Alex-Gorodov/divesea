@@ -3,9 +3,10 @@ import { FormCheckbox } from "./form-checkbox";
 import { useDispatch, useSelector } from "react-redux";
 import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/actions";
 import { AppRoute } from "../../const";
-import { useBtcPrice, useEthPrice } from "../../hooks/useEthPrice";
+import { useEthPrice } from "../../hooks/useEthPrice";
 import { RootState } from "../../store/root-state";
 import { addItemToDatabase } from "../../services/database";
+import { useBtcPrice } from "../../hooks/useBtcPrice";
 
 export function CreateForm(): JSX.Element {
   const items = useSelector((state: RootState) => state.data.items);
@@ -51,7 +52,7 @@ export function CreateForm(): JSX.Element {
       price = Number(parseFloat(formData.priceValue).toFixed(2));
       break;
     case 'BTC':
-      price = Number((Number(btcPrice) / Number(ethPrice)).toFixed(2));
+      price = Number((Number(formData.priceValue) * Number(btcPrice) / Number(ethPrice)).toFixed(2));
       break;
     default:
       price = Number((Number(formData.priceValue) / Number(ethPrice)).toFixed(2));
@@ -161,7 +162,8 @@ export function CreateForm(): JSX.Element {
             type="number" 
             className="create-form__input create-form__input--currency" 
             id="price" 
-            placeholder={`0.00007 ${formData.priceCurrency}`} 
+            placeholder={`0.00007 ${formData.priceCurrency}`}
+            step={0.1}
             onChange={(e) => setFormData({...formData, priceValue: e.target.value})} 
           />
         </label>

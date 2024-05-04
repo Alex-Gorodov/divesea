@@ -4,7 +4,7 @@ import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { addBid, toggleBidForm } from "../../store/actions";
 import { monthNames } from "../../const";
 import { FormEvent, useState } from "react";
-import { useEthPrice, useBtcPrice } from "../../hooks/useEthPrice";
+import { useEthPrice } from "../../hooks/useEthPrice";
 import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg"
 import { ReactComponent as Ethereum } from "../../img/icons/ethereum.svg"
 import { ReactComponent as CloseCross } from "../../img/icons/cross.svg"
@@ -12,6 +12,7 @@ import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { addBidToDatabase } from "../../services/database";
 import { RootState } from "../../store/root-state";
 import { Spinner } from "../spinner/spinner";
+import { useBtcPrice } from "../../hooks/useBtcPrice";
 
 export function BidForm(): JSX.Element {
   const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
@@ -102,6 +103,8 @@ export function BidForm(): JSX.Element {
     });
   }
 
+  const sortedBids = [...bids].sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   return (
     <div className={formClassName}>
       <div className="bid-form__wrapper" ref={ref}>
@@ -116,7 +119,7 @@ export function BidForm(): JSX.Element {
             ?
             <Spinner size={"40"}/>
             :
-            bids.slice(0,3).map((bid, index) => {
+            sortedBids.slice(0,3).map((bid, index) => {
               const bidDate = new Date(bid.date);
               return (
                 <li className="bid-form__bids-item bid-item" key={`bid-${index}`}>

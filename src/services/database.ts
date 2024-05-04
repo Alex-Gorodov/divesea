@@ -19,7 +19,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 export const addBidToDatabase = (bid: Bid) => {
-  const bidWithTimestamp = { ...bid, timestamp: new Date().toISOString() };
+  const bidWithTimestamp = { ...bid, date: new Date().toISOString() };
   return database.ref(APIRoute.Bids).push(bidWithTimestamp);
 };
 
