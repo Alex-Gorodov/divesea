@@ -52,7 +52,7 @@ export function CreateForm(): JSX.Element {
       price = Number(parseFloat(formData.priceValue).toFixed(2));
       break;
     case 'BTC':
-      price = Number((Number(formData.priceValue) * Number(btcPrice) / Number(ethPrice)).toFixed(2));
+      price = Number((Number(Number(formData.priceValue) * Number(btcPrice)) / Number(ethPrice)).toFixed(2));
       break;
     default:
       price = Number((Number(formData.priceValue) / Number(ethPrice)).toFixed(2));
