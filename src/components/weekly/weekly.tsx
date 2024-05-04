@@ -26,7 +26,7 @@ export function Weekly(): JSX.Element {
         :
         <>
           <Swiper
-            spaceBetween={20}
+            spaceBetween={0}
             loop={true}
             navigation={{
               prevEl: '.weekly__slider-btn--next',

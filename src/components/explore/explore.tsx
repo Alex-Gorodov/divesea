@@ -6,12 +6,9 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/root-state";
 import { Spinner } from "../spinner/spinner";
+import { scrollToTop } from "../../utils/scroll-to";
 
 export function Explore(): JSX.Element {
-  const scrollToTop = () => {
-    window.scrollTo(0, 0)
-  }
-
   const items = useSelector((state: RootState) => state.data.items)
   const isLoading = useSelector((state: RootState) => state.data.isItemsDataLoading);
 

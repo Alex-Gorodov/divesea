@@ -5,7 +5,7 @@ import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/acti
 import { AppRoute } from "../../const";
 import { useBtcPrice, useEthPrice } from "../../hooks/useEthPrice";
 import { RootState } from "../../store/root-state";
-import { addItemToStore } from "../../services/database";
+import { addItemToDatabase } from "../../services/database";
 
 export function CreateForm(): JSX.Element {
   const items = useSelector((state: RootState) => state.data.items);
@@ -79,7 +79,7 @@ export function CreateForm(): JSX.Element {
     }));
 
     dispatch(setUploadedNftPath({path: null}));
-    addItemToStore({
+    addItemToDatabase({
       id: items.length,
       name: formData.name,
       img: uploadedUrl ? uploadedUrl : '',

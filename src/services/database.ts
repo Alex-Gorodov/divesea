@@ -2,6 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import { Bid } from '../types/bid';
 import { Item } from '../types/item';
+import { APIRoute } from '../const';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMfAbrjGAaAmEBf9Cs9FLCVnbur8HxAM0",
@@ -18,9 +19,11 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 export const addBidToDatabase = (bid: Bid) => {
-  return database.ref('divesea-db/bids').push(bid);
+  const bidWithTimestamp = { ...bid, timestamp: new Date().toISOString() };
+  return database.ref(APIRoute.Bids).push(bidWithTimestamp);
 };
 
-export const addItemToStore = (item: Item) => {
-  return database.ref('divesea-db/items').push(item);
+export const addItemToDatabase = (item: Item) => {
+  const itemWithTimestamp = { ...item, addedDate: new Date().toISOString() };
+  return database.ref(APIRoute.Items).push(itemWithTimestamp);
 }

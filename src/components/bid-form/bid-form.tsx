@@ -80,7 +80,7 @@ export function BidForm(): JSX.Element {
   const bid = {
     id: bids.length,
     user: users[Math.round(Math.random() * (users?.length - 1))],
-    date: bidDate,
+    date: new Date(bidDate),
     price: price
   }
     
