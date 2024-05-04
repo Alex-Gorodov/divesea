@@ -27,3 +27,8 @@ export const addItemToDatabase = (item: Item) => {
   const itemWithTimestamp = { ...item, addedDate: new Date().toISOString() };
   return database.ref(APIRoute.Items).push(itemWithTimestamp);
 }
+
+export const updateLikesInDatabase = (item: Item) => {
+  const likes = item.likes;
+  return firebase.database().ref(`${APIRoute.Items}/${item.id}/likes`).set(likes)
+};

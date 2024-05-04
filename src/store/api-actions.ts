@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { APIRoute } from "../const";
-import { AppDispatch, State } from "../types/state";
+import { AppDispatch } from "../types/state";
 import { loadBids, loadItems, loadUsers, setBidsDataLoadingStatus, setItemsDataLoadingStatus, setUsersDataLoadingStatus } from "./actions";
 import firebase from "firebase/compat/app";
 import { Bid } from "../types/bid";
@@ -19,7 +19,6 @@ export const fetchItemsAction = createAsyncThunk<void, undefined, ThunkOptions>(
     const itemsArray: Item[] = data ? Object.values(data) : [];
     dispatch(loadItems({items: itemsArray}));
     dispatch(setItemsDataLoadingStatus({isItemsDataLoading: false}));
-    console.log('items: ', itemsArray);
   }
 );
 
@@ -28,7 +27,6 @@ export const fetchBidsAction = createAsyncThunk<void, undefined, ThunkOptions>(
     dispatch(setBidsDataLoadingStatus({isBidsDataLoading: true}));
     const data = (await firebase.database().ref(APIRoute.Bids).once("value")).val();
     const bidsArray: Bid[] = data ? Object.values(data) : [];
-    console.log('bids: ', bidsArray);
     dispatch(setBidsDataLoadingStatus({isBidsDataLoading: false}));
     dispatch(loadBids({bids: bidsArray}));
   }
@@ -39,7 +37,6 @@ export const fetchUsersAction = createAsyncThunk<void, undefined, ThunkOptions>(
     dispatch(setUsersDataLoadingStatus({isUsersDataLoading: true}));
     const data = (await firebase.database().ref(APIRoute.Users).once("value")).val();
     const usersArray: User[] = data ? Object.values(data) : [];
-    console.log('users: ', usersArray);
     dispatch(setUsersDataLoadingStatus({isUsersDataLoading: false}));
     dispatch(loadUsers({users: usersArray}));
   }

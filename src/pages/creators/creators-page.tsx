@@ -19,21 +19,21 @@ export function CreatorsPage(): JSX.Element {
       <main className="main">
         <section className="section creators">
           <h1 className="title title--2 title--secondary creators__title">Meet Our Great&nbsp;Creators</h1>
-          <ul className="creators__list">
             {
               isUsersLoading
               ?
               <Spinner size="40"/>
               :
-              users?.map((user) => {
-                return (
-                  <li className="creators__item" key={`user-id${user.id}`}>
-                    <CreatorCard user={user}/>
-                  </li>
-                )
-              })
+              <ul className="creators__list">{
+                users?.map((user) => {
+                  return (
+                    <li className="creators__item" key={`user-id${user.id}`}>
+                      <CreatorCard user={user}/>
+                    </li>
+                  )
+                })}
+              </ul>
             }
-          </ul>
         </section>
       </main>
     </Layout>
