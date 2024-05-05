@@ -12,8 +12,8 @@ import { User } from "../../types/user";
 import { useState } from 'react';
 import cn from 'classnames';
 import { ActivityItem } from '../activity-item/activity-item';
-import { items } from '../../mocks/items';
-import { users } from '../../mocks/users';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/root-state';
 
 type UserProfileProps = {
   user: User;
@@ -21,6 +21,8 @@ type UserProfileProps = {
 
 export function UserProfile({user}: UserProfileProps): JSX.Element {
   const [navActive, setNavActive] = useState('collection');
+  const users = useSelector((state: RootState) => state.data.users)
+  const items = useSelector((state: RootState) => state.data.items)
 
   const navBtnClassName = (btnType: string) => cn('profile-nav__btn', {
     'profile-nav__btn--active': navActive === btnType

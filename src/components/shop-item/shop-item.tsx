@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Item } from "../../types/item";
 import { Link, generatePath } from "react-router-dom";
 import { AppRoute } from "../../const";
@@ -10,8 +10,14 @@ type ItemProps = {
   item: Item;
 }
 
-export function ShopItem({item}: ItemProps): JSX.Element {
+export function ShopItem({ item }: ItemProps): JSX.Element {
+  const dispatch = useDispatch();
   const [currentTime, setCurrentTime] = useState(new Date());
+  const isItemLoading = useSelector((state: RootState) => state.data.isItemsDataLoading);
+  const itemBids = useSelector((state: RootState) => state.data.items[item.id]?.bids);
+  const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
+  const lastBid = !isItemLoading && itemBids && itemBids.length ? itemBids[itemBids.length - 1].value : 0;
+
   useEffect(() => {
     const timerID = setInterval(() => {
       setCurrentTime(new Date());
@@ -19,10 +25,6 @@ export function ShopItem({item}: ItemProps): JSX.Element {
 
     return () => clearInterval(timerID);
   }, []);
-
-
-  const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
-  const dispatch = useDispatch();
 
   const link = generatePath(AppRoute.ProductPage, {
     id: `${item.id}`,
@@ -44,9 +46,9 @@ export function ShopItem({item}: ItemProps): JSX.Element {
     <div className="item">
       <div className="item__image-wrapper">
         <Link to={link}>
-          <img className="item__image" src={item.img} alt={item.name} width={252} height={252}/>
+          <img className="item__image" src={item.img} alt={item.name} width={252} height={252} />
         </Link>
-        <p className="item__time-wrapper" style={{gridTemplateColumns: `${days !== 0 ? 'repeat(4, 36px)' : 'repeat(3, 36px)'}`}}>
+        <p className="item__time-wrapper" style={{ gridTemplateColumns: `${days !== 0 ? 'repeat(4, 36px)' : 'repeat(3, 36px)'}` }}>
           {
             days !== 0 && <span className="item__time">{days < 10 ? '0' + days : days}d</span>
           }
@@ -55,13 +57,13 @@ export function ShopItem({item}: ItemProps): JSX.Element {
           <span className="item__time">{seconds < 10 ? '0' + seconds : seconds}s </span>
         </p>
       </div>
-      <p className="item__name">{item.name.length > 12 ? shortName() : item.name}</p>
+      <p className="item__name" title={item.name.length > 12 ? item.name : ''}>{item.name.length > 12 ? shortName() : item.name}</p>
       <div className="item__price-wrapper">
         <span className="item__price-description">Current bid</span>
-        <span className="item__price">{item.price}</span>
-        <button className="item__button button button--dark" onClick={() => 
+        <span className="item__price">{lastBid}</span>
+        <button className="item__button button button--dark" onClick={() =>
           {
-            dispatch(toggleBidForm({isOpened: !isFormOpened}));
+            dispatch(toggleBidForm({ isOpened: !isFormOpened, item: item }));
           }
         }>Place bid</button>
       </div>

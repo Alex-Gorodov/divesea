@@ -1,9 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { APIRoute } from "../const";
 import { AppDispatch } from "../types/state";
-import { loadBids, loadItems, loadUsers, setBidsDataLoadingStatus, setItemsDataLoadingStatus, setUsersDataLoadingStatus } from "./actions";
+import { loadItems, loadUsers, setItemsDataLoadingStatus, setUsersDataLoadingStatus } from "./actions";
 import firebase from "firebase/compat/app";
-import { Bid } from "../types/bid";
 import { Item } from "../types/item";
 import { User } from "../types/user";
 
@@ -19,16 +18,6 @@ export const fetchItemsAction = createAsyncThunk<void, undefined, ThunkOptions>(
     const itemsArray: Item[] = data ? Object.values(data) : [];
     dispatch(loadItems({items: itemsArray}));
     dispatch(setItemsDataLoadingStatus({isItemsDataLoading: false}));
-  }
-);
-
-export const fetchBidsAction = createAsyncThunk<void, undefined, ThunkOptions>(
-  'data/fetchBids', async (_arg, { dispatch }) => {
-    dispatch(setBidsDataLoadingStatus({isBidsDataLoading: true}));
-    const data = (await firebase.database().ref(APIRoute.Bids).once("value")).val();
-    const bidsArray: Bid[] = data ? Object.values(data) : [];
-    dispatch(setBidsDataLoadingStatus({isBidsDataLoading: false}));
-    dispatch(loadBids({bids: bidsArray}));
   }
 );
 

@@ -5,12 +5,14 @@ import { NotFound } from "../not-found/not-found";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
-import { users } from "../../mocks/users";
 import { User } from "../../types/user";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/root-state";
 
 export function Profile(): JSX.Element {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const users = useSelector((state: RootState) => state.data.users)
 
   const [profile, setProfile] = useState<User | null>(null);
   useEffect(() => {

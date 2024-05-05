@@ -18,10 +18,12 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-export const addBidToDatabase = (bid: Bid) => {
+export const addBidToDatabase = (bid: Bid, item: Item) => {
   const bidWithTimestamp = { ...bid, date: new Date().toISOString() };
-  return database.ref(APIRoute.Bids).push(bidWithTimestamp);
+  const updatedBids = [...item.bids, bidWithTimestamp];
+  return database.ref(`${APIRoute.Items}/${item.id}/bids`).set(updatedBids);
 };
+
 
 export const addItemToDatabase = (item: Item) => {
   const itemWithTimestamp = { ...item, addedDate: new Date().toISOString() };

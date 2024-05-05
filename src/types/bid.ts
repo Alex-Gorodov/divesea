@@ -1,8 +1,8 @@
 import { User } from "./user";
 
 export type Bid = {
-  id: number;
+  id: string;
   user: User;
   date: Date;
-  price: number;
+  value: number;
 }

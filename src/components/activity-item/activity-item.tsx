@@ -58,7 +58,7 @@ export function ActivityItem({item}: ActivityItemProps): JSX.Element {
             <span className="stats-item__description">Traded</span>
             <span className="stats-item__value">
               <Ethereum/>
-              {item.price}
+              {item.bids[item.bids.length - 1].value}
             </span>
           </li>
         </ul>

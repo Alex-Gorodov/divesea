@@ -1,3 +1,5 @@
+import { Bid } from "./bid";
+
 export type Item = {
   id: number;
   name: string;
@@ -7,4 +9,5 @@ export type Item = {
   likes: number;
   addedDate: Date;
   addedBy?: string;
+  bids: Bid[];
 }

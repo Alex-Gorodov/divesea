@@ -8,7 +8,26 @@
         "img": "/divesea/img/items/item-1.png",
         "price": 7.5,
         "likes": 50,
-        "addedDate": "2024-04-17T09:00:52.000Z"
+        "addedDate": "2024-04-17T09:00:52.000Z",
+        "bids": [
+          {
+            "id": "Chroma-0",
+            "user": {
+              "id": 0,
+              "firstname": "Alex",
+              "surname": "Gorodov",
+              "nickname": "user0",
+              "totalSales": 27,
+              "followers": 23561,
+              "following": 245,
+              "bio": "As an NFT artist, I blend traditional techniques with digital innovation, transcending boundaries in the art world. With a passion for exploring the intersection of technology and creativity, my work reflects a deep appreciation for both the tangible and the virtual. Inspired by the infinite possibilities of blockchain and the decentralized nature of NFTs, I strive to create pieces that provoke thought, evoke emotion, and challenge perceptions. Each artwork is a unique expression of my journey, inviting viewers to join me in exploring new realms of imagination and possibility. Welcome to my digital gallery, where art meets innovation and the future is limitless.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-1.png"
+            },
+            "date": "2024-04-08T18:30:44.244Z",
+            "value": 1.45
+          }
+        ]
       },
       {
         "id": 1,
@@ -17,7 +36,26 @@
         "img": "/divesea/img/items/item-2.png",
         "price": 5.2,
         "likes": 150,
-        "addedDate": "2024-04-17T09:04:39.000Z"
+        "addedDate": "2024-04-17T09:04:39.000Z",
+        "bids": [
+          {
+            "id": "Prismi-0",
+            "user": {
+              "id": 1,
+              "firstname": "John",
+              "surname": "Smith",
+              "nickname": "j.smith",
+              "totalSales": 53,
+              "followers": 5256,
+              "following": 953,
+              "bio": "As an NFT artist, I merge traditional artistry with digital evolution, crafting pieces that redefine the boundaries of creativity. Inspired by blockchain's decentralized ethos, each artwork is a testament to innovation, inviting viewers into a realm where imagination knows no bounds. Welcome to my digital canvas, where art transcends convention and embraces the future.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-2.png"
+            },
+            "date": "2024-04-28T06:21:37.593Z",
+            "value": 1.67
+          }
+        ]
       },
       {
         "id": 2,
@@ -26,7 +64,26 @@
         "img": "/divesea/img/items/item-3.png",
         "price": 1.75,
         "likes": 100,
-        "addedDate": "2024-04-14T19:43:30.000Z"
+        "addedDate": "2024-04-14T19:43:30.000Z",
+        "bids": [
+          {
+            "id": "Synthi-0",
+            "user": {
+              "id": 4,
+              "firstname": "Clara",
+              "surname": "Tsvetkin",
+              "nickname": "Tsvetkin",
+              "totalSales": 8,
+              "followers": 524,
+              "following": 423,
+              "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-5.png"
+            },
+            "date": "2024-04-20T21:06:07.889Z",
+            "value": 1.43
+          }
+        ]
       },
       {
         "id": 3,
@@ -35,7 +92,26 @@
         "img": "/divesea/img/items/item-4.png",
         "price": 1.15,
         "likes": 120,
-        "addedDate": "2024-04-17T02:00:24.000Z"
+        "addedDate": "2024-04-17T02:00:24.000Z",
+        "bids": [
+          {
+            "id": "Lumino-0",
+            "user": {
+              "id": 3,
+              "firstname": "Lana",
+              "surname": "Del Gray",
+              "nickname": "i'm.gray",
+              "totalSales": 103,
+              "followers": 24496,
+              "following": 573,
+              "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-4.png"
+            },
+            "date": "2024-04-26T15:57:04.229Z",
+            "value": 1.2
+          }   
+        ]
       },
       {
         "id": 4,
@@ -44,7 +120,26 @@
         "img": "/divesea/img/items/item-5.png",
         "price": 2.4,
         "likes": 80,
-        "addedDate": "2024-04-17T09:00:10.000Z"
+        "addedDate": "2024-04-17T09:00:10.000Z",
+        "bids": [
+          {
+            "id": "Spectra-0",
+            "user": {
+              "id": 4,
+              "firstname": "Clara",
+              "surname": "Tsvetkin",
+              "nickname": "Tsvetkin",
+              "totalSales": 8,
+              "followers": 524,
+              "following": 423,
+              "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-5.png"
+            },
+            "date": "2024-04-27T20:09:53.801Z",
+            "value": 1.43
+          }
+        ]
       },
       {
         "id": 5,
@@ -53,7 +148,26 @@
         "img": "/divesea/img/items/item-6.png",
         "price": 4.35,
         "likes": 180,
-        "addedDate": "2024-04-18T09:00:44.000Z"
+        "addedDate": "2024-04-18T09:00:44.000Z",
+        "bids": [
+          {
+            "id": "NuEvey-0",
+            "user": {
+              "id": 4,
+              "firstname": "Clara",
+              "surname": "Tsvetkin",
+              "nickname": "Tsvetkin",
+              "totalSales": 8,
+              "followers": 524,
+              "following": 423,
+              "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-5.png"
+            },
+            "date": "2024-04-29T18:42:11.827Z",
+            "value": 1.43
+          }
+        ]
       },
       {
         "id": 6,
@@ -62,7 +176,26 @@
         "img": "/divesea/img/items/item-7.png",
         "price": 15.5,
         "likes": 30,
-        "addedDate": "2024-04-17T09:00:10.000Z"
+        "addedDate": "2024-04-17T09:00:10.000Z",
+        "bids": [
+          {
+            "id": "Edan-0",
+            "user": {
+              "id": 4,
+              "firstname": "Clara",
+              "surname": "Tsvetkin",
+              "nickname": "Tsvetkin",
+              "totalSales": 8,
+              "followers": 524,
+              "following": 423,
+              "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-5.png"
+            },
+            "date": "2024-04-13T14:57:39.649Z",
+            "value": 1.15
+          }
+        ]
       },
       {
         "id": 7,
@@ -71,7 +204,26 @@
         "img": "/divesea/img/items/item-8.png",
         "price": 17.2,
         "likes": 20,
-        "addedDate": "2024-04-18T09:00:44.000Z"
+        "addedDate": "2024-04-18T09:00:44.000Z",
+        "bids": [
+          {
+            "id": "Waving-0",
+            "user": {
+              "id": 1,
+              "firstname": "John",
+              "surname": "Smith",
+              "nickname": "j.smith",
+              "totalSales": 53,
+              "followers": 5256,
+              "following": 953,
+              "bio": "As an NFT artist, I merge traditional artistry with digital evolution, crafting pieces that redefine the boundaries of creativity. Inspired by blockchain's decentralized ethos, each artwork is a testament to innovation, inviting viewers into a realm where imagination knows no bounds. Welcome to my digital canvas, where art transcends convention and embraces the future.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-2.png"
+            },
+            "date": "2024-04-21T15:08:35.429Z",
+            "value": 1.6
+          }
+        ]
       },
       {
         "id": 8,
@@ -80,7 +232,26 @@
         "img": "/divesea/img/items/item-9.png",
         "price": 11,
         "likes": 70,
-        "addedDate": "2024-04-17T09:00:10.000Z"
+        "addedDate": "2024-04-17T09:00:10.000Z",
+        "bids": [
+          {
+            "id": "Heizenberg-0",
+            "user": {
+              "id": 2,
+              "firstname": "Eva",
+              "surname": "White",
+              "nickname": "eva_15",
+              "totalSales": 12000,
+              "followers": 5256,
+              "following": 653,
+              "bio": "With a palette of pixels and passion, I sculpt digital masterpieces that blur the line between reality and imagination. NFTs are my canvas, and blockchain is my medium, enabling me to create art that resonates in the decentralized landscape of tomorrow.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-12.png"
+            },
+            "date": "2024-04-02T21:51:02.873Z",
+            "value": 1.32
+          }
+        ]
       },
       {
         "id": 9,
@@ -89,7 +260,26 @@
         "img": "/divesea/img/items/item-10.png",
         "price": 5,
         "likes": 190,
-        "addedDate": "2024-04-18T09:00:44.000Z"
+        "addedDate": "2024-04-18T09:00:44.000Z",
+        "bids": [
+          {
+            "id": "Head-0",
+            "user": {
+              "id": 3,
+              "firstname": "Lana",
+              "surname": "Del Gray",
+              "nickname": "i'm.gray",
+              "totalSales": 103,
+              "followers": 24496,
+              "following": 573,
+              "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-4.png"
+            },
+            "date": "2024-04-04T04:02:37.572Z",
+            "value": 1.1
+          }
+        ]
       },
       {
         "id": 10,
@@ -98,7 +288,26 @@
         "img": "/divesea/img/items/item-11.png",
         "price": 7,
         "likes": 40,
-        "addedDate": "2024-04-17T09:00:10.000Z"
+        "addedDate": "2024-04-17T09:00:10.000Z",
+        "bids": [
+          {
+            "id": "Helmon-0",
+            "user": {
+              "id": 5,
+              "firstname": "Lana",
+              "surname": "Del Gray",
+              "nickname": "i'm.gray",
+              "totalSales": 127,
+              "followers": 13452,
+              "following": 721,
+              "bio": "I'm Lena, a digital artist exploring the boundaries of creativity in the world of NFTs. With a background in graphic design and a passion for innovation, I aim to inspire and provoke thought through my art. Join me on this journey of discovery where pixels meet emotion and imagination knows no bounds.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-4.png"
+            },
+            "date": "2024-04-30T09:15:27.019Z",
+            "value": 1.67
+          }
+        ]
       },
       {
         "id": 11,
@@ -107,7 +316,26 @@
         "img": "/divesea/img/items/item-12.png",
         "price": 3,
         "likes": 160,
-        "addedDate": "2024-04-18T09:00:44.000Z"
+        "addedDate": "2024-04-18T09:00:44.000Z",
+        "bids": [
+          {
+            "id": "Ee-0",
+            "user": {
+              "id": 3,
+              "firstname": "Lana",
+              "surname": "Del Gray",
+              "nickname": "i'm.gray",
+              "totalSales": 103,
+              "followers": 24496,
+              "following": 573,
+              "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
+              "collection": [],
+              "avatar": "/divesea/img/users/user-4.png"
+            },
+            "date": "2024-04-25T12:30:15.124Z",
+            "value": 1.2
+          }
+        ]
       }    
     ],
     "users" : [
@@ -284,144 +512,6 @@
         ],
         "avatar": "/divesea/img/users/user-5.png"
       }
-    ],
-    "bids" : [
-      {
-        "id": 0,
-        "user": {
-          "id": 0,
-          "firstname": "Alex",
-          "surname": "Gorodov",
-          "nickname": "user0",
-          "totalSales": 27,
-          "followers": 23561,
-          "following": 245,
-          "bio": "As an NFT artist, I blend traditional techniques with digital innovation, transcending boundaries in the art world. With a passion for exploring the intersection of technology and creativity, my work reflects a deep appreciation for both the tangible and the virtual. Inspired by the infinite possibilities of blockchain and the decentralized nature of NFTs, I strive to create pieces that provoke thought, evoke emotion, and challenge perceptions. Each artwork is a unique expression of my journey, inviting viewers to join me in exploring new realms of imagination and possibility. Welcome to my digital gallery, where art meets innovation and the future is limitless.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-1.png"
-        },
-        "date": "2024-04-08T18:30:44.244Z",
-        "price": 1.45
-      },
-      {
-        "id": 1,
-        "user": {
-          "id": 1,
-          "firstname": "John",
-          "surname": "Smith",
-          "nickname": "j.smith",
-          "totalSales": 53,
-          "followers": 5256,
-          "following": 953,
-          "bio": "As an NFT artist, I merge traditional artistry with digital evolution, crafting pieces that redefine the boundaries of creativity. Inspired by blockchain's decentralized ethos, each artwork is a testament to innovation, inviting viewers into a realm where imagination knows no bounds. Welcome to my digital canvas, where art transcends convention and embraces the future.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-2.png"
-        },
-        "date": "2024-04-21T15:08:35.429Z",
-        "price": 1.6
-      },
-      {
-        "id": 2,
-        "user": {
-          "id": 2,
-          "firstname": "Eva",
-          "surname": "White",
-          "nickname": "eva_15",
-          "totalSales": 12000,
-          "followers": 5256,
-          "following": 653,
-          "bio": "With a palette of pixels and passion, I sculpt digital masterpieces that blur the line between reality and imagination. NFTs are my canvas, and blockchain is my medium, enabling me to create art that resonates in the decentralized landscape of tomorrow.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-12.png"
-        },
-        "date": "2024-04-02T21:51:02.873Z",
-        "price": 1.32
-      },
-      {
-        "id": 3,
-        "user": {
-          "id": 3,
-          "firstname": "Lana",
-          "surname": "Del Gray",
-          "nickname": "i'm.gray",
-          "totalSales": 103,
-          "followers": 24496,
-          "following": 573,
-          "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-4.png"
-        },
-        "date": "2024-04-04T04:02:37.572Z",
-        "price": 1.1
-      },
-      {
-        "id": 4,
-        "user": {
-          "id": 4,
-          "firstname": "Clara",
-          "surname": "Tsvetkin",
-          "nickname": "Tsvetkin",
-          "totalSales": 8,
-          "followers": 524,
-          "following": 423,
-          "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-5.png"
-        },
-        "date": "2024-04-13T14:57:39.649Z",
-        "price": 1.15
-      },
-      {
-        "id": 5,
-        "user": {
-          "id": 3,
-          "firstname": "Lana",
-          "surname": "Del Gray",
-          "nickname": "i'm.gray",
-          "totalSales": 103,
-          "followers": 24496,
-          "following": 573,
-          "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-4.png"
-        },
-        "date": "2024-04-24T16:40:03.701Z",
-        "price": 1.67
-      },
-      {
-        "id": 6,
-        "user": {
-          "id": 4,
-          "firstname": "Clara",
-          "surname": "Tsvetkin",
-          "nickname": "Tsvetkin",
-          "totalSales": 8,
-          "followers": 524,
-          "following": 423,
-          "bio": "In the vast expanse of the digital universe, I am an explorer, navigating the infinite possibilities of blockchain and NFTs. Through my art, I seek to capture the essence of humanity in bytes and pixels, inviting viewers to ponder the intersection of technology and emotion.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-5.png"
-        },
-        "date": "2024-04-20T21:06:07.889Z",
-        "price": 1.43
-      },
-      {
-        "id": 7,
-        "user": {
-          "id": 3,
-          "firstname": "Lana",
-          "surname": "Del Gray",
-          "nickname": "i'm.gray",
-          "totalSales": 103,
-          "followers": 24496,
-          "following": 573,
-          "bio": "I am an artist of the digital age, weaving dreams into pixels and emotions into code. NFTs are my brush strokes, each stroke a testament to the boundless creativity that thrives in the virtual realm. Welcome to my world, where innovation meets inspiration.",
-          "collection": [],
-          "avatar": "/divesea/img/users/user-4.png"
-        },
-        "date": "2024-04-29T04:45:18.369Z",
-        "price": 1.2
-      }        
     ]
   }
 }

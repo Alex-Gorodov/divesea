@@ -5,6 +5,7 @@ import { setUploadedNftPath, toggleBidForm } from "../../actions";
 const initialState: PageState = {
   uploadedNftPath: null,
   isBidFormOpened: false,
+  bidItem: null,
 }
 
 export const pageReducer = createReducer(initialState, (builder) => {
@@ -14,7 +15,8 @@ export const pageReducer = createReducer(initialState, (builder) => {
       state.uploadedNftPath = path;
     })
     .addCase(toggleBidForm, (state, action) => {
-      const { isOpened } = action.payload;
+      const { isOpened, item } = action.payload;
       state.isBidFormOpened = isOpened;
+      state.bidItem = item;
     })
 })

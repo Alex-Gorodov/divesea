@@ -9,7 +9,6 @@ import { useParams, Link, generatePath } from "react-router-dom";
 import browserHistory from "../../browser-history";
 import { monthNames, AppRoute } from "../../const";
 import { useIsMobileOnly } from "../../hooks/useIsMobile";
-import { users } from "../../mocks/users";
 import { updateLikesInDatabase } from "../../services/database";
 import { toggleBidForm, toggleLike } from "../../store/actions";
 import { RootState } from "../../store/root-state";
@@ -19,6 +18,7 @@ import { Spinner } from "../spinner/spinner";
 export function Product(): JSX.Element {
   const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
   const dispatch = useDispatch();
+  const users = useSelector((state: RootState) => state.data.users)
 
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -114,7 +114,7 @@ export function Product(): JSX.Element {
                     </span>
                   </div>
                 </div>
-                <button className="button button--dark product-page__btn" onClick={() => dispatch(toggleBidForm({ isOpened : !isFormOpened}))}>
+                <button className="button button--dark product-page__btn" onClick={() => dispatch(toggleBidForm({ isOpened : !isFormOpened, item: product}))}>
                   <BidIcon/>
                   Place Bid
                 </button>

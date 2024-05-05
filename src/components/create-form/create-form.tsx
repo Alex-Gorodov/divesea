@@ -75,7 +75,8 @@ export function CreateForm(): JSX.Element {
         price: price,
         addedDate: new Date(),
         description: formData.description,
-        likes: 0
+        likes: 0,
+        bids: []
       }
     }));
 
@@ -87,7 +88,8 @@ export function CreateForm(): JSX.Element {
       price: price,
       addedDate: new Date(),
       description: formData.description,
-      likes: 0
+      likes: 0,
+      bids: []
     });
     setFormData({
       name: '',
