@@ -10,8 +10,8 @@ import { Spinner } from "../spinner/spinner";
 import cn from 'classnames'
 
 export function Discover(): JSX.Element {
-  const originalItems = useSelector((state: RootState) => state.data.items);
   const isLoading = useSelector((state: RootState) => state.data.isItemsDataLoading);
+  const originalItems = useSelector((state: RootState) => state.data.items);
   const [items, setItems] = useState<Item[]>(originalItems)
 
   const sortByCategory = () => {
@@ -32,8 +32,6 @@ export function Discover(): JSX.Element {
   useEffect(() => {
     setItems(originalItems);
   }, [originalItems]);
-
-
 
   return (
     <section className="section discover">
