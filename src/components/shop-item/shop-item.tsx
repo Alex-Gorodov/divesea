@@ -16,7 +16,7 @@ export function ShopItem({ item }: ItemProps): JSX.Element {
   const isItemLoading = useSelector((state: RootState) => state.data.isItemsDataLoading);
   const itemBids = useSelector((state: RootState) => state.data.items[item.id]?.bids);
   const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
-  const lastBid = !isItemLoading && itemBids && itemBids.length ? itemBids[itemBids.length - 1].value : 0;
+  const lastBid = !isItemLoading && itemBids && itemBids.length ? itemBids[itemBids.length - 1].value : item.price;
 
   useEffect(() => {
     const timerID = setInterval(() => {
@@ -44,19 +44,19 @@ export function ShopItem({ item }: ItemProps): JSX.Element {
 
   return (
     <div className="item">
-      <div className="item__image-wrapper">
-        <Link to={link}>
+      <Link to={link}>
+        <div className="item__image-wrapper">
           <img className="item__image" src={item.img} alt={item.name} width={252} height={252} />
-        </Link>
-        <p className="item__time-wrapper" style={{ gridTemplateColumns: `${days !== 0 ? 'repeat(4, 36px)' : 'repeat(3, 36px)'}` }}>
-          {
-            days !== 0 && <span className="item__time">{days < 10 ? '0' + days : days}d</span>
-          }
-          <span className="item__time">{hours < 10 ? '0' + hours : hours}h </span>
-          <span className="item__time">{minutes < 10 ? '0' + minutes : minutes}m </span>
-          <span className="item__time">{seconds < 10 ? '0' + seconds : seconds}s </span>
-        </p>
-      </div>
+          <p className="item__time-wrapper" style={{ gridTemplateColumns: `${days !== 0 ? 'repeat(4, 36px)' : 'repeat(3, 36px)'}` }}>
+            {
+              days !== 0 && <span className="item__time">{days < 10 ? '0' + days : days}d</span>
+            }
+            <span className="item__time">{hours < 10 ? '0' + hours : hours}h </span>
+            <span className="item__time">{minutes < 10 ? '0' + minutes : minutes}m </span>
+            <span className="item__time">{seconds < 10 ? '0' + seconds : seconds}s </span>
+          </p>
+        </div>
+      </Link>
       <p className="item__name" title={item.name.length > 12 ? item.name : ''}>{item.name.length > 12 ? shortName() : item.name}</p>
       <div className="item__price-wrapper">
         <span className="item__price-description">Current bid</span>

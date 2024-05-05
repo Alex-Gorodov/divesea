@@ -25,8 +25,6 @@ export function BidForm({item}: BidFormProps): JSX.Element {
   const ethPrice = useEthPrice();
   const btcPrice = useBtcPrice();
   const date = new Date();
-
-  const isBidsLoading = useSelector((state: RootState) => state.data.isBidsDataLoading);
   const itemBids = useSelector((state: RootState) => state.data.items[item.id].bids);
   const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
   const users = useSelector((state: RootState) => state.data.users);
@@ -119,10 +117,6 @@ export function BidForm({item}: BidFormProps): JSX.Element {
         <span className="bid-form__date">{`${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</span>
         <ul className="bid-form__bids-list">
           {
-            isBidsLoading
-            ?
-            <Spinner size={"40"}/>
-            :
             Array.isArray(sortedBids) && sortedBids.slice(0, 3).map((bid, index) => {
               const date = new Date(bid.date);
               return (

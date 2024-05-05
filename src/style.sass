@@ -148,6 +148,15 @@ $extra-bold: 800
   font-family: "Plus Jakarta Sans", $main-fonts
   font-weight: $medium
 
+// ANIMATIONS
+
+@keyframes new-item
+  0%
+    scale: 0.5
+    opacity: 0
+  100%    
+    scale: 1
+    opacity: 1
 *, 
 *::after, 
 *::before
@@ -159,6 +168,7 @@ html
   padding: 0
   flex-direction: column
   overflow-x: hidden
+  scroll-behavior: smooth
 
 body
   margin: 0

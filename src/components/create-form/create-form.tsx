@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { FormCheckbox } from "./form-checkbox";
 import { useDispatch, useSelector } from "react-redux";
 import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/actions";
@@ -7,6 +7,7 @@ import { useEthPrice } from "../../hooks/useEthPrice";
 import { RootState } from "../../store/root-state";
 import { addItemToDatabase } from "../../services/database";
 import { useBtcPrice } from "../../hooks/useBtcPrice";
+import { scrollToBottom } from "../../utils/scroll-to";
 
 export function CreateForm(): JSX.Element {
   const items = useSelector((state: RootState) => state.data.items);
@@ -104,6 +105,9 @@ export function CreateForm(): JSX.Element {
       isDirectSale: false,
       upload: '',
     });
+    setTimeout(() => {
+      scrollToBottom();
+    }, 100);
 
     dispatch(redirectToRoute(AppRoute.Discover));
   }

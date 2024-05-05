@@ -8,12 +8,13 @@
   border-radius: 24px
   background-color: $white
   transition: 0.3s
+  &:has(.product__likes-btn)
+    grid-template-rows: auto min-content auto
   &:hover
     box-shadow: 0px 10px 16px 4px rgba(0,0,0,0.3)
   &__image-wrapper
     position: relative
   &__image
-    height: auto
     border-radius: 24px
   &__time-wrapper
     position: absolute
@@ -28,6 +29,7 @@
     color: $white
   &__name
     @include poppins-semi-bold
+    color: $accent-dark
     margin: 18px 0 14px
     text-transform: capitalize
     font-size: 21px

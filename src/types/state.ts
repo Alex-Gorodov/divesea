@@ -12,7 +12,6 @@ export type DataState = {
   users: User[];
   isItemsDataLoading: boolean;
   isUsersDataLoading: boolean;
-  isBidsDataLoading: boolean;
 }
 
 export type PageState = {

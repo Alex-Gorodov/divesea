@@ -14,6 +14,7 @@ import { toggleBidForm, toggleLike } from "../../store/actions";
 import { RootState } from "../../store/root-state";
 import { Item } from "../../types/item";
 import { Spinner } from "../spinner/spinner";
+import { scrollToTop } from "../../utils/scroll-to";
 
 export function Product(): JSX.Element {
   const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
@@ -68,74 +69,76 @@ export function Product(): JSX.Element {
         <title>DiveSea | {product?.name ? product.name : 'Loading...'}</title>
       </Helmet>
       <main className="main">
-        <section className="section section--centered product-page">
+        <section className="section section--centered product">
           <h1 className="visually-hidden">The page of {product?.name ? product.name : 'product'}.</h1>
-          <div className="button-wrapper product-page__breadcrumb-wrapper">
-            <Link className="button button--circle product-page__breadcrumb-link"  to="#" onClick={() => browserHistory.back()}>
+          <div className="button-wrapper product__breadcrumb-wrapper">
+            <Link className="button button--circle product__breadcrumb-link"  to="#" onClick={() => browserHistory.back()}>
               <BackArrow/>
             </Link>
-            <p className="product-page__breadcrumb-title">Product Detail</p>
+            <p className="product__breadcrumb-title">Product Detail</p>
           </div>
           {
             product ?
             <>
-              <div className="product-page__item">
-              <img className="product-page__item-image" src={product.img} alt={product.name} width={isMobile ? 280 : 564} height={isMobile ? 280 : 564} />
-              <div className="product-page__item-container">
+              <div className="product__item">
+              <img className="product__item-image" src={product.img} alt={product.name} width={isMobile ? 280 : 564} height={isMobile ? 280 : 564} />
+              <div className="product__item-container">
                 <h2 className="title title--2">{product.name}</h2>
-                <p className="product-page__item-description">{product.description}</p>
-                <div className="product-page__owners-wrapper">
-                  <div className="product-page__owner">
-                    <img className="product-page__owner-avatar" width={65} height={65} src={users[0].avatar} alt={`${users[0].firstname} ${users[0].surname.charAt(0)}.`} />
-                    <p>
-                      <span className="product-page__owner-description">Created by</span>
-                      <span className="product-page__owner-name">{users[0].firstname}</span>
-                    </p>
-                  </div>
-                  <div className="product-page__owner">
-                    <img className="product-page__owner-avatar" width={65} height={65} src={users[1].avatar} alt={`${users[1].firstname} ${users[1].surname.charAt(0)}.`} />
-                    <p>
-                      <span className="product-page__owner-description">Owned by</span>
-                      <span className="product-page__owner-name">{users[1].firstname}</span>
-                    </p>
-                  </div>
+                <p className="product__item-description">{product.description}</p>
+                <div className="product__owners-wrapper">
+                  <Link className="product__owner" to={generatePath(`${AppRoute.Creators}/${users[0].id}`)} onClick={() => scrollToTop()}>
+                    <div className="product__owner">
+                      <img className="product__owner-avatar" width={65} height={65} src={users[0].avatar} alt={`${users[0].firstname} ${users[0].surname.charAt(0)}.`} />
+                      <p>
+                        <span className="product__owner-description">Created by</span>
+                        <span className="product__owner-name">{users[0].firstname}</span>
+                      </p>
+                    </div>
+                  </Link>
+                  <Link className="product__owner" to={generatePath(`${AppRoute.Creators}/${users[1].id}`)} onClick={() => scrollToTop()}>
+                    <div className="product__owner">
+                      <img className="product__owner-avatar" width={65} height={65} src={users[1].avatar} alt={`${users[1].firstname} ${users[1].surname.charAt(0)}.`} />
+                      <p>
+                        <span className="product__owner-description">Owned by</span>
+                        <span className="product__owner-name">{users[1].firstname}</span>
+                      </p>
+                    </div>
+                  </Link>
                 </div>
-                <div className="product-page__price-wrapper">
-                  <div className="product-page__price">
-                    <span className="product-page__price-description">Current bid</span>
-                    <span className="product-page__price-value">{product.price}</span>
+                <div className="product__price-wrapper">
+                  <div className="product__price">
+                    <span className="product__price-description">Current bid</span>
+                    <span className="product__price-value">{product.bids ? product.bids[product.bids.length - 1].value : product.price}</span>
                   </div>
-                  <div className="product-page__end">
-                    <span className="product-page__end-description">End in</span>
-                    <span className="product-page__end-value">
+                  <div className="product__end">
+                    <span className="product__end-description">End in</span>
+                    <span className="product__end-value">
                       {
                         `${monthNames[date.getUTCMonth()]}, ${date.getDate() + 5} ${date.getFullYear()} at 15:08`
                       }
                     </span>
                   </div>
                 </div>
-                <button className="button button--dark product-page__btn" onClick={() => dispatch(toggleBidForm({ isOpened : !isFormOpened, item: product}))}>
+                <button className="button button--dark product__btn" onClick={() => dispatch(toggleBidForm({ isOpened : !isFormOpened, item: product}))}>
                   <BidIcon/>
                   Place Bid
                 </button>
               </div>
             </div>
-            <div className="product-page__similar">
-              <h2 className="title title--2 product-page__similar-title">From creator</h2>
-              <ul className="product-page__similar-list">
+            <div className="product__similar">
+              <h2 className="title title--2 product__similar-title">From creator</h2>
+              <ul className="product__similar-list">
                 {
                   items?.slice(0,5).map((item) => (
-                    <li className="item product-page__similar-item" key={`similar-${item.name}`}>
-                      <div className="item__image-wrapper">
-                        <Link to={generatePath(AppRoute.ProductPage, {id: `${item.id}`})}>
-                          <img className="item__image" src={item.img} alt={item.name} width={188} height={164}/>
-                        </Link>
-                      </div>
-                      <p className="item__name">{item.name.length > 12 ? shortName(item) : item.name}</p>
+                    <li className="item product__similar-item" key={`similar-${item.name}`}>
+                      <Link className="item__image-wrapper" to={generatePath(AppRoute.ProductPage, {id: `${item.id}`})} onClick={() => scrollToTop()}>
+                        <img className="item__image" src={item.img} alt={item.name} width={188} height={164}/>
+                        <p className="item__name">{item.name.length > 12 ? shortName(item) : item.name}</p>
+                      </Link>
                       <div className="item__price-wrapper">
-                        <span className="item__price product-page__similar-price">{item.price}</span>
+                        <span className="item__price product__similar-price">{item.bids[item.bids.length - 1].value}</span>
                         <button
-                          className={`product-page__likes-btn ${similarItemsLiked[item.id] && 'product-page__likes-btn--liked' }`}
+                          className={`product__likes-btn ${similarItemsLiked[item.id] && 'product__likes-btn--liked' }`}
                           type="button"
                           onClick={() => {
                             const newLikesCount = similarItemsLiked[item.id] ? item.likes - 1 : item.likes + 1;
@@ -145,7 +148,7 @@ export function Product(): JSX.Element {
                           }}
                         >
                           <Like/>
-                          <span className="product-page__likes-count">{item.likes}</span>
+                          <span className="product__likes-count">{item.likes}</span>
                         </button>
                       </div>
                     </li>

@@ -7,7 +7,6 @@ const initialState: DataState = {
   users: [],
   isItemsDataLoading: false,
   isUsersDataLoading: false,
-  isBidsDataLoading: false
 }
 
 export const dataReducer = createReducer(initialState, (builder) => {

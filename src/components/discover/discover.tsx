@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Item } from "../../types/item";
 import { RootState } from "../../store/root-state";
 import { Spinner } from "../spinner/spinner";
+import cn from 'classnames'
 
 export function Discover(): JSX.Element {
   const originalItems = useSelector((state: RootState) => state.data.items);
@@ -32,6 +33,8 @@ export function Discover(): JSX.Element {
     setItems(originalItems);
   }, [originalItems]);
 
+
+
   return (
     <section className="section discover">
       <h1 className="title title--2 title--secondary">Discover NFTs</h1>
@@ -55,8 +58,12 @@ export function Discover(): JSX.Element {
           <Spinner size={"40"}/>
           :
           items.map((item) => {
+            const itemClassName = cn('discover__item', {
+              'discover__item--new' : item.id === items.length - 1
+            })
+
             return (
-              <li className="discover__item" key={`discover-${item.id}`}>
+              <li className={itemClassName} key={`discover-${item.id}`}>
                 <ShopItem item={item}/>
               </li>
             )
