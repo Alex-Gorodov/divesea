@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/divesea/static/css/main.4d950b3c.css",
-    "main.js": "/divesea/static/js/main.5f5016b3.js",
+    "main.js": "/divesea/static/js/main.9cd1fd86.js",
     "static/media/profile-cover.png": "/divesea/static/media/profile-cover.415e0a91ba363fb3605f.png",
     "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
     "static/media/input-pencil.svg": "/divesea/static/media/input-pencil.940ef24a3e33b296307e.svg",
@@ -30,10 +30,10 @@
     "static/media/cross.svg": "/divesea/static/media/cross.bfea2c058f091f5f405b78406d1757dd.svg",
     "static/media/ethereum.svg": "/divesea/static/media/ethereum.b01f5ac86eb4d3d7cbcdde66645c3c65.svg",
     "main.4d950b3c.css.map": "/divesea/static/css/main.4d950b3c.css.map",
-    "main.5f5016b3.js.map": "/divesea/static/js/main.5f5016b3.js.map"
+    "main.9cd1fd86.js.map": "/divesea/static/js/main.9cd1fd86.js.map"
   },
   "entrypoints": [
     "static/css/main.4d950b3c.css",
-    "static/js/main.5f5016b3.js"
+    "static/js/main.9cd1fd86.js"
   ]
 }
