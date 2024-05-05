@@ -7,7 +7,7 @@ import { useEthPrice } from "../../hooks/useEthPrice";
 import { RootState } from "../../store/root-state";
 import { addItemToDatabase } from "../../services/database";
 import { useBtcPrice } from "../../hooks/useBtcPrice";
-import { scrollToBottom } from "../../utils/scroll-to";
+import { scrollToNewItem } from "../../utils/scroll-to";
 
 export function CreateForm(): JSX.Element {
   const items = useSelector((state: RootState) => state.data.items);
@@ -106,7 +106,7 @@ export function CreateForm(): JSX.Element {
       upload: '',
     });
     setTimeout(() => {
-      scrollToBottom();
+      scrollToNewItem();
     }, 100);
 
     dispatch(redirectToRoute(AppRoute.Discover));

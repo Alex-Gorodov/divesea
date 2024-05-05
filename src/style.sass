@@ -152,11 +152,20 @@ $extra-bold: 800
 
 @keyframes new-item
   0%
-    scale: 0.5
     opacity: 0
-  100%    
-    scale: 1
+    transform: rotateY(640deg) scale(1.25)
+    box-shadow: 0px 0px 20px 10px $accent-dark
+  50%
+    opacity: 0.5
+    box-shadow: 0px 0px 20px 10px $accent-dark
+  75%    
+    opacity: 0.75
+    transform: rotateY(-160deg) scale(0.75)
+    box-shadow: 0px 0px 20px 10px $accent-dark
+  100%
     opacity: 1
+    transform: rotateY(0) scale(1)
+    box-shadow: none
 *, 
 *::after, 
 *::before

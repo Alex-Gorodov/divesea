@@ -44,7 +44,7 @@ export function ShopItem({ item }: ItemProps): JSX.Element {
 
   return (
     <div className="item">
-      <Link to={link}>
+      <Link className="item__link" to={link}>
         <div className="item__image-wrapper">
           <img className="item__image" src={item.img} alt={item.name} width={252} height={252} />
           <p className="item__time-wrapper" style={{ gridTemplateColumns: `${days !== 0 ? 'repeat(4, 36px)' : 'repeat(3, 36px)'}` }}>
@@ -56,8 +56,8 @@ export function ShopItem({ item }: ItemProps): JSX.Element {
             <span className="item__time">{seconds < 10 ? '0' + seconds : seconds}s </span>
           </p>
         </div>
+        <p className="item__name" title={item.name.length > 12 ? item.name : ''}>{item.name.length > 12 ? shortName() : item.name}</p>
       </Link>
-      <p className="item__name" title={item.name.length > 12 ? item.name : ''}>{item.name.length > 12 ? shortName() : item.name}</p>
       <div className="item__price-wrapper">
         <span className="item__price-description">Current bid</span>
         <span className="item__price">{lastBid}</span>
