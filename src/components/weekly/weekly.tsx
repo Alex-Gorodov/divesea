@@ -8,15 +8,29 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import { RootState } from "../../store/root-state";
 import { Spinner } from "../spinner/spinner";
+import { useEffect, useState } from "react";
 
 export function Weekly(): JSX.Element {
   const itemWidth = 281;
-  const slidesPerView = Math.round(window.innerWidth / itemWidth)
-  const spaceBetween = Math.round(window.innerWidth - itemWidth) / 2 / slidesPerView;
   const items = useSelector((state: RootState) => state.data.items)
   const isItemsLoading = useSelector((state: RootState) => state.data.isItemsDataLoading);
-  const mobileSlidesPerView = window.innerWidth / (itemWidth + spaceBetween/(items?.length - 3));
-  const isMobile = useIsMobile();
+  const [slidesPerView, setSlidesPerView] = useState(Math.round(window.innerWidth / itemWidth));
+  const [spaceBetween, setSpaceBetween] = useState(Math.round(window.innerWidth - itemWidth) / 2 / slidesPerView);
+  const [mobileSlidesPerView, setMobileSlidesPerView] = useState(window.innerWidth / (itemWidth + spaceBetween/(items?.length - 3)));
+  
+  useEffect(() => {
+    const updateDimensions = () => {
+      setSlidesPerView(Math.round(window.innerWidth / itemWidth));
+      setSpaceBetween(Math.round(window.innerWidth - itemWidth) / 2 / slidesPerView);
+      setMobileSlidesPerView(window.innerWidth / (itemWidth + spaceBetween/(items?.length - 3)));
+    };
+
+    window.addEventListener("resize", updateDimensions);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, [itemWidth, items?.length, slidesPerView, spaceBetween]);
 
   return (
     <section className="section weekly">
@@ -33,9 +47,8 @@ export function Weekly(): JSX.Element {
               nextEl: '.weekly__slider-btn--prev'
             }}
             modules={[Navigation]}
-            centeredSlides={isMobile}
-            slidesPerView={isMobile ? mobileSlidesPerView : slidesPerView}
-            slidesPerGroup={isMobile ? 1 : undefined}
+            centeredSlides={true}
+            slidesPerView={mobileSlidesPerView}
           >
             {items?.map((item) => (
               <SwiperSlide key={`weekly-${item.id}`}>
