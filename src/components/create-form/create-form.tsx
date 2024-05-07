@@ -169,7 +169,7 @@ export function CreateForm(): JSX.Element {
             className="create-form__input create-form__input--currency" 
             id="price" 
             placeholder={`0.00007 ${formData.priceCurrency}`}
-            step={0.1}
+            step={0.001}
             onChange={(e) => setFormData({...formData, priceValue: e.target.value})} 
           />
         </label>

@@ -120,9 +120,9 @@ export function UserProfile({user}: UserProfileProps): JSX.Element {
             </div>
             :
             <div className="profile-nav__activity">
-              <ActivityItem item={{ ...items[0], addedBy: users[userNameFirst].firstname+users[userNameFirst].surname.charAt(0) }} />
-              <ActivityItem item={{ ...items[5], addedBy: users[userNameSecond].firstname+users[userNameSecond].surname.charAt(0) }} />
-              <ActivityItem item={{ ...items[11], addedBy: users[userNameThird].firstname+users[userNameThird].surname.charAt(0) }} />
+              <ActivityItem item={{ ...items[0], author: users[userNameFirst] }} />
+              <ActivityItem item={{ ...items[5], author: users[userNameSecond] }} />
+              <ActivityItem item={{ ...items[11], author: users[userNameThird] }} />
             </div>
           }
         </div>

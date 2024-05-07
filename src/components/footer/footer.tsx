@@ -15,7 +15,7 @@ export function Footer(): JSX.Element {
       <div className={`footer__wrapper footer__wrapper--left ${isMobile && 'footer__wrapper--mobile'}`}>
         <Link className="footer__logo" to={AppRoute.Root}>
           <Logo/>
-          DiveSea
+          <span>DiveSea</span>
         </Link>
         {
           isMobile &&

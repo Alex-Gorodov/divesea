@@ -10,6 +10,8 @@ type ActivityItemProps = {
 export function ActivityItem({item}: ActivityItemProps): JSX.Element {
   const minutes = new Date().getMinutes() + item.id * 4;
 
+  const author = item.author && item.author.firstname+item.author.surname.charAt(0)
+
   return (
     <div className="activity-item">
       <div className="activity-item__container">
@@ -18,9 +20,9 @@ export function ActivityItem({item}: ActivityItemProps): JSX.Element {
           <div className="activity-item__inner-wrapper">
             <span className="activity-item__name">{item.name}</span>
             {
-              item.addedBy &&
+              item.author &&
               <span className="activity-item__author">
-                {item.addedBy}
+                {author}
                 <Validation/>
               </span>
             }

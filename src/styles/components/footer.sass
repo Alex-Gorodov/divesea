@@ -40,9 +40,12 @@
     align-items: center
     gap: 10px
     font-size: 30px
-    color: $white
+    color: $footer-link
     &:hover
-      opacity: 0.6
+      color: $white
+    &:focus-visible
+      outline: none
+      color: $white
     @media (max-width: $mobile)
       font-size: 20px
       gap: 6px
@@ -66,6 +69,9 @@
     transition: 0.3s
     &:hover
       color: $white
+    &:focus-visible
+      outline: none
+      color: $white
   &__social
     @include list-reset
     display: flex
@@ -79,4 +85,7 @@
     color: $footer-social
     transition: 0.3s
     &:hover
+      color: $white
+    &:focus-visible
+      outline: none
       color: $white

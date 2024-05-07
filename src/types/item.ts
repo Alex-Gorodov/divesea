@@ -1,4 +1,5 @@
 import { Bid } from "./bid";
+import { User } from "./user";
 
 export type Item = {
   id: number;
@@ -8,6 +9,7 @@ export type Item = {
   price: number;
   likes: number;
   addedDate: Date;
-  addedBy?: string;
+  author?: User;
+  royalty?: 'Fixed' | 'Persentage';
   bids: Bid[];
 }
