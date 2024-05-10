@@ -18,4 +18,5 @@ export type PageState = {
   uploadedNftPath: string | null;
   isBidFormOpened: boolean;
   bidItem: Item | null;
+  isWalletFormOpened: boolean;
 }

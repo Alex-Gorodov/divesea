@@ -14,18 +14,18 @@ export function Discover(): JSX.Element {
   const originalItems = useSelector((state: RootState) => state.data.items);
   const [items, setItems] = useState<Item[]>(originalItems)
 
-  const sortByCategory = () => {
-    const sortedItems = [...items].sort((a, b) => b.price - a.price);
+  const sortByAdded = () => {
+    const sortedItems = [...items].sort((a, b) => new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime());
     setItems(sortedItems);
   };
 
-  const sortByCollection = () => {
-    const sortedItems = [...items].sort((a, b) => b.price - a.price);
+  const sortByPopular = () => {
+    const sortedItems = [...items].sort((a, b) => b.likes - a.likes);
     setItems(sortedItems);
   };
 
   const sortByPrice = () => {
-    const sortedItems = [...items].sort((a, b) => b.price - a.price);
+    const sortedItems = [...items].sort((a, b) => (b.bids ? [...b.bids].sort((a,b) => b.value - a.value)[0].value : b.price) - (a.bids ? [...a.bids].sort((a,b) => b.value - a.value)[0].value : a.price));
     setItems(sortedItems);
   };
 
@@ -37,13 +37,13 @@ export function Discover(): JSX.Element {
     <section className="section discover">
       <h1 className="title title--2 title--secondary">Discover NFTs</h1>
       <div className="discover__buttons-wrapper">
-        <button className="button button--light discover__btn" onClick={() => sortByCategory()}>
+        <button className="button button--light discover__btn" onClick={() => sortByAdded()}>
           <Category/>
-          Category
+          Added
         </button>
-        <button className="button button--light discover__btn" onClick={() => sortByCollection()}>
+        <button className="button button--light discover__btn" onClick={() => sortByPopular()}>
           <Collection/>
-          Collection
+          Popular
         </button>
         <button className="button button--light discover__btn" onClick={() => sortByPrice()}>
           <Price/>
@@ -57,7 +57,7 @@ export function Discover(): JSX.Element {
           :
           items.map((item) => {
             const itemClassName = cn('discover__item', {
-              'discover__item--new' : item.id === items.length - 1
+              'discover__item--new' : item.id === items.length - 1 && new Date(item.addedDate).getDate() === new Date().getDate()
             })
 
             return (

@@ -62,7 +62,7 @@ export function Footer(): JSX.Element {
         </ul>
       </div>
       <div className="footer__wrapper footer__wrapper--right">
-        <span>© 2023 EATLY All Rights Reserved.</span>
+        <span>© 2024 EATLY All Rights Reserved.</span>
         {
           !isMobile &&
           <ul className="footer__social">

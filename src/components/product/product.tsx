@@ -91,7 +91,7 @@ export function Product(): JSX.Element {
                       <img className="product__owner-avatar" width={65} height={65} src={users[0].avatar} alt={`${users[0].firstname} ${users[0].surname.charAt(0)}.`} />
                       <p>
                         <span className="product__owner-description">Created by</span>
-                        <span className="product__owner-name">{users[0].firstname}</span>
+                        <span className="product__owner-name">{product.author ? product.author.firstname : users[0].firstname}</span>
                       </p>
                     </div>
                   </Link>

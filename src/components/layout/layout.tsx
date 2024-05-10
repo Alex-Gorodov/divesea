@@ -4,6 +4,7 @@ import { Footer } from "../footer/footer";
 import { BidForm } from "../bid-form/bid-form";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/root-state";
+import { ConnectWallet } from "../connect-wallet/connect-wallet";
 
 type LayoutProps = {
   children: ReactNode;
@@ -11,11 +12,13 @@ type LayoutProps = {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   const activeItem = useSelector((state: RootState) => state.page.bidItem)
+  const isWalletFormOpened = useSelector((state: RootState) => state.page.isWalletFormOpened)
   return (
       <div className="page-container">
       <Header/>
       {children}
-      {activeItem && <BidForm item={activeItem}/>} {/* Проверяем, что есть активный элемент перед отображением формы */}
+      {activeItem && <BidForm item={activeItem}/>}
+      {isWalletFormOpened && <ConnectWallet/>}
       <Footer/>
     </div>
   )

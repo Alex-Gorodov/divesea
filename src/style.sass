@@ -178,6 +178,8 @@ html
   flex-direction: column
   overflow-x: hidden
   scroll-behavior: smooth
+  &:has(.connect-wallet__wrapper)
+    overflow: hidden
 
 body
   margin: 0
@@ -214,7 +216,6 @@ body
   position: relative
   flex-grow: 1
   &:has(.bid-form--opened)
-    
 
 .parallax
   position: absolute
@@ -230,15 +231,25 @@ body
   @media (max-width: $tablet)
     top: 450px
 
-.swiper
+.swiper:not(:has(.wallet-preview__image))
   overflow: unset
 
-.swiper-horizontal
+.swiper:has(.wallet-preview__image)
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 310px
+  overflow: unset
+
+.swiper-horizontal:not(:has(.wallet-preview__image))
   margin-left: -35px
   @media (max-width: $tablet)
     margin-left: 0
     
-.swiper-slide.item
+.swiper-slide.item:not(:has(.wallet-preview__image))
   flex-shrink: 0 !important
   width: 100% !important
   max-width: 282px !important
+
+.swiper-slide:has(.wallet-preview__image)
+  width: 310px !important

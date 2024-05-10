@@ -6,11 +6,18 @@ import { useEffect, useState } from 'react';
 import { useIsMobileOnly } from '../../hooks/useIsMobile';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { Search } from '../search/search';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/root-state';
+import { toggleWalletForm } from '../../store/actions';
 
 export function Header(): JSX.Element {
-  const location = useLocation();
-  const [isMenuOpened, setMenuOpened] = useState(false);
+
+  const isWalletFormOpened = useSelector((state: RootState) => state.page.isWalletFormOpened);
   const [currentPage, setCurrentPage] = useState<string | null>(null);
+  const [isMenuOpened, setMenuOpened] = useState(false);
+  const isMobile = useIsMobileOnly();
+  const location = useLocation();
+  const dispatch = useDispatch();
   
   useEffect(() => {
     const pathname = location.pathname;
@@ -24,7 +31,6 @@ export function Header(): JSX.Element {
       }
     }, [location.pathname]);
     
-  const isMobile = useIsMobileOnly();
 
   const navWrapperClassName = cn('navigation__wrapper', {
     'navigation__wrapper--opened' : isMenuOpened
@@ -43,6 +49,16 @@ export function Header(): JSX.Element {
     isMobile && setMenuOpened(false);
   }) as React.RefObject<HTMLDivElement>;
 
+  const handleMobileMenu = () => {
+    setMenuOpened(!isMenuOpened)
+    dispatch(toggleWalletForm({isWalletFormOpened: false}))
+  }
+
+  const handleWalletForm = () => {
+    dispatch(toggleWalletForm({isWalletFormOpened: !isWalletFormOpened}))
+    setMenuOpened(false)
+  }
+
   return (
     <header className="header">
       <nav className="header__nav navigation">
@@ -53,7 +69,7 @@ export function Header(): JSX.Element {
           {
             isMobile
             ?
-              <button className={burgerClassName} type="button" onClick={() => setMenuOpened(!isMenuOpened)}>
+              <button className={burgerClassName} type="button" onClick={() => handleMobileMenu()}>
                 <span></span>
               </button>
             : ''
@@ -76,7 +92,7 @@ export function Header(): JSX.Element {
           </ul>
           <div className="navigation__buttons-wrapper">
             <Search/>
-            <button className="button button--dark" type="button">Connect wallet</button>
+            <button className="button button--dark" type="button" onClick={() => handleWalletForm()}>Connect wallet</button>
           </div>
         </div>
       </nav>

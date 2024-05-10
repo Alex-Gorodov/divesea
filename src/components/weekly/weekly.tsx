@@ -1,5 +1,4 @@
 import { SliderButtons } from "../slider-buttons/slider-buttons";
-import { useIsMobile } from "../../hooks/useIsMobile";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ShopItem } from "../shop-item/shop-item";
 import { Navigation } from 'swiper/modules';
@@ -50,11 +49,13 @@ export function Weekly(): JSX.Element {
             centeredSlides={true}
             slidesPerView={mobileSlidesPerView}
           >
-            {items?.map((item) => (
-              <SwiperSlide key={`weekly-${item.id}`}>
-                <ShopItem item={item}/>
-              </SwiperSlide>
-            ))}
+            {
+              items?.map((item) => (
+                <SwiperSlide key={`weekly-${item.id}`}>
+                  <ShopItem item={item}/>
+                </SwiperSlide>
+              )
+            )}
           </Swiper>
           <SliderButtons classNames={['weekly__slider-btn--prev', 'weekly__slider-btn--next']}/>
         </>

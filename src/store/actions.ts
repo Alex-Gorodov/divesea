@@ -25,3 +25,5 @@ export const loadUsers = createAction<{users: User[]}>('data/loadUsers');
 export const setItemsDataLoadingStatus = createAction<{isItemsDataLoading: boolean}>('data/setItemsDataLoadingStatus')
 
 export const setUsersDataLoadingStatus = createAction<{isUsersDataLoading: boolean}>('data/setUsersDataLoadingStatus')
+
+export const toggleWalletForm = createAction<{isWalletFormOpened: boolean}>('page/toggleWalletForm');
