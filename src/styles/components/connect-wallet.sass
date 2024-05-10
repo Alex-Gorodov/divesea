@@ -22,7 +22,7 @@
       border-radius: 24px 24px 0 0
       box-shadow: 0 -10px 10px 4px rgba($accent-dark, 50%)
     &--opened
-      top: 0
+      top: 4px
       left: 0
       opacity: 1
       touch-action: auto
@@ -64,8 +64,13 @@
       border-radius: 4px
   &__title
     font-size: 24px
+    @media (min-width: 1025px)
+      padding-top: 120px
+      margin-bottom: 0px
     @media (max-width: $tablet)
-      margin-bottom: 80px
+      margin-bottom: 180px
+    @media (max-width: $mobile)
+      margin-bottom: 50px
   &__list
     @include list-reset
     display: flex
