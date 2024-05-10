@@ -45,7 +45,7 @@ export function ConnectWallet(): JSX.Element {
     setTranslationY(0);
     console.log('translation:', translationY);
     
-    if (translationY > 110) dispatch(toggleWalletForm({ isWalletFormOpened: false }));
+    if (translationY > 90) dispatch(toggleWalletForm({ isWalletFormOpened: false }));
   };
 
   // Записываем начальную позицию "puller" при монтировании компонента
