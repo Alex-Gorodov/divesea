@@ -7,13 +7,19 @@
   @media (max-width: $mobile)
     grid-template-columns: 1fr
   &__wrapper
-    position: fixed
-    top: 0
+    position: absolute
+    top: 105vh
     left: 0
     width: 100vw
-    height: 100vh
+    height: 82vh
+    border-radius: 24px 24px 0 0
+    box-shadow: 0 -10px 10px 4px rgba($accent-dark, 50%)
     background-color: $mobile-background-color
+    transition: 0.6s
     z-index: 15
+    &--opened
+      top: 122px
+      left: 0
   &__inner-wrapper
     display: flex
     padding: 0 30px
@@ -23,6 +29,7 @@
     @media (max-width: $mobile)
       justify-content: unset
   &__form
+    position: relative
     height: 100%
     padding-top: 100px
     &-copyright
@@ -33,6 +40,20 @@
       justify-content: space-between
       font-size: 16px
       color: #aaaaaa
+  &__mobile-puller
+    position: absolute
+    top: 20px
+    left: 50%
+    padding: 20px 0
+    transform: translateX(-50%)
+    border: none
+    background-color: transparent
+    & span
+      display: block
+      background-color: $gray
+      height: 4px
+      width: 60px
+      border-radius: 4px
 
   &__preview
     height: 100%

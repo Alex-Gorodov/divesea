@@ -9,6 +9,7 @@ import { Search } from '../search/search';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/root-state';
 import { toggleWalletForm } from '../../store/actions';
+import React from 'react';
 
 export function Header(): JSX.Element {
 
@@ -63,20 +64,30 @@ export function Header(): JSX.Element {
     <header className="header">
       <nav className="header__nav navigation">
         <div className="navigation__toggle-wrapper">
-          <Link to={AppRoute.Root} className="navigation__link navigation__logo">
-            <Logo/>
-          </Link>
+          
           {
             isMobile
             ?
+            <React.Fragment>
               <button className={burgerClassName} type="button" onClick={() => handleMobileMenu()}>
                 <span></span>
               </button>
-            : ''
+              <button className="button button--dark" type="button" onClick={() => handleWalletForm()}>Connect wallet</button>
+            </React.Fragment>
+            : 
+            <Link to={AppRoute.Root} className="navigation__link navigation__logo">
+              <Logo/>
+            </Link>
           }
         </div>
         <div className={navWrapperClassName} ref={menuRef}>
           <ul className="navigation__list">
+            {
+              isMobile ?
+              <li className="navigation__item">
+                <Link to={AppRoute.Root} className={navLinkClassName(AppRoute.Root)}>Home</Link>
+              </li> : ''
+            }
             <li className="navigation__item">
               <Link to={AppRoute.Discover} className={navLinkClassName(AppRoute.Discover)}>Discover</Link>
             </li>
@@ -92,7 +103,9 @@ export function Header(): JSX.Element {
           </ul>
           <div className="navigation__buttons-wrapper">
             <Search/>
-            <button className="button button--dark" type="button" onClick={() => handleWalletForm()}>Connect wallet</button>
+            {
+              !isMobile && <button className="button button--dark" type="button" onClick={() => handleWalletForm()}>Connect wallet</button>
+            }
           </div>
         </div>
       </nav>

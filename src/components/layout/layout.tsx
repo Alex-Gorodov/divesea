@@ -12,13 +12,12 @@ type LayoutProps = {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   const activeItem = useSelector((state: RootState) => state.page.bidItem)
-  const isWalletFormOpened = useSelector((state: RootState) => state.page.isWalletFormOpened)
   return (
       <div className="page-container">
       <Header/>
       {children}
       {activeItem && <BidForm item={activeItem}/>}
-      {isWalletFormOpened && <ConnectWallet/>}
+      <ConnectWallet/>
       <Footer/>
     </div>
   )
