@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/divesea/static/css/main.bac53b92.css",
-    "main.js": "/divesea/static/js/main.c426524c.js",
+    "main.css": "/divesea/static/css/main.00afad62.css",
+    "main.js": "/divesea/static/js/main.00558808.js",
     "static/media/profile-cover.png": "/divesea/static/media/profile-cover.415e0a91ba363fb3605f.png",
     "static/media/metamask.svg": "/divesea/static/media/metamask.1e5a3882da2a42b07478f06b11ab5f30.svg",
     "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
@@ -33,11 +33,11 @@
     "static/media/redirect-arrow.svg": "/divesea/static/media/redirect-arrow.c11ebb0599b56ea3e094474f275cb15b.svg",
     "static/media/cross.svg": "/divesea/static/media/cross.bfea2c058f091f5f405b78406d1757dd.svg",
     "static/media/ethereum.svg": "/divesea/static/media/ethereum.b01f5ac86eb4d3d7cbcdde66645c3c65.svg",
-    "main.bac53b92.css.map": "/divesea/static/css/main.bac53b92.css.map",
-    "main.c426524c.js.map": "/divesea/static/js/main.c426524c.js.map"
+    "main.00afad62.css.map": "/divesea/static/css/main.00afad62.css.map",
+    "main.00558808.js.map": "/divesea/static/js/main.00558808.js.map"
   },
   "entrypoints": [
-    "static/css/main.bac53b92.css",
-    "static/js/main.c426524c.js"
+    "static/css/main.00afad62.css",
+    "static/js/main.00558808.js"
   ]
 }
