@@ -18,7 +18,7 @@
     opacity: 0
     z-index: -1
     @media (max-width: $mobile)
-      height: 75vh
+      height: 100vh
       border-radius: 24px 24px 0 0
       box-shadow: 0 -10px 10px 4px rgba($accent-dark, 50%)
     &--opened
@@ -62,11 +62,12 @@
       height: 4px
       width: 60px
       border-radius: 4px
+  &__title
+    margin-bottom: 80px
   &__list
     @include list-reset
     display: flex
     flex-direction: column
-    flex-grow: 1
     justify-content: center
     gap: 24px
   &__item

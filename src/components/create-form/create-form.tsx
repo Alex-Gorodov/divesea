@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 import { FormCheckbox } from "./form-checkbox";
 import { useDispatch, useSelector } from "react-redux";
 import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/actions";

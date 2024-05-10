@@ -43,7 +43,6 @@ export function ConnectWallet(): JSX.Element {
   const handleTouchEnd = () => {
     setTouchStartY(0);
     setTranslationY(0);
-    console.log('translation:', translationY);
     
     if (translationY > 90) dispatch(toggleWalletForm({ isWalletFormOpened: false }));
   };
@@ -69,7 +68,7 @@ export function ConnectWallet(): JSX.Element {
               ref={pullerRef}
             ><span></span></button>
           )}
-          <h2 className="title title--3">Choose wallet</h2>
+          <h2 className="title title--3 connect-wallet__title">Choose wallet</h2>
           <ul className="connect-wallet__list">
             <li className="connect-wallet__item">
               <Link className="connect-wallet__link" to={"/"}>
