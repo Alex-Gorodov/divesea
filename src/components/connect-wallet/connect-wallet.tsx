@@ -4,7 +4,7 @@ import { ReactComponent as Connect } from "../../img/icons/connect-icon.svg";
 import { ReactComponent as Eth } from "../../img/icons/enter-eth-address-icon.svg";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
 import React, { useState, useRef, useEffect } from "react";
-import { useIsMobileOnly } from "../../hooks/useIsMobile";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import { toggleWalletForm } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, generatePath } from "react-router-dom";
@@ -19,7 +19,7 @@ export function ConnectWallet(): JSX.Element {
   const isItemsLoaded = useSelector((state: RootState) => !state.data.isItemsDataLoading);
   const isOpened = useSelector((state: RootState) => state.page.isWalletFormOpened);
   const items = useSelector((state: RootState) => state.data.items);
-  const isMobile = useIsMobileOnly();
+  const isMobile = useIsMobile();
   const dispatch = useDispatch();
 
   const walletWrapperClassName = cn("connect-wallet__wrapper", {
