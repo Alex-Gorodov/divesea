@@ -1,13 +1,17 @@
+import { ReactComponent as Metamask } from "../../img/icons/metamask.svg";
+import { ReactComponent as Trust } from "../../img/icons/trust-wallet.svg";
+import { ReactComponent as Connect } from "../../img/icons/connect-icon.svg";
+import { ReactComponent as Eth } from "../../img/icons/enter-eth-address-icon.svg";
+import { SliderButtons } from "../slider-buttons/slider-buttons";
 import React, { useState, useRef, useEffect } from "react";
+import { useIsMobileOnly } from "../../hooks/useIsMobile";
+import { toggleWalletForm } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, generatePath } from "react-router-dom";
 import { RootState } from "../../store/root-state";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SliderButtons } from "../slider-buttons/slider-buttons";
-import { Navigation } from "swiper/modules";
 import { Spinner } from "../spinner/spinner";
-import { toggleWalletForm } from "../../store/actions";
-import { useIsMobileOnly } from "../../hooks/useIsMobile";
-import { Link, generatePath } from "react-router-dom";
+import { Navigation } from "swiper/modules";
 import { AppRoute } from "../../const";
 import cn from "classnames";
 
@@ -25,21 +29,17 @@ export function ConnectWallet(): JSX.Element {
   const [touchStartY, setTouchStartY] = useState<number>(0);
   const [translationY, setTranslationY] = useState<number>(0);
 
-  // Создаем ссылку на элемент "puller"
   const pullerRef = useRef<HTMLButtonElement>(null);
 
-  // Обработчик начала касания
   const handleTouchStart = (e: React.TouchEvent<HTMLButtonElement>) => {
     setTouchStartY(e.touches[0].clientY);
   };
 
-  // Обработчик перемещения при касании
   const handleTouchMove = (e: React.TouchEvent<HTMLButtonElement>) => {
     const deltaY = e.touches[0].clientY - touchStartY;
     setTranslationY(deltaY);
   };
 
-  // Обработчик завершения касания
   const handleTouchEnd = () => {
     setTouchStartY(0);
     setTranslationY(0);
@@ -48,7 +48,6 @@ export function ConnectWallet(): JSX.Element {
     if (translationY > 90) dispatch(toggleWalletForm({ isWalletFormOpened: false }));
   };
 
-  // Записываем начальную позицию "puller" при монтировании компонента
   useEffect(() => {
     if (pullerRef.current) {
       const initialY = pullerRef.current.getBoundingClientRect().top;
@@ -71,11 +70,37 @@ export function ConnectWallet(): JSX.Element {
             ><span></span></button>
           )}
           <h2 className="title title--3">Choose wallet</h2>
-          <button className="button button--dark" onClick={() => dispatch(toggleWalletForm({ isWalletFormOpened: !isOpened }))}>close</button>
-          <div className="connect-wallet__form-copyright">
-            <p>Privacy policy</p>
-            <p>Copyright 2024</p>
-          </div>
+          <ul className="connect-wallet__list">
+            <li className="connect-wallet__item">
+              <Link className="connect-wallet__link" to={"/"}>
+                <Metamask/>
+                <span className="connect-wallet__item-name">Metamask</span>
+                <Connect/>
+              </Link>
+            </li>
+            <li className="connect-wallet__item">
+              <Link className="connect-wallet__link" to={"/"}>
+                <Trust/>
+                <span className="connect-wallet__item-name">Trust wallet</span>
+                <Connect/>
+              </Link>
+            </li>
+            <li className="connect-wallet__item">
+              <Link className="connect-wallet__link" to={"/"}>
+                <Eth/>
+                <span className="connect-wallet__item-name">Enter ethereum address</span>
+                <Connect/>
+              </Link>
+            </li>
+            <li className="button button--dark">Next</li>
+          </ul>
+          {
+            !isMobile &&
+            <div className="connect-wallet__form-copyright">
+              <p>Privacy policy</p>
+              <p>Copyright 2024</p>
+            </div>
+          }
         </div>
         {!isMobile && (
           <div className="connect-wallet__preview connect-wallet__inner-wrapper wallet-preview">

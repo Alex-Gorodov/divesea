@@ -11,20 +11,24 @@
     top: 105vh
     left: 0
     width: 100vw
-    height: 65vh
-    border-radius: 24px 24px 0 0
-    box-shadow: 0 -10px 10px 4px rgba($accent-dark, 50%)
+    height: 100vh
     background-color: $mobile-background-color
     transition: 0.3s
     touch-action: none
     opacity: 0
     z-index: -1
+    @media (max-width: $mobile)
+      height: 65vh
+      border-radius: 24px 24px 0 0
+      box-shadow: 0 -10px 10px 4px rgba($accent-dark, 50%)
     &--opened
-      top: 122px
+      top: 0
       left: 0
       opacity: 1
       touch-action: auto
       z-index: 15
+      @media (max-width: $mobile)
+        top: 122px
   &__inner-wrapper
     display: flex
     padding: 0 30px
@@ -41,7 +45,6 @@
       @include poppins-medium
       display: flex
       width: 100%
-      margin-top: auto
       justify-content: space-between
       font-size: 16px
       color: #aaaaaa
@@ -59,6 +62,32 @@
       height: 4px
       width: 60px
       border-radius: 4px
+  &__list
+    @include list-reset
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    justify-content: center
+    gap: 24px
+  &__item
+    min-width: 280px
+    background-color: $white
+    box-shadow: 3.5px 7px 35px 0 rgba($black, 10%)
+    border-radius: 6px
+    transition: 0.3s
+    &:hover
+      box-shadow: 7px 14px 35px 0 rgba($black, 30%)
+    &-name
+      @include poppins-semi-bold
+      font-size: 14px
+      transition: 0.3s
+  &__link
+    @include link-reset
+    display: flex
+    padding: 16px 20px
+    align-items: center
+    gap: 12px
+    color: $black
 
   &__preview
     height: 100%

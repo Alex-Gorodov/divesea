@@ -75,7 +75,7 @@ export function Header(): JSX.Element {
               <button className="button button--dark" type="button" onClick={() => handleWalletForm()}>Connect wallet</button>
             </React.Fragment>
             : 
-            <Link to={AppRoute.Root} className="navigation__link navigation__logo">
+            <Link to={AppRoute.Root} className="navigation__link navigation__logo" onClick={() => isWalletFormOpened && dispatch(toggleWalletForm({isWalletFormOpened: false}))}>
               <Logo/>
             </Link>
           }
