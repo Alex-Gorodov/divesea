@@ -26,7 +26,7 @@ export function ConnectWallet(): JSX.Element {
     "connect-wallet__wrapper--opened": isOpened,
   });
 
-  const [position, setPosition] = useState<number>(1500);
+  const [position, setPosition] = useState<number>(WalletPositions.Closed);
   const [touchStartY, setTouchStartY] = useState<number>(0);
   const [translationY, setTranslationY] = useState<number>(0);
 
@@ -57,12 +57,20 @@ export function ConnectWallet(): JSX.Element {
     if (pullerRef.current) {
       const initialY = pullerRef.current.getBoundingClientRect().top;
       setTouchStartY(initialY);
-      setPosition(WalletPositions.OpenedMobile);
+      setPosition(isMobile ? WalletPositions.OpenedMobile : WalletPositions.Opened);
     }
+    isOpened ? isMobile
+      ? setPosition(WalletPositions.OpenedMobile)
+      : setPosition(WalletPositions.Opened)
+        :
+        setPosition(WalletPositions.Closed)
   }, [isOpened, isMobile]);
 
+  console.log(position);
+  
+
   return (
-    <div className={walletWrapperClassName} style={{ top: isOpened ? isMobile ? WalletPositions.OpenedMobile : WalletPositions.Opened + 'px' : WalletPositions.Closed}}>
+    <div className={walletWrapperClassName} style={{ top: isOpened ? `${position}px` : WalletPositions.Closed}}>
       <h1 className="visually-hidden">Connect wallet</h1>
       <div className="connect-wallet">
         <div className="connect-wallet__form connect-wallet__inner-wrapper">
