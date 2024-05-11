@@ -216,7 +216,8 @@ body
 .main
   position: relative
   flex-grow: 1
-  &:has(.bid-form--opened)
+  @media (max-width: $mobile)
+    margin-top: 80px
 
 .parallax
   position: absolute

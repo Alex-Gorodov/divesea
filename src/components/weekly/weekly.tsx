@@ -39,7 +39,7 @@ export function Weekly(): JSX.Element {
         :
         <>
           <Swiper
-            spaceBetween={20}
+            spaceBetween={40}
             loop={true}
             navigation={{
               prevEl: '.weekly__slider-btn--next',

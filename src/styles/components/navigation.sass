@@ -16,6 +16,8 @@
     justify-content: space-between
     z-index: 20
     @media (max-width: $mobile)
+      position: fixed
+      top: 0
       width: 100%
       background-color: $mobile-background-color
       padding: 10px 30px
@@ -41,7 +43,7 @@
       flex-direction: column
       align-items: unset
     @media (max-width: $mobile)
-      position: absolute
+      position: fixed
       top: -80vh
       height: 80vh
       padding: 40px
