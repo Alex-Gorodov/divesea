@@ -19,19 +19,18 @@ export function ConnectWallet(): JSX.Element {
   const isItemsLoaded = useSelector((state: RootState) => !state.data.isItemsDataLoading);
   const isOpened = useSelector((state: RootState) => state.page.isWalletFormOpened);
   const items = useSelector((state: RootState) => state.data.items);
+  const pullerRef = useRef<HTMLButtonElement>(null);
   const isMobile = useIsMobile();
   const dispatch = useDispatch();
-
+  
+  const [position, setPosition] = useState<number>(WalletPositions.Closed);
+  const [translationY, setTranslationY] = useState<number>(0);
+  const [touchStartY, setTouchStartY] = useState<number>(0);
+  const [transition, setTransition] = useState(0.3)
+  
   const walletWrapperClassName = cn("connect-wallet__wrapper", {
     "connect-wallet__wrapper--opened": isOpened,
   });
-
-  const [position, setPosition] = useState<number>(WalletPositions.Closed);
-  const [touchStartY, setTouchStartY] = useState<number>(0);
-  const [translationY, setTranslationY] = useState<number>(0);
-  const [transition, setTransition] = useState(0.3)
-
-  const pullerRef = useRef<HTMLButtonElement>(null);
   
   const handleTouchStart = (e: React.TouchEvent<HTMLButtonElement>) => {
     setTouchStartY(e.touches[0].clientY);
@@ -69,8 +68,6 @@ export function ConnectWallet(): JSX.Element {
         setPosition(WalletPositions.Closed)
   }, [isOpened, isMobile]);
 
-  console.log(position);
-  
 
   return (
     <div className={walletWrapperClassName} style={{ top: isOpened ? `${position}px` : WalletPositions.Closed, transition: `${transition}s`}}>
