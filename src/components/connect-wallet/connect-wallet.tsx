@@ -40,7 +40,7 @@ export function ConnectWallet(): JSX.Element {
   const handleTouchMove = (e: React.TouchEvent<HTMLButtonElement>) => {
     const deltaY = e.touches[0].clientY - touchStartY;
     setTranslationY(deltaY);
-    setTransition(0);
+    setTransition(0.05);
     setPosition(isMobile ? WalletPositions.OpenedMobile + translationY : WalletPositions.Opened + translationY);
   };
 
@@ -89,21 +89,21 @@ export function ConnectWallet(): JSX.Element {
           <h2 className="title title--3 connect-wallet__title">Choose wallet</h2>
           <ul className="connect-wallet__list">
             <li className="connect-wallet__item">
-              <Link className="connect-wallet__link" to={"/"}>
+              <Link className="connect-wallet__link" to={"/"} onClick={() => dispatch(toggleWalletForm({isWalletFormOpened: false}))}>
                 <Metamask/>
                 <span className="connect-wallet__item-name">Metamask</span>
                 <Connect/>
               </Link>
             </li>
             <li className="connect-wallet__item">
-              <Link className="connect-wallet__link" to={"/"}>
+              <Link className="connect-wallet__link" to={"/"} onClick={() => dispatch(toggleWalletForm({isWalletFormOpened: false}))}>
                 <Trust/>
                 <span className="connect-wallet__item-name">Trust wallet</span>
                 <Connect/>
               </Link>
             </li>
             <li className="connect-wallet__item">
-              <Link className="connect-wallet__link" to={"/"}>
+              <Link className="connect-wallet__link" to={"/"} onClick={() => dispatch(toggleWalletForm({isWalletFormOpened: false}))}>
                 <Eth/>
                 <span className="connect-wallet__item-name">Enter ethereum address</span>
                 <Connect/>
