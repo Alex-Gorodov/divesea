@@ -29,6 +29,7 @@ export function ConnectWallet(): JSX.Element {
   const [position, setPosition] = useState<number>(WalletPositions.Closed);
   const [touchStartY, setTouchStartY] = useState<number>(0);
   const [translationY, setTranslationY] = useState<number>(0);
+  const [transition, setTransition] = useState(0.3)
 
   const pullerRef = useRef<HTMLButtonElement>(null);
   
@@ -39,12 +40,14 @@ export function ConnectWallet(): JSX.Element {
   const handleTouchMove = (e: React.TouchEvent<HTMLButtonElement>) => {
     const deltaY = e.touches[0].clientY - touchStartY;
     setTranslationY(deltaY);
+    setTransition(0);
     setPosition(isMobile ? WalletPositions.OpenedMobile + translationY : WalletPositions.Opened + translationY);
   };
 
   const handleTouchEnd = () => {
     setTouchStartY(0);
     setTranslationY(0);
+    setTransition(0.3)
     if (translationY > 80) {
       dispatch(toggleWalletForm({ isWalletFormOpened: false }));
       setPosition(WalletPositions.Closed);
@@ -70,7 +73,7 @@ export function ConnectWallet(): JSX.Element {
   
 
   return (
-    <div className={walletWrapperClassName} style={{ top: isOpened ? `${position}px` : WalletPositions.Closed}}>
+    <div className={walletWrapperClassName} style={{ top: isOpened ? `${position}px` : WalletPositions.Closed, transition: `${transition}s`}}>
       <h1 className="visually-hidden">Connect wallet</h1>
       <div className="connect-wallet">
         <div className="connect-wallet__form connect-wallet__inner-wrapper">
