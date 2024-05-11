@@ -62,7 +62,7 @@ export function ConnectWallet(): JSX.Element {
   }, [isOpened, isMobile]);
 
   return (
-    <div className={walletWrapperClassName} style={{ top: isOpened ? position + 'px' : WalletPositions.Closed}}>
+    <div className={walletWrapperClassName} style={{ top: isOpened ? isMobile ? WalletPositions.OpenedMobile : WalletPositions.Opened + 'px' : WalletPositions.Closed}}>
       <h1 className="visually-hidden">Connect wallet</h1>
       <div className="connect-wallet">
         <div className="connect-wallet__form connect-wallet__inner-wrapper">
