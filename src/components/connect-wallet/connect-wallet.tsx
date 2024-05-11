@@ -12,7 +12,7 @@ import { RootState } from "../../store/root-state";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Spinner } from "../spinner/spinner";
 import { Navigation } from "swiper/modules";
-import { AppRoute } from "../../const";
+import { AppRoute, WalletPositions } from "../../const";
 import cn from "classnames";
 
 export function ConnectWallet(): JSX.Element {
@@ -26,11 +26,12 @@ export function ConnectWallet(): JSX.Element {
     "connect-wallet__wrapper--opened": isOpened,
   });
 
+  const [position, setPosition] = useState<number>(1500);
   const [touchStartY, setTouchStartY] = useState<number>(0);
   const [translationY, setTranslationY] = useState<number>(0);
 
   const pullerRef = useRef<HTMLButtonElement>(null);
-
+  
   const handleTouchStart = (e: React.TouchEvent<HTMLButtonElement>) => {
     setTouchStartY(e.touches[0].clientY);
   };
@@ -38,24 +39,30 @@ export function ConnectWallet(): JSX.Element {
   const handleTouchMove = (e: React.TouchEvent<HTMLButtonElement>) => {
     const deltaY = e.touches[0].clientY - touchStartY;
     setTranslationY(deltaY);
+    setPosition(isMobile ? WalletPositions.OpenedMobile + translationY : WalletPositions.Opened + translationY);
   };
 
   const handleTouchEnd = () => {
     setTouchStartY(0);
     setTranslationY(0);
-    
-    if (translationY > 90) dispatch(toggleWalletForm({ isWalletFormOpened: false }));
+    if (translationY > 80) {
+      dispatch(toggleWalletForm({ isWalletFormOpened: false }));
+      setPosition(WalletPositions.Closed);
+    } else {
+      setPosition(isMobile ? WalletPositions.OpenedMobile : WalletPositions.Opened);
+    }
   };
 
   useEffect(() => {
     if (pullerRef.current) {
       const initialY = pullerRef.current.getBoundingClientRect().top;
       setTouchStartY(initialY);
+      setPosition(WalletPositions.OpenedMobile);
     }
-  }, []);
+  }, [isOpened, isMobile]);
 
   return (
-    <div className={walletWrapperClassName} style={{ transform: `translateY(${translationY}px)` }}>
+    <div className={walletWrapperClassName} style={{ top: isOpened ? position + 'px' : WalletPositions.Closed}}>
       <h1 className="visually-hidden">Connect wallet</h1>
       <div className="connect-wallet">
         <div className="connect-wallet__form connect-wallet__inner-wrapper">

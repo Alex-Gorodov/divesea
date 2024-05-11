@@ -22,11 +22,17 @@ export enum HeroItemSizes {
 }
 
 export enum ScreenSizes {
-  Mobile= 430,
+  Mobile = 430,
   MobileOnly = 768,
   Tablet = 1024,
   Desktop = 1440,
   ContainerMaxWidth = 1250
+}
+
+export enum WalletPositions {
+  Closed = 1500,
+  Opened = 0,
+  OpenedMobile = 122,
 }
 
 export const monthNames = ["January", "February", "March", "April", "May", "June",
