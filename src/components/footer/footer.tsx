@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { ReactComponent as Logo} from '../../logo.svg';
-import { AppRoute } from "../../const";
 import { ReactComponent as Instagram} from '../../img/icons/instagram.svg';
 import { ReactComponent as Linkedin} from '../../img/icons/linkedin.svg';
 import { ReactComponent as Facebook} from '../../img/icons/facebook.svg';
 import { ReactComponent as Twitter} from '../../img/icons/twitter.svg';
+import { ReactComponent as Logo} from '../../logo.svg';
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { Link } from "react-router-dom";
+import { AppRoute } from "../../const";
 
 export function Footer(): JSX.Element {
   const isMobile = useIsMobile();

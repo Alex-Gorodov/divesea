@@ -1,12 +1,12 @@
 import { ReactComponent as Arrow} from "../../img/icons/redirect-arrow.svg";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { scrollToTop } from "../../utils/scroll-to";
+import { RootState } from "../../store/root-state";
 import { ShopItem } from "../shop-item/shop-item";
+import { Spinner } from "../spinner/spinner";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
-import { useIsMobile } from "../../hooks/useIsMobile";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/root-state";
-import { Spinner } from "../spinner/spinner";
-import { scrollToTop } from "../../utils/scroll-to";
 
 export function Explore(): JSX.Element {
   const items = useSelector((state: RootState) => state.data.items)

@@ -1,19 +1,18 @@
-import { useDispatch, useSelector } from "react-redux"
-import cn from "classnames";
+import { ReactComponent as Ethereum } from "../../img/icons/ethereum.svg";
+import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg";
+import { ReactComponent as CloseCross } from "../../img/icons/cross.svg";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { addBid, toggleBidForm } from "../../store/actions";
-import { monthNames } from "../../const";
-import { FormEvent, useEffect, useState } from "react";
-import { useEthPrice } from "../../hooks/useEthPrice";
-import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg"
-import { ReactComponent as Ethereum } from "../../img/icons/ethereum.svg"
-import { ReactComponent as CloseCross } from "../../img/icons/cross.svg"
-import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { addBidToDatabase } from "../../services/database";
-import { RootState } from "../../store/root-state";
-import { Spinner } from "../spinner/spinner";
+import { useIsMobileOnly } from "../../hooks/useIsMobile";
+import { useDispatch, useSelector } from "react-redux";
 import { useBtcPrice } from "../../hooks/useBtcPrice";
+import { useEthPrice } from "../../hooks/useEthPrice";
+import { RootState } from "../../store/root-state";
+import { FormEvent, useState } from "react";
+import { monthNames } from "../../const";
 import { Item } from "../../types/item";
+import cn from "classnames";
 
 interface BidFormProps {
   item: Item;

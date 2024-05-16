@@ -1,4 +1,6 @@
 .search
+  &__wrapper
+    position: relative
   &__input
     @include poppins-medium
     position: relative
@@ -17,6 +19,47 @@
     @media (max-width: $tablet)
       padding: 10px 10px 10px 50px
       background-position: 14px 12px
+    @media (max-width: 760px)
+      background-image: none
+      padding: 10px
     &:focus-visible
       outline: 2px solid $accent-dark
       background-color: lighten($lighten-gray, 10%)
+  &__result
+    &-wrapper
+      position: absolute
+      top: 70px
+      left: 0
+      width: 100%
+      min-width: 260px
+      padding: 12px
+      border-radius: 14px
+      background-color: $lighten-gray
+      z-index: 10
+      @media (max-width: $mobile)
+        bottom: 70px
+        top: unset
+    &-list
+      @include list-reset
+      display: flex
+      gap: 12px
+      overflow: scroll
+    &-item
+      @include link-reset
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      gap: 8px
+      &:hover
+        color: $accent-dark
+      &__name
+        @include poppins-medium
+        font-size: 14px
+
+    &-title
+      @include poppins-semi-bold
+      font-size: 16px
+  &__user-item
+    &__image
+      border-radius: 50%

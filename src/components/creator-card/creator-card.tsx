@@ -1,9 +1,9 @@
-import { Link, generatePath } from 'react-router-dom';
-import { AppRoute } from '../../const';
 import { ReactComponent as ValidationIcon} from '../../img/icons/validation-icon.svg';
 import { ReactComponent as Etherium} from '../../img/icons/ethereum.svg';
-import { User } from "../../types/user";
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { Link, generatePath } from 'react-router-dom';
+import { User } from "../../types/user";
+import { AppRoute } from '../../const';
 
 type CreatorCardProps = {
   user: User;

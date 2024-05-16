@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Item } from "../../types/item";
-import { Link, generatePath } from "react-router-dom";
-import { AppRoute } from "../../const";
 import { useSelector, useDispatch } from "react-redux";
+import { Link, generatePath } from "react-router-dom";
 import { toggleBidForm } from "../../store/actions";
+import React, { useEffect, useState } from "react";
 import { RootState } from "../../store/root-state";
+import { Item } from "../../types/item";
+import { AppRoute } from "../../const";
 
 type ItemProps = {
   item: Item;

@@ -1,14 +1,14 @@
-import { Link, useLocation } from 'react-router-dom';
-import { AppRoute } from '../../const';
-import { ReactComponent as Logo} from '../../logo.svg';
-import cn from "classnames";
-import { useEffect, useState } from 'react';
-import { useIsMobileOnly } from '../../hooks/useIsMobile';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
-import { Search } from '../search/search';
+import { useIsMobileOnly } from '../../hooks/useIsMobile';
+import { ReactComponent as Logo} from '../../logo.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/root-state';
 import { toggleWalletForm } from '../../store/actions';
+import { Link, useLocation } from 'react-router-dom';
+import { RootState } from '../../store/root-state';
+import { useEffect, useState } from 'react';
+import { Search } from '../search/search';
+import { AppRoute } from '../../const';
+import cn from "classnames";
 import React from 'react';
 
 export function Header(): JSX.Element {

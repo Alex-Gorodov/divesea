@@ -5,15 +5,15 @@ import { ReactComponent as Instagram} from '../../img/icons/instagram.svg';
 import { ReactComponent as Linkedin} from '../../img/icons/linkedin.svg';
 import { ReactComponent as Facebook} from '../../img/icons/facebook.svg';
 import { ReactComponent as Twitter} from '../../img/icons/twitter.svg';
+import { ActivityItem } from '../activity-item/activity-item';
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { RootState } from '../../store/root-state';
 import { ShopItem } from '../shop-item/shop-item';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import { User } from "../../types/user";
 import { useState } from 'react';
 import cn from 'classnames';
-import { ActivityItem } from '../activity-item/activity-item';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/root-state';
 
 type UserProfileProps = {
   user: User;

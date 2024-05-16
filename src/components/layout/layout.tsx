@@ -1,10 +1,10 @@
-import { FC, ReactNode } from "react"
+import { ConnectWallet } from "../connect-wallet/connect-wallet";
+import { RootState } from "../../store/root-state";
+import { BidForm } from "../bid-form/bid-form";
 import { Header } from "../header/header";
 import { Footer } from "../footer/footer";
-import { BidForm } from "../bid-form/bid-form";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/root-state";
-import { ConnectWallet } from "../connect-wallet/connect-wallet";
+import { FC, ReactNode } from "react"
 
 type LayoutProps = {
   children: ReactNode;

@@ -1,7 +1,7 @@
-import { Item } from "../../types/item";
 import { ReactComponent as Validation } from '../../img/icons/validation-icon.svg';
 import { ReactComponent as Ethereum } from '../../img/icons/ethereum.svg';
 import { useEthPrice } from "../../hooks/useEthPrice";
+import { Item } from "../../types/item";
 
 type ActivityItemProps = {
   item: Item;

@@ -1,13 +1,13 @@
 import { SliderButtons } from "../slider-buttons/slider-buttons";
+import { RootState } from "../../store/root-state";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ShopItem } from "../shop-item/shop-item";
+import { Spinner } from "../spinner/spinner";
+import { useEffect, useState } from "react";
 import { Navigation } from 'swiper/modules';
 import { useSelector } from "react-redux";
 import 'swiper/css/navigation';
 import 'swiper/css';
-import { RootState } from "../../store/root-state";
-import { Spinner } from "../spinner/spinner";
-import { useEffect, useState } from "react";
 
 export function Weekly(): JSX.Element {
   const itemWidth = 281;

@@ -1,13 +1,13 @@
-import { FormEvent, useState } from "react";
-import { FormCheckbox } from "./form-checkbox";
-import { useDispatch, useSelector } from "react-redux";
 import { createNFT, redirectToRoute, setUploadedNftPath } from "../../store/actions";
-import { AppRoute } from "../../const";
+import { addItemToDatabase } from "../../services/database";
+import { scrollToNewItem } from "../../utils/scroll-to";
+import { useDispatch, useSelector } from "react-redux";
+import { useBtcPrice } from "../../hooks/useBtcPrice";
 import { useEthPrice } from "../../hooks/useEthPrice";
 import { RootState } from "../../store/root-state";
-import { addItemToDatabase } from "../../services/database";
-import { useBtcPrice } from "../../hooks/useBtcPrice";
-import { scrollToNewItem } from "../../utils/scroll-to";
+import { FormCheckbox } from "./form-checkbox";
+import { FormEvent, useState } from "react";
+import { AppRoute } from "../../const";
 
 export function CreateForm(): JSX.Element {
   const items = useSelector((state: RootState) => state.data.items);

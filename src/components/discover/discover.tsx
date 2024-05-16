@@ -1,12 +1,12 @@
-import { ReactComponent as Category } from "../../img/icons/category-icon.svg";
 import { ReactComponent as Collection } from "../../img/icons/collection-icon.svg";
+import { ReactComponent as Category } from "../../img/icons/category-icon.svg";
 import { ReactComponent as Price } from "../../img/icons/price-icon.svg";
-import { ShopItem } from "../shop-item/shop-item";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { Item } from "../../types/item";
 import { RootState } from "../../store/root-state";
+import { ShopItem } from "../shop-item/shop-item";
 import { Spinner } from "../spinner/spinner";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Item } from "../../types/item";
 import cn from 'classnames'
 
 export function Discover(): JSX.Element {

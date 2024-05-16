@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
 import { ReactComponent as UploadIcon } from "../../img/icons/upload-icon.svg";
-import { useDispatch } from "react-redux";
+import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { setUploadedNftPath } from "../../store/actions";
 import { useDropzone } from "react-dropzone";
-import { useIsMobileOnly } from "../../hooks/useIsMobile";
+import { useDispatch } from "react-redux";
+import { useRef, useState } from "react";
 
 export function Upload(): JSX.Element {
   const fileInputRef = useRef<HTMLInputElement>(null);

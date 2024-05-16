@@ -1,18 +1,18 @@
-import { ReactComponent as Metamask } from "../../img/icons/metamask.svg";
-import { ReactComponent as Trust } from "../../img/icons/trust-wallet.svg";
-import { ReactComponent as Connect } from "../../img/icons/connect-icon.svg";
 import { ReactComponent as Eth } from "../../img/icons/enter-eth-address-icon.svg";
+import { ReactComponent as Connect } from "../../img/icons/connect-icon.svg";
+import { ReactComponent as Trust } from "../../img/icons/trust-wallet.svg";
+import { ReactComponent as Metamask } from "../../img/icons/metamask.svg";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
 import React, { useState, useRef, useEffect } from "react";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { AppRoute, WalletPositions } from "../../const";
 import { toggleWalletForm } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, generatePath } from "react-router-dom";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import { RootState } from "../../store/root-state";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Spinner } from "../spinner/spinner";
 import { Navigation } from "swiper/modules";
-import { AppRoute, WalletPositions } from "../../const";
 import cn from "classnames";
 
 export function ConnectWallet(): JSX.Element {

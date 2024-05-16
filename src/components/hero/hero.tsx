@@ -1,20 +1,20 @@
-import { animated, useSpring } from "react-spring"
-import cn from "classnames";
-import { useState } from "react";
-import { AppRoute, HeroItemSizes } from "../../const";
-import React from "react";
 import { SliderButtons } from "../slider-buttons/slider-buttons";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { Link, generatePath } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { AppRoute, HeroItemSizes } from "../../const";
+import { animated, useSpring } from "react-spring";
 import { RootState } from "../../store/root-state";
 import { Spinner } from "../spinner/spinner";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import cn from "classnames";
 
 interface Props {
   end: number;
 }
 
 const CountAnimation: React.FC<Props> = ({ end }) => {
+  // nums running animation
   const { number } = useSpring({
     from: { number: 0 },
     to: { number: end },

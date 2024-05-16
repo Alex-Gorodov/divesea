@@ -10,10 +10,10 @@ import { SellPage } from "../../pages/sell/sell-page";
 import { HelmetProvider } from "react-helmet-async";
 import browserHistory from "../../browser-history";
 import { Route, Routes } from "react-router-dom";
-import 'firebase/compat/database';
-import { AppRoute } from "../../const";
 import { Provider } from "react-redux";
+import { AppRoute } from "../../const";
 import { store } from "../../store";
+import 'firebase/compat/database';
 import "../../styles/style.sass";
 
 export function App() {

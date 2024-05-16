@@ -1,20 +1,19 @@
 import { ReactComponent as BackArrow } from "../../img/icons/back-arrow.svg";
 import { ReactComponent as BidIcon } from "../../img/icons/bid-icon.svg";
 import { ReactComponent as Like } from "../../img/icons/like-icon.svg";
-import { Layout } from "antd";
-import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
-import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link, generatePath } from "react-router-dom";
-import browserHistory from "../../browser-history";
-import { monthNames, AppRoute } from "../../const";
-import { useIsMobileOnly } from "../../hooks/useIsMobile";
 import { updateLikesInDatabase } from "../../services/database";
 import { toggleBidForm, toggleLike } from "../../store/actions";
-import { RootState } from "../../store/root-state";
-import { Item } from "../../types/item";
-import { Spinner } from "../spinner/spinner";
+import { useIsMobileOnly } from "../../hooks/useIsMobile";
+import { useSelector, useDispatch } from "react-redux";
 import { scrollToTop } from "../../utils/scroll-to";
+import browserHistory from "../../browser-history";
+import { monthNames, AppRoute } from "../../const";
+import { RootState } from "../../store/root-state";
+import { Spinner } from "../spinner/spinner";
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { Item } from "../../types/item";
 
 export function Product(): JSX.Element {
   const isFormOpened = useSelector((state: RootState) => state.page.isBidFormOpened);
@@ -64,7 +63,7 @@ export function Product(): JSX.Element {
   }
 
   return (
-    <Layout>
+    <>
       <Helmet>
         <title>DiveSea | {product?.name ? product.name : 'Loading...'}</title>
       </Helmet>
@@ -162,7 +161,7 @@ export function Product(): JSX.Element {
           }
         </section>
       </main>
-    </Layout>
+    </>
   );
 
 }
