@@ -24,6 +24,8 @@ export function Weekly(): JSX.Element {
       setMobileSlidesPerView(window.innerWidth / (itemWidth + spaceBetween/(items?.length - 3)));
     };
 
+    updateDimensions();
+
     window.addEventListener("resize", updateDimensions);
 
     return () => {
@@ -39,7 +41,7 @@ export function Weekly(): JSX.Element {
         :
         <>
           <Swiper
-            spaceBetween={40}
+            spaceBetween={30}
             loop={true}
             navigation={{
               prevEl: '.weekly__slider-btn--next',
