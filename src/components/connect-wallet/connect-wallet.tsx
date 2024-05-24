@@ -123,7 +123,7 @@ export function ConnectWallet(): JSX.Element {
             ) : (
               <>
                 <Swiper
-                  spaceBetween={"100%"}
+                  spaceBetween={"200%"}
                   loop={false}
                   navigation={{
                     prevEl: ".wallet-preview__btn--prev",
