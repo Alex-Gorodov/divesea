@@ -24,7 +24,6 @@ export const addBidToDatabase = (bid: Bid, item: Item) => {
   return database.ref(`${APIRoute.Items}/${item.id}/bids`).set(updatedBids);
 };
 
-
 export const addItemToDatabase = (item: Item) => {
   const itemWithTimestamp = { ...item, addedDate: new Date().toISOString() };
   return database.ref(APIRoute.Items).push(itemWithTimestamp);

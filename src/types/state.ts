@@ -1,5 +1,4 @@
 import { store } from "../store";
-import { Bid } from "./bid";
 import { Item } from "./item";
 import { User } from "./user";
 

@@ -13,7 +13,6 @@ import { Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { AppRoute } from "../../const";
 import { store } from "../../store";
-import 'firebase/compat/database';
 import "../../styles/style.sass";
 
 export function App() {
