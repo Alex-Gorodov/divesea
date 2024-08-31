@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/divesea/static/css/main.1ba46175.css",
-    "main.js": "/divesea/static/js/main.a802f6d5.js",
+    "main.js": "/divesea/static/js/main.3967dd42.js",
     "static/media/profile-cover.png": "/divesea/static/media/profile-cover.415e0a91ba363fb3605f.png",
     "static/media/metamask.svg": "/divesea/static/media/metamask.1e5a3882da2a42b07478f06b11ab5f30.svg",
     "static/media/hero-parallax.svg": "/divesea/static/media/hero-parallax.639552466e551e2ec26a.svg",
@@ -15,9 +15,9 @@
     "static/media/like-icon.svg": "/divesea/static/media/like-icon.c9abb445db8b1c31a151e7877f46c9b9.svg",
     "static/media/bid-icon.svg": "/divesea/static/media/bid-icon.95b5d5f0ba260db09d352134514c4b7c.svg",
     "static/media/upload-icon.svg": "/divesea/static/media/upload-icon.11c83baa93523d6f5fdba2336a9e913d.svg",
+    "index.html": "/divesea/index.html",
     "static/media/enter-eth-address-icon.svg": "/divesea/static/media/enter-eth-address-icon.d9e47947b3ec259591d3d6f0632c683f.svg",
     "static/media/validation-icon.svg": "/divesea/static/media/validation-icon.a9836c463922f14e01d9cb89882412cd.svg",
-    "index.html": "/divesea/index.html",
     "static/media/twitter.svg": "/divesea/static/media/twitter.515bcaa5dbb1081102859188c681cec7.svg",
     "static/media/category-icon.svg": "/divesea/static/media/category-icon.15dfc6ce24dc6b1f83c856fa6b895185.svg",
     "static/media/linkedin.svg": "/divesea/static/media/linkedin.4c0a681061bd6852e03c630df0ba9a49.svg",
@@ -34,10 +34,10 @@
     "static/media/cross.svg": "/divesea/static/media/cross.bfea2c058f091f5f405b78406d1757dd.svg",
     "static/media/ethereum.svg": "/divesea/static/media/ethereum.b01f5ac86eb4d3d7cbcdde66645c3c65.svg",
     "main.1ba46175.css.map": "/divesea/static/css/main.1ba46175.css.map",
-    "main.a802f6d5.js.map": "/divesea/static/js/main.a802f6d5.js.map"
+    "main.3967dd42.js.map": "/divesea/static/js/main.3967dd42.js.map"
   },
   "entrypoints": [
     "static/css/main.1ba46175.css",
-    "static/js/main.a802f6d5.js"
+    "static/js/main.3967dd42.js"
   ]
 }
