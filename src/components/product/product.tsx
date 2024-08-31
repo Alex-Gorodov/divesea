@@ -148,6 +148,7 @@ export function Product(): JSX.Element {
                         >
                           <Like/>
                           <span className="product__likes-count">{item.likes}</span>
+                          <span className="visually-hidden">{similarItemsLiked[item.id] ? 'remove like' : 'put like'}</span>
                         </button>
                       </div>
                     </li>

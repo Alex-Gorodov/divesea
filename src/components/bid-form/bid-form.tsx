@@ -111,6 +111,7 @@ export function BidForm({item}: BidFormProps): JSX.Element {
       <div className="bid-form__wrapper" ref={ref}>
         <h3 className="title title--3">History of Bid</h3>
         <button className="bid-form__close-btn" type="button" onClick={handleCloseForm}>
+          <span className="visually-hidden">Close bid history</span>
           <CloseCross/>
         </button>
         <span className="bid-form__date">{`${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}</span>

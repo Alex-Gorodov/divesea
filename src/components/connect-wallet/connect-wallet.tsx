@@ -81,7 +81,10 @@ export function ConnectWallet(): JSX.Element {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
               ref={pullerRef}
-            ><span></span></button>
+            >
+              <span></span>
+              <span className="visually-hidden">Pull down to close 'wallet connection'</span>
+            </button>
           )}
           <h2 className="title title--3 connect-wallet__title">Choose wallet</h2>
           <ul className="connect-wallet__list">

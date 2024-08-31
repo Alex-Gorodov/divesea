@@ -71,12 +71,14 @@ export function Header(): JSX.Element {
             <React.Fragment>
               <button className={burgerClassName} type="button" onClick={() => handleMobileMenu()}>
                 <span></span>
+                <span className="visually-hidden">{isMenuOpened ? 'close menu' : 'open menu'}</span>
               </button>
               <button className="button button--dark" type="button" onClick={() => handleWalletForm()}>Connect wallet</button>
             </React.Fragment>
             : 
             <Link to={AppRoute.Root} className="navigation__link navigation__logo" onClick={() => isWalletFormOpened && dispatch(toggleWalletForm({isWalletFormOpened: false}))}>
               <Logo/>
+              <span className="visually-hidden">To main page</span>
             </Link>
           }
         </div>
